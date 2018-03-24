@@ -1,0 +1,1 @@
+This folder contains the sprites that will be used for the final version of the game

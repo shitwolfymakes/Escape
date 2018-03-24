@@ -1,0 +1,1 @@
+This folder contains the sprites that will be used for the test version of the game
