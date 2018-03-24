@@ -1,3 +1,7 @@
+/*
+ * 	This class governs the dynamically-rendered level
+ */
+
 package application.model;
 
 import java.io.File;

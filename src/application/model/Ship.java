@@ -1,3 +1,8 @@
+/*
+ * 	Super class to Enemy.java and Player.java
+ * 		defines shared data variables
+ */
+
 package application.model;
 
 public class Ship {
