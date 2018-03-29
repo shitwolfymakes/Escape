@@ -1,5 +1,5 @@
 /*
- *	This class parses the save file, and stores data during gameplay 
+ *	This class stores the data for the current player
  */
 
 package application.model;
