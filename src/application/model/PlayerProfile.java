@@ -4,6 +4,6 @@
 
 package application.model;
 
-public class Profile {
+public class PlayerProfile {
 
 }
