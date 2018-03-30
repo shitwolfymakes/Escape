@@ -11,13 +11,12 @@ import java.util.Scanner;
 
 public class Save {
 
-	// use in Profile.java: parseSave(getSaveName(), p);
+	// use in PlayerProfile.java: parseSave(getSaveName(), p);
 	public void parseSave(String username, PlayerProfile p)
 	{
 		try {
 			String filename = "../saves/"+ username + ".txt";
 			Scanner save = new Scanner( new File(filename) );
-
 
 			String line = save.nextLine();
 			String[] tokens = line.split(",");
@@ -57,7 +56,7 @@ public class Save {
 			// Line 6, upgrades
 			line = save.nextLine();
 			tokens = line.split(",");
-			if (tokens[0].equals("money")) 
+			if (tokens[0].equals("upgrades")) 
 			{
 				for ( int i = 1; i < tokens.length; i++ )
 				p.addUpgrades(tokens[i]);
@@ -75,10 +74,12 @@ public class Save {
 
 	}//end parseSave()
 
+	// use in PlayerProfile.java: updateSave( p );
 	public void updateSave(PlayerProfile p)
 	{
 		//TODO: Take in the current PlayerProfile, and write all it's data into a new 
 		//			save file. See /saves/readme.txt for the save file structure
+		
 	}//end updateSave()
 
 }
