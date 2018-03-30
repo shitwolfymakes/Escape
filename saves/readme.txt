@@ -8,11 +8,11 @@ Save file structure:
 () contains range of possible values if applicable
 
 Each line contains the name of the data the line stores. this MUST be validated before 
-	you store the following data. A switch statement would be most appropriate.
+	you store the following data. 
 
 <username>.txt
-1 name,<name>
-2 difficulty,<numDifficulty(1-3)>
+1 username,<username>
+2 difficulty,<difficultyLevel(1-3)>
 3 points,<points>
 4 money,<money>
 5 levels_unlocked,<numLevelsUnlocked>
