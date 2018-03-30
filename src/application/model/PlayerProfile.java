@@ -15,7 +15,41 @@ public class PlayerProfile {
 	private int numLevelsUnlocked;
 	private ArrayList<String> upgrades = new ArrayList<String>();
 	
-	public PlayerProfile() {}
+	private Save s = new Save();
+	
+	public PlayerProfile(String username) 
+	{
+		this.username = username;
+	}
+	
+	// run this on first time playing, then follow with initProfile()
+	public void createProfile(String username, int difficulty)
+	{
+		// set new profile to default values
+		PlayerProfile p = new PlayerProfile(username);
+		p.setDifficultyLevel(difficulty);
+		p.setPoints(0);
+		p.setMoney(0);
+		p.setNumLevelsUnlocked(1);
+		
+		// save the newly made profile
+		s.updateSave(p);
+	}
+	
+	public PlayerProfile initProfile(String username)
+	{
+		// create the current profile, and populate it with
+		//    the data stored in the save file
+		PlayerProfile p = new PlayerProfile(username);
+		s.parseSave(getUsername(), p);
+		
+		return p;
+	}//end initProfile()
+	
+	public void saveProfile(PlayerProfile p)
+	{
+		s.updateSave(p);
+	}//end saveProfile
 
 	/**
 	 * @return the username
@@ -100,7 +134,5 @@ public class PlayerProfile {
 	public void addUpgrades(String upgrade) {
 		upgrades.add(upgrade);
 	}
-	
-	
 
-}
+}//end PlayerProfile
