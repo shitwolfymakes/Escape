@@ -1,5 +1,5 @@
 /**
- * 
+ * This controller governs Bullets
  * 
  * @author wolfyCSA
  */
