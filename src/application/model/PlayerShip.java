@@ -1,5 +1,7 @@
-/*
+/**
  * 	Subclass of Ship.java. Governs the player ship object
+ * 
+ * @author wolfyCSA
  */
 
 package application.model;

@@ -1,3 +1,9 @@
+/**
+ * 
+ * @author wolfyCSA
+ *
+ */
+
 package application.view;
 
 import application.model.Level;

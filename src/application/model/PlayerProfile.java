@@ -1,5 +1,7 @@
-/*
+/**
  *	This class stores the data for the current player
+ *
+ * @author wolfyCSA
  */
 
 package application.model;

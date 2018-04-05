@@ -1,6 +1,9 @@
-/*
- * 	Super class to Enemy.java and Player.java
+/**
+ * Super class to Enemy.java and Player.java
  * 		defines shared data variables
+ * 
+ * @author wolfyCSA
+ *
  */
 
 package application.model;

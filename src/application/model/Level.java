@@ -1,5 +1,7 @@
-/*
+/**
  * 	This class governs the dynamically-rendered level
+ * 
+ * @author wolfyCSA
  */
 
 package application.model;
