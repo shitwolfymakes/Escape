@@ -18,10 +18,10 @@ public class EnemyShip extends Ship {
 	private String enemyID;
 	
 	
-	public EnemyShip(String enemyGameID) {
+	public EnemyShip(String cortexKey) {
 		ArrayList<String> enemyShipData = new ArrayList<String>();
 		// store data grabbed from the Cortex entry
-		enemyShipData = Main.cortex.getEnemy().get(enemyGameID);
+		enemyShipData = Main.cortex.getEnemy().get("E_"+cortexKey);
 		
 		setEnemyID(enemyShipData.get(0));
 		setName(enemyShipData.get(1));
