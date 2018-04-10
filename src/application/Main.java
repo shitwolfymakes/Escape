@@ -31,7 +31,7 @@ public class Main extends Application {
 		try {
 			// load the fxml file we need
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( Main.class.getResource("../Main.fxml") );
+			loader.setLocation( Main.class.getResource("../MainMenu.fxml") );
 			AnchorPane layout = (AnchorPane) loader.load();
 							
 			// Load the Board model 

@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainMenuController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@PHMainMenuBG.png" />
+         </image></ImageView>
+      <Button fx:id="startButton" layoutX="301.0" layoutY="411.0" mnemonicParsing="false" onAction="#start" prefHeight="30.0" prefWidth="200.0" text="Start" />
+      <Button fx:id="loadButton" layoutX="301.0" layoutY="466.0" mnemonicParsing="false" onAction="#handle" prefHeight="30.0" prefWidth="200.0" text="Load User" />
+      <Button fx:id="highScoreButton" layoutX="301.0" layoutY="520.0" mnemonicParsing="false" onAction="#highScore" prefHeight="30.0" prefWidth="200.0" text="High Scores" />
+   </children>
 </AnchorPane>
-
