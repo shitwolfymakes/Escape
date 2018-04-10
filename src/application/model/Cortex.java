@@ -179,4 +179,39 @@ public class Cortex {
 		
 	}//end loadLevels()
 
+	/**
+	 * @return the cortex
+	 */
+	public Map<String, HashMap<String, ArrayList<String>>> getCortex() {
+		return cortex;
+	}
+
+	/**
+	 * @return the level
+	 */
+	public Map<String, List<ArrayList<String>>> getLevel() {
+		return level;
+	}
+
+	/**
+	 * @return the weapon
+	 */
+	public Map<String, ArrayList<String>> getWeapon() {
+		return weapon;
+	}
+
+	/**
+	 * @return the enemy
+	 */
+	public Map<String, ArrayList<String>> getEnemy() {
+		return enemy;
+	}
+
+	/**
+	 * @return the upgrade
+	 */
+	public Map<String, ArrayList<String>> getUpgrade() {
+		return upgrade;
+	}
+
 }//end class Cortex
