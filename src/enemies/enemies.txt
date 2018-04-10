@@ -1,0 +1,2 @@
+hornet,H1,5,0,10,10,../test_sprites/hornet.jpeg,1,BLA1
+super hornet,H2,10,0,25,25,../test_sprites/super_hornet.jpeg,1,BLA2
