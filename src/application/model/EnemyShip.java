@@ -35,6 +35,7 @@ public class EnemyShip extends Ship {
 		for (int i = 0; i < getNumWeapons(); i++)
 			addWeapons(enemyShipData.get(8+i));
 		
+		System.out.println(this.toString());
 	}
 
 	
