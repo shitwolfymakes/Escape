@@ -1,0 +1,4 @@
+basic blaster,BLA1,1,1
+blaster v2,BLA2,1,2
+fast blaster,BLAF,2,1
+fast blaster v2,BLAF2,2,2
