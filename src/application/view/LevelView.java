@@ -6,21 +6,15 @@
 
 package application.view;
 
-import application.model.Level;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 public class LevelView extends GridPane{
 
-	//private Level model; //replaced by Main.model
-	//private int imgSize;
-	
-	//public LevelView( Level model ) {
-		//this.model = model;
-	//}//end constructor
 	public LevelView() {}
 	
 	// TODO: create the other getter methods 
+	// TODO: find a way to get this to update the view
 	
 	public ImageView chooseImage(String code) {
 		switch( code ) {
