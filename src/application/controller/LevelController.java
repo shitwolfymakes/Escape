@@ -26,6 +26,30 @@ public class LevelController implements EventHandler<ActionEvent> {
 		Level l = new Level( Main.player.getCurrentLevel() );
 		enemies = l.collectEnemies();
 		
+		// move all enemies to the left once per second
+		while (enemies.size() > 0)
+		{
+			try {
+				Thread.sleep(1000);
+				
+				for ( EnemyShip e : enemies ) {
+					// need an isTileOccupied()
+					
+					if (e.getCurrentCol() == 11) {
+						// jumping the barrier
+						l.enemyJumpBarrier(e);
+					} else if ( e.getCurrentCol() < 10 )
+						continue;
+					else l.updateEnemyLocation(e);
+				}//end for
+				
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}//end try/catch
+			
+		}//end while
+		
 		
 	}//end handle()
 	

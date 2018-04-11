@@ -98,5 +98,8 @@ public class Level {
 	public void updateEnemyLocation(EnemyShip e) {
 		this.currentCol = e.getCurrentCol() - 1;
 	}
+	public void enemyJumpBarrier(EnemyShip e) {
+		this.currentCol = e.getCurrentCol() - 2;
+	}
 	
 }
