@@ -35,16 +35,23 @@ public class Cortex {
 	public Map< String, ArrayList<String> >       			weapon   = new HashMap< String, ArrayList<String> >();
 	public Map< String, ArrayList<String> >       			enemy    = new HashMap< String, ArrayList<String> >();
 	public Map< String, ArrayList<String> >       			upgrade  = new HashMap< String, ArrayList<String> >();
-
+	
+	
 	public Cortex() {
 		initCortex();
 	}//end constructor
 
 	public void initCortex() {
 		loadLevels();
+		System.out.println("Levels loaded");
 		loadWeapons();
+		System.out.println("Weapons hot");
 		loadEnemies();
+		System.out.println("Enemies spotted");
 		loadUpgrades();
+		System.out.println("Upgrades developed");
+		//loadMods();
+		//System.out.println("Mods are asleep, upvote trebuchet");
 		System.out.println(cortex.toString());
 	}//end initCortex()
 
