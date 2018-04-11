@@ -22,14 +22,15 @@ import javafx.scene.layout.AnchorPane;
 
 public class Main extends Application {
 	
-	public static final Cortex cortex = new Cortex();  // hashmap object containing the data
+	//public static final Cortex cortex = new Cortex();  // hashmap object containing the data
 													   // of everything in the game.
 	public static Level model;						   // the model of the app
     public static LevelView view;					   // the view of the app
+	public static Stage stage;
 
 	@Override
 	public void start(Stage primaryStage) {
-
+		
 		try {
 			//File level1 = new File("../levels/level1csv.txt");
 			
@@ -59,6 +60,7 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace(); // TODO: handle this better!
 		}
+		stage = primaryStage;
 	}
 	
 	public static void main(String[] args) {
