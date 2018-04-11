@@ -24,7 +24,7 @@ public class Main extends Application {
 	public static final Cortex cortex = new Cortex();  // hashmap object containing the data
 													   // of everything in the game.
 	public static PlayerProfile player = new PlayerProfile();
-	public static Level model;						   // the model of the app
+	public Level model = new Level(1);						   // the model of the app
     public static LevelView view;					   // the view of the app
 	public static Stage stage;
 

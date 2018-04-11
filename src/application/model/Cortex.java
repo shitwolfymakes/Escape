@@ -31,7 +31,7 @@ import java.util.Scanner;
 public class Cortex {
 
 	public Map< String,HashMap<String, ArrayList<String>> > cortex = new HashMap< String,HashMap<String, ArrayList<String>> >();
-	public Map< String, List<ArrayList<String>> > 			level    = new HashMap< String, List<ArrayList<String>> >();
+	public Map< String, ArrayList<String> >					level    = new HashMap< String, ArrayList<String> >();
 	public Map< String, ArrayList<String> >       			weapon   = new HashMap< String, ArrayList<String> >();
 	public Map< String, ArrayList<String> >       			enemy    = new HashMap< String, ArrayList<String> >();
 	public Map< String, ArrayList<String> >       			upgrade  = new HashMap< String, ArrayList<String> >();
@@ -64,7 +64,7 @@ public class Cortex {
 
 			if ( ((File) levelFile).exists() ) {
 				System.out.println(levelFile + " exists");
-				level.put( "L_"+ i, parseLevel(levelFile) );
+				level.put( "L_"+ i, (ArrayList<String>) parseLevel(levelFile) );
 				
 				i++;
 			} else break;
@@ -73,22 +73,18 @@ public class Cortex {
 		
 	}//end loadLevels()
 
-	public List<ArrayList<String>> parseLevel(File f)
+	public List<String> parseLevel(File f)
 	{
-		List<ArrayList<String>> fullLevel = new ArrayList< ArrayList<String> >();
+		List<String> fullLevel = new ArrayList<String>();
 		
 		try {
 			Scanner scan = new Scanner( f );
 			System.out.println( "level" + f.getName() + ":");
 			while(scan.hasNextLine())
 			{
-				String line = scan.nextLine();
-				String[] tokens = line.split(",");
-				
-				List<String> levelLine = new ArrayList<String>( Arrays.asList(tokens) );
-				
-				fullLevel.add((ArrayList<String>) levelLine);
-				System.out.println(levelLine.toString());
+				String levelLine = scan.nextLine();
+				fullLevel.add( levelLine );
+				System.out.println(levelLine);
 			}//end while
 			
 			scan.close();	// close the file!
@@ -182,7 +178,7 @@ public class Cortex {
 	/**
 	 * @return the level HashMap
 	 */
-	public Map<String, List<ArrayList<String>>> getLevel() {
+	public Map<String, ArrayList<String>> getLevel() {
 		return level;
 	}
 	/**

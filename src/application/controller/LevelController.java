@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import application.Main;
 import application.model.EnemyShip;
 import application.model.Level;
+import application.view.LevelView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -20,11 +21,13 @@ import javafx.scene.layout.GridPane;
 public class LevelController implements EventHandler<ActionEvent> {
 	
 	public ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
-	
+	public LevelView view;
 	@Override
 	public void handle(ActionEvent event) {
-		Level l = new Level( Main.player.getCurrentLevel() );
-		enemies = l.collectEnemies();
+		Level model = new Level( Main.player.getCurrentLevel() );
+		view = new LevelView( model );
+		enemies = model.collectEnemies();
+		
 		
 		// move all enemies to the left once per second
 		while (enemies.size() > 0)
@@ -37,10 +40,10 @@ public class LevelController implements EventHandler<ActionEvent> {
 					
 					if (e.getCurrentCol() == 11) {
 						// jumping the barrier
-						l.enemyJumpBarrier(e);
+						model.enemyJumpBarrier(e);
 					} else if ( e.getCurrentCol() < 10 )
 						continue;
-					else l.updateEnemyLocation(e);
+					else model.updateEnemyLocation(e);
 				}//end for
 				
 			} catch (InterruptedException e1) {

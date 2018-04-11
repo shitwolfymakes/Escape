@@ -6,10 +6,7 @@
 
 package application.model;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import application.Main;
 
@@ -17,89 +14,108 @@ public class Level {
 
 	private static final int numRows = 7;
 	private static final int numCols = 10;
-	private String [][] level;
+	private String[][] level;
 	private int currentLevel;
 	private int currentRow;
 	private int currentCol;
 	private ArrayList<EnemyShip> enemyShips = new ArrayList<EnemyShip>();
+	
+	public Level() {};
 	
 	public Level(int levelNum) {
 		
 		this.currentLevel = levelNum;
 		this.currentRow = 4;
 		this.currentCol = 1;
+		this.level = parseLevel(this.currentLevel);
+		
 	}
 	
 	public ArrayList<EnemyShip> collectEnemies() {
 		
-		for (int r = 0; r < level.length ; r++) 
+		for (int r = 0; r < 7 ; r++) 
 	    { 
-	        for (int c = 0; c < level[c].length; c++)
+	        for (int c = 0; c < 10; c++)
 	        {
 	        	if ( level[r][c].equals("H1") )
 	        		enemyShips.add( new EnemyShip("H1", r, c) );
-	        		
 	        	if ( level[r][c].equals("H2") )
 	        		enemyShips.add( new EnemyShip("H2", r, c) );
+	        	
 	        }//end inner for
 	    }//end outer for
 		
 		return enemyShips;
 	}
 	
-	// deprecated, level data is already stored in the cortex entry
-	/*
-	public static Level parseLevel( String fileName ) {
+	public int getLongestRow(ArrayList<String> eachRow) {
+		int tmp = 0;
+		for (int i = 1; i < 7; i++)
+		{
+			String line = eachRow.get(i-1).toString();
+			String[] tokens = line.split(",");
+			String line2 = eachRow.get(i).toString();
+			String[] tokens2 = line2.split(",");
 		
-		// open the file
-		Scanner scan = null;
-		Level l = null;
-		ArrayList<String> eachRow = new ArrayList<String>();
-		
-		//TODO: refactor this to work with arrays parsed from txt file
-		try {
-			// do the reading
-			scan = new Scanner( new File( fileName ) );
-			while( scan.hasNextLine() ) {
-				eachRow.add( scan.nextLine() );
-			}
-			
-			int numberOfRows = eachRow.size();
-			int numberOfCols = eachRow.get(0).length();
-			
-			l = new Level( numberOfRows, numberOfCols );
-			// copy the file contents to the Level model object
-			for( int r=0; r<numberOfRows; r++ ) {
-				for( int c=0; c<numberOfCols; c++ ) {
-					char letter = eachRow.get(r).charAt(c);
-					l.level[r][c] = letter;
-					
-					if( letter=='c' )
-						l.updateCurrentLocation(r,c);
-				}
-			}
-			
-		}catch(IOException e) {
-			//TODO: handle this exception!
-			e.printStackTrace();
-		}finally {
-			if( scan!=null )
-				scan.close();
+			tmp = Math.max(tokens.length, tokens2.length);
 		}
+		return tmp;
+	}
+	
+	public String[][] parseLevel(int levelNum) {
+		
+		ArrayList<String> eachRow = Main.cortex.getLevel().get("L_"+levelNum);
+		int longestRow = getLongestRow(eachRow);
+		
+		String[][] matrix = new String[7][longestRow];
+		
+		for (int i = 0; i < 7; i++)
+		{
+			String line = eachRow.get(i).toString();
+			String[] tokens = line.split(",");
 			
-		return l;
+			// fill the array
+			for (int j = 0; j < tokens.length; j++)
+				matrix[i][j] = tokens[j];
+			for ( int j = tokens.length - 1; j < matrix[i].length; j++)
+				if ( matrix[i][j] == null )
+					 matrix[i][j] = String.valueOf(-1);
+		}//end outer for
+		
+		for( int i = 0; i < 7; i++ ) {
+			for( int j = 0; j < matrix[i].length; j++ ) {
+				System.out.printf("%s,",matrix[i][j]);
+			}//end inner for
+			System.out.println("");
+		}//end outer for
+		
+		for( int r = 0; r < 7; r++ ) {
+			for( int c = 0; c < matrix[r].length; c++ ) {
+				String code = "";
+				code = matrix[r][c];
+				
+				if( code == null )
+					continue;
+				else if ( code.equals("p") )
+					updateCurrentLocation(r,c);
+			}//end inner for
+		}//end outer for
+		
+		return matrix;
 	}//end parseLevel()
-	*/
 	
 	public void updateCurrentLocation(int r, int c) {
 		this.currentCol = c;
 		this.currentRow = r;
-	}
+		System.out.println("player location updated!");
+	}//end updateCurrentLocation()
+	
 	public void updateEnemyLocation(EnemyShip e) {
 		this.currentCol = e.getCurrentCol() - 1;
-	}
+	}//end updateEnemyLocation()
+	
 	public void enemyJumpBarrier(EnemyShip e) {
 		this.currentCol = e.getCurrentCol() - 2;
-	}
+	}//end enemyJumpBarrier()
 	
-}
+}//end class Level

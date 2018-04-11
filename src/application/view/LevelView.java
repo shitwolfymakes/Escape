@@ -21,9 +21,10 @@ public class LevelView extends GridPane{
 	
 	// TODO: create the other getter methods 
 	
-	public ImageView chooseImage(char letter) {
-		switch( letter ) {
-			case 'c' : return getPlayerImage();
+	public ImageView chooseImage(String code) {
+		switch( code ) {
+			case "p" : return getPlayerImage();
+			case " " : return getDefaultImage();
 			default: return getDefaultImage();
 		}//end switch
 	}//end chooseImage()
@@ -32,32 +33,28 @@ public class LevelView extends GridPane{
 	public ImageView getPlayerImage() {
 		//TODO: update, to grab spriteLink from profile object
 		ImageView img = new ImageView("File:data/Escape Sprites/playership.png");
-		img.setFitHeight(imgSize);
-		img.setFitWidth(imgSize);
+		
 		return img;
 	}//end getPlayerImage()
 	
 	public ImageView getBulletImage() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:data/test_sprites/Yello_Dot.png");
-		img.setFitHeight(imgSize);
-		img.setFitWidth(imgSize);
+		
 		return img;
 	}//end getBulletImage()
 	
 	public ImageView getEnemyImage() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:test_sprites/test_enemy.png");
-		img.setFitHeight(imgSize);
-		img.setFitWidth(imgSize);
+		
 		return img;
 	}//end getEnemyImage()
 	
 	public ImageView getDefaultImage() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:test_sprites/default.png");
-		img.setFitHeight(imgSize);
-		img.setFitWidth(imgSize);
+		
 		return img;
 	}//end getDefaultImage()
 	
