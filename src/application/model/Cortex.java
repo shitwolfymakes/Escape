@@ -21,6 +21,7 @@ package application.model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -49,109 +50,99 @@ public class Cortex {
 	}//end initCortex()
 
 	public void loadLevels() {
-		int i = 0;
+		int i = 1;
 
 		while(true)
 		{
-			File levels = new File("../levels/level"+i+"csv.txt");
+			File levelFile = new File("levels/level"+i+"csv.txt");
 
-			if ( ((File) level).exists() ) {
-				level.put( "L_"+ i, parseLevel(levels) );
+			if ( ((File) levelFile).exists() ) {
+				System.out.println(levelFile + "exists");
+				//level.put( "L_"+ i, parseLevel(levelFile) );
+				//System.out.println(level.get("L_"+i));
 				i++;
 			} else break;
 		}//end while
-
+		
 	}//end loadLevels()
 
 	public List<ArrayList<String>> parseLevel(File f)
 	{
 		List<ArrayList<String>> fullLevel = new ArrayList< ArrayList<String> >();
-		Scanner    scan  = null;
 		
 		try {
-			scan = new Scanner( f );
+			Scanner scan = new Scanner( f );
 			
 			while(scan.hasNextLine())
 			{
 				String line = scan.nextLine();
 				String[] tokens = line.split(",");
 				
-				ArrayList<String> levelLine = new ArrayList<String>();
-				levelLine = (ArrayList<String>) Arrays.asList(tokens);
+				List<String> levelLine = new ArrayList<String>( Arrays.asList(tokens) );
 				
-				fullLevel.add(levelLine);
+				fullLevel.add((ArrayList<String>) levelLine);
 				System.out.println(fullLevel.toString());
 			}//end while
-		}catch(FileNotFoundException ex) {
-			System.out.println( "File Not Found" );
-		} finally {
+			
 			scan.close();	// close the file!
-		}//end try/catch/finally
+		}catch(FileNotFoundException ex) {
+			System.out.println( "Level" + f + "file not found" );
+		}//end try/catch
 		
 		return fullLevel;
 	}//end parseLevel()
 
 	public void loadWeapons() {
-		
-		File 	f 	 = new File("../weapons/weapons.txt");
-		Scanner scan = null;
-		int		i	 = 0;
+		int	i = 0;
 		
 		try {
-			scan = new Scanner( f );
+			Scanner scan = new Scanner( new File("weapons/weapons.txt") );
 			
 			while(scan.hasNextLine())
 			{
-				ArrayList<String> weapons = new ArrayList<String>();
-				
 				String line = scan.nextLine();
 				String[] tokens = line.split(",");
 				
-				weapons = (ArrayList<String>) Arrays.asList(tokens);
+				List<String> weapons = new ArrayList<String>( Arrays.asList(tokens) );
 				//add to HashMap
-				weapon.put("W_"+ i, weapons);
+				weapon.put("W_"+ i, (ArrayList<String>) weapons);
 				i++;
 				System.out.println(weapons.toString());
 			}//end while
-		}catch(FileNotFoundException ex) {
-			System.out.println( "File Not Found" );
-		}finally {
+			
 			scan.close();	// close the file!
-		}//end try/catch/finally
+		}catch(FileNotFoundException ex) {
+			System.out.println( "Weapons file not found" );
+		}//end try/catch
 		
 	}//end loadWeapons()
 
 	public void loadEnemies() {
-		File 	f 	 = new File("../enemies/enemies.txt");
-		Scanner scan = null;
-		int		i	 = 0;
+		int	i = 0;
 		
 		try {
-			scan = new Scanner( f );
+			Scanner scan = new Scanner( new File("enemies/enemies.txt") );
 			
 			while(scan.hasNextLine())
 			{
-				ArrayList<String> enemies = new ArrayList<String>();
-				
 				String line = scan.nextLine();
 				String[] tokens = line.split(",");
-				
-				enemies = (ArrayList<String>) Arrays.asList(tokens);
+				List<String> enemies = new ArrayList<String>( Arrays.asList(tokens) );
 				//add to HashMap
-				enemy.put("E_"+ i, enemies);
+				enemy.put("E_"+ i, (ArrayList<String>) enemies);
 				i++;
 				System.out.println(enemies.toString());
 			}//end while
-		}catch(FileNotFoundException ex) {
-			System.out.println( "File Not Found" );
-		}finally {
+			
 			scan.close();	// close the file!
-		}//end try/catch/finally
+		}catch(FileNotFoundException ex) {
+			System.out.println( "Enemies file not found" );
+		}//end try/catch
 		
 	}//end loadEnemies()
 
 	public void loadUpgrades() {
-		File 	f 	 = new File("../upgrades/upgrades.txt");
+		File 	f 	 = new File("upgrades/upgrades.txt");
 		Scanner scan = null;
 		int		i	 = 0;
 		
@@ -160,22 +151,20 @@ public class Cortex {
 			
 			while(scan.hasNextLine())
 			{
-				ArrayList<String> upgrades = new ArrayList<String>();
-				
 				String line = scan.nextLine();
 				String[] tokens = line.split(",");
 				
-				upgrades = (ArrayList<String>) Arrays.asList(tokens);
+				List<String> upgrades = new ArrayList<String>( Arrays.asList(tokens) );
 				//add to HashMap
-				upgrade.put("U_"+ i, upgrades);
+				upgrade.put("U_"+ i, (ArrayList<String>) upgrades);
 				i++;
 				System.out.println(upgrades.toString());
 			}//end while
-		}catch(FileNotFoundException ex) {
-			System.out.println( "File Not Found" );
-		}finally {
+			
 			scan.close();	// close the file!
-		}//end try/catch/finally
+		}catch(FileNotFoundException ex) {
+			System.out.println( "Upgrades file not found" );
+		}//end try/catch
 		
 	}//end loadLevels()
 
