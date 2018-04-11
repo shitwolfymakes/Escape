@@ -25,7 +25,7 @@ public class Main extends Application {
 													   		  // of everything in the game.
 	public static PlayerProfile player = new PlayerProfile(); // player profile
 	public static Level model;		   		  				  // the model of the app
-    public static LevelView view;					   		  // the view of the app
+    public static LevelView view = new LevelView();			  // the view of the app
 	public static Stage stage;
 
 	@Override
