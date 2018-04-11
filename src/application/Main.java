@@ -20,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
 
 public class Main extends Application {
 	
-	//public static final Cortex cortex = new Cortex();  // hashmap object containing the data
+	public static final Cortex cortex = new Cortex();  // hashmap object containing the data
 													   // of everything in the game.
 	public static Level model;						   // the model of the app
     public static LevelView view;					   // the view of the app
@@ -30,13 +30,18 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 		try {
+			//File level1 = new File("../levels/level1csv.txt");
+			
 			// load the fxml file we need
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation( Main.class.getResource("../MainMenu.fxml") );
 			AnchorPane layout = (AnchorPane) loader.load();
-							
-			// Load the Board model 
-			model = Level.parseLevel("File:levels/level1.txt");
+			
+			//paint the scene
+			Scene scene = new Scene( layout );
+			/*
+			// Load the model 
+			model = Level.parseLevel(level1);
 			
 			// Load the Level view
 			view = new LevelView( model );
@@ -44,8 +49,9 @@ public class Main extends Application {
 			Scene scene = new Scene( layout );
 			
 			// TODO: connect the controller!
+			*/
 			
-			// Sets the scene to the stage & shows stage to user
+			// Sets the stage to the scene & shows stage to user
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			

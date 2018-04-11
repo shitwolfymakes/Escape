@@ -1,0 +1,1 @@
+This folder contains all core game data, separated into subfolders for each major group
