@@ -17,7 +17,7 @@ public class LevelView extends GridPane{
 	
 	public LevelView( Level model ) {
 		this.model = model;
-	}
+	}//end constructor
 	
 	// TODO: create the other getter methods 
 	
@@ -25,36 +25,40 @@ public class LevelView extends GridPane{
 		switch( letter ) {
 			case 'c' : return getPlayerImage();
 			default: return getDefaultImage();
-		}
-	}
+		}//end switch
+	}//end chooseImage()
 	
 	
 	public ImageView getPlayerImage() {
-		ImageView img = new ImageView("File:test_sprites/test_player.png");
+		//TODO: update, to grab spriteLink from profile object
+		ImageView img = new ImageView("File:data/Escape Sprites/playership.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
-	}
+	}//end getPlayerImage()
 	
 	public ImageView getBulletImage() {
-		ImageView img = new ImageView("File:test_sprites/test_bullet.png");
+		//TODO: update, to grab spriteLink from cortex entry
+		ImageView img = new ImageView("File:data/test_sprites/Yello_Dot.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
-	}
+	}//end getBulletImage()
 	
 	public ImageView getEnemyImage() {
+		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:test_sprites/test_enemy.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
-	}
+	}//end getEnemyImage()
 	
 	public ImageView getDefaultImage() {
+		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:test_sprites/default.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
-	}
+	}//end getDefaultImage()
 	
-}
+}//end class LevelView
