@@ -21,7 +21,6 @@ package application.model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -54,7 +53,7 @@ public class Cortex {
 
 		while(true)
 		{
-			File levelFile = new File("levels/level"+i+"csv.txt");
+			File levelFile = new File("data/levels/level"+i+"csv.txt");
 
 			if ( ((File) levelFile).exists() ) {
 				System.out.println(levelFile + "exists");
@@ -96,7 +95,7 @@ public class Cortex {
 		int	i = 0;
 		
 		try {
-			Scanner scan = new Scanner( new File("weapons/weapons.txt") );
+			Scanner scan = new Scanner( new File("data/weapons/weapons.txt") );
 			
 			while(scan.hasNextLine())
 			{
@@ -121,7 +120,7 @@ public class Cortex {
 		int	i = 0;
 		
 		try {
-			Scanner scan = new Scanner( new File("enemies/enemies.txt") );
+			Scanner scan = new Scanner( new File("data/enemies/enemies.txt") );
 			
 			while(scan.hasNextLine())
 			{
@@ -142,12 +141,10 @@ public class Cortex {
 	}//end loadEnemies()
 
 	public void loadUpgrades() {
-		File 	f 	 = new File("upgrades/upgrades.txt");
-		Scanner scan = null;
-		int		i	 = 0;
+		int	i = 0;
 		
 		try {
-			scan = new Scanner( f );
+			Scanner scan = new Scanner( new File("data/upgrades/upgrades.txt") );
 			
 			while(scan.hasNextLine())
 			{
