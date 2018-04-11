@@ -1,0 +1,7 @@
+reinforced hull,URH1,100,data/test_sprites/Yello_Dot.png,hull,1,-1
+reinforced hull,URH2,100,data/test_sprites/Yello_Dot.png,hull,1,-1
+reinforced hull,URH3,100,data/test_sprites/Yello_Dot.png,hull,1,-1
+weapon bay,UWB1,250,data/test_sprites/Yello_Dot.png,numWeapons,1,-1
+weapon bay,UWB2,250,data/test_sprites/Yello_Dot.png,numWeapons,1,-1
+weapon bay,UWB3,250,data/test_sprites/Yello_Dot.png,numWeapons,1,-1
+weapon pre-igniter,UWPI,150,data/test_sprites/Yello_Dot.png,-1,-1,-1

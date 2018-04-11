@@ -11,22 +11,29 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import application.Main;
+
 public class Level {
 
-	private int numRows;
-	private int numCols;
-	private char [][] level;
+	private ArrayList<String> levelEnemies = new ArrayList<String>();
+	private static final int numRows = 7;
+	private static final int numCols = 10;
+	private String [][] level;
 	private int currentLevel;
-	
+	private int totalEnemies;
 	private int currentRow;
 	private int currentCol;
 
-	public Level( int rows, int cols ) {
-		this.numRows = rows;
-		this.numCols = cols;
+	public Level( String levelNum ) {
+		// TODO: add getters and setters for this kind of stuff in Cortex.java
+		totalEnemies = Integer.parseInt( Main.cortex.level.get("L_" + levelNum).get(9).get(0) );
+		System.out.println(totalEnemies);
+		currentRow = 4;
+		currentCol = 1;
 	}
 	
-	// Method to read in the data from level files & create a Level object
+	// deprecated, level data is already stored in the cortex entry
+	/*
 	public static Level parseLevel( String fileName ) {
 		
 		// open the file
@@ -66,7 +73,8 @@ public class Level {
 		}
 			
 		return l;
-	}
+	}//end parseLevel()
+	*/
 	
 	public void updateCurrentLocation(int r, int c) {
 		this.currentCol = c;

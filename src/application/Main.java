@@ -11,6 +11,7 @@ package application;
 
 import application.model.Cortex;
 import application.model.Level;
+import application.model.PlayerProfile;
 import application.view.LevelView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +23,7 @@ public class Main extends Application {
 	
 	public static final Cortex cortex = new Cortex();  // hashmap object containing the data
 													   // of everything in the game.
+	public static PlayerProfile player = new PlayerProfile();
 	public static Level model;						   // the model of the app
     public static LevelView view;					   // the view of the app
 	public static Stage stage;

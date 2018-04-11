@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class PlayerProfile {
 	
 	private String username;
+	private int currentLevel;
 	private int difficultyLevel;
 	private int points;
 	private int money;
@@ -18,6 +19,15 @@ public class PlayerProfile {
 	private ArrayList<String> upgrades = new ArrayList<String>();
 	
 	private Save s = new Save();
+	
+	public PlayerProfile() {
+		this.numLevelsUnlocked = -1;
+		this.currentLevel 	   = -1;
+		this.points		 	   = 0;
+		this.money		 	   = 0;
+		this.upgrades          = null;
+		this.username	       = null;
+	}//end empty constructor
 	
 	public PlayerProfile(String username) 
 	{
@@ -61,6 +71,13 @@ public class PlayerProfile {
 	}
 
 	/**
+	 * @return the currentLevel
+	 */
+	public int getCurrentLevel() {
+		return currentLevel;
+	}
+
+	/**
 	 * @return the difficultyLevel
 	 */
 	public int getDifficultyLevel() {
@@ -96,10 +113,24 @@ public class PlayerProfile {
 	}
 
 	/**
+	 * @return the s
+	 */
+	public Save getS() {
+		return s;
+	}
+
+	/**
 	 * @param username the username to set
 	 */
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	/**
+	 * @param currentLevel the currentLevel to set
+	 */
+	public void setCurrentLevel(int currentLevel) {
+		this.currentLevel = currentLevel;
 	}
 
 	/**
@@ -128,6 +159,13 @@ public class PlayerProfile {
 	 */
 	public void setNumLevelsUnlocked(int numLevelsUnlocked) {
 		this.numLevelsUnlocked = numLevelsUnlocked;
+	}
+
+	/**
+	 * @param s the s to set
+	 */
+	public void setS(Save s) {
+		this.s = s;
 	}
 
 	/**

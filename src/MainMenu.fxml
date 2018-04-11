@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Screen_background/mainMenuBG.png" />
+            <Image url="@../data/Screen_background/mainMenuBG.png" />
          </image></ImageView>
       <Button fx:id="startButton" layoutX="301.0" layoutY="411.0" mnemonicParsing="false" onAction="#start" prefHeight="30.0" prefWidth="200.0" text="Start" />
       <Button fx:id="loadButton" layoutX="301.0" layoutY="466.0" mnemonicParsing="false" onAction="#handle" prefHeight="30.0" prefWidth="200.0" text="Load User" />
