@@ -56,7 +56,7 @@ public class Cortex {
 			File levelFile = new File("data/levels/level"+i+"csv.txt");
 
 			if ( ((File) levelFile).exists() ) {
-				System.out.println(levelFile + "exists");
+				System.out.println(levelFile + " exists");
 				//level.put( "L_"+ i, parseLevel(levelFile) );
 				//System.out.println(level.get("L_"+i));
 				i++;
@@ -85,7 +85,7 @@ public class Cortex {
 			
 			scan.close();	// close the file!
 		}catch(FileNotFoundException ex) {
-			System.out.println( "Level" + f + "file not found" );
+			System.out.println( "Level " + f + " file not found" );
 		}//end try/catch
 		
 		return fullLevel;
