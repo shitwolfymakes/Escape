@@ -12,12 +12,13 @@ import javafx.scene.layout.GridPane;
 
 public class LevelView extends GridPane{
 
-	private Level model;
-	private int imgSize;
+	//private Level model; //replaced by Main.model
+	//private int imgSize;
 	
-	public LevelView( Level model ) {
-		this.model = model;
-	}//end constructor
+	//public LevelView( Level model ) {
+		//this.model = model;
+	//}//end constructor
+	public LevelView() {}
 	
 	// TODO: create the other getter methods 
 	
@@ -25,6 +26,7 @@ public class LevelView extends GridPane{
 		switch( code ) {
 			case "p" : return getPlayerImage();
 			case " " : return getDefaultImage();
+			case "b" : return getBulletImage();
 			default: return getDefaultImage();
 		}//end switch
 	}//end chooseImage()
