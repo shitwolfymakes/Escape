@@ -21,11 +21,12 @@ public class PlayerProfile {
 	private Save s = new Save();
 	
 	public PlayerProfile() {
-		this.currentLevel = -1;
-		this.points		  = 0;
-		this.money		  = 0;
-		this.upgrades     = null;
-		this.username	  = null;
+		this.numLevelsUnlocked = -1;
+		this.currentLevel 	   = -1;
+		this.points		 	   = 0;
+		this.money		 	   = 0;
+		this.upgrades          = null;
+		this.username	       = null;
 	}//end empty constructor
 	
 	public PlayerProfile(String username) 
