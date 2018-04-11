@@ -16,12 +16,17 @@ public class EnemyShip extends Ship {
 	private int moneyValue;
 	private String name;
 	private String enemyID;
+	private int currentRow;
+	private int currentCol;
 	
 	
-	public EnemyShip(String cortexKey) {
+	public EnemyShip(String enemyID, int r, int c) {
+		this.currentRow = r;
+		this.currentCol = c;
+		
 		ArrayList<String> enemyShipData = new ArrayList<String>();
 		// store data grabbed from the Cortex entry
-		enemyShipData = Main.cortex.getEnemy().get("E_"+cortexKey);
+		enemyShipData = Main.cortex.getEnemy().get("E_"+ enemyID);
 		
 		setEnemyID(enemyShipData.get(0));
 		setName(enemyShipData.get(1));
@@ -69,6 +74,54 @@ public class EnemyShip extends Ship {
 	public String getEnemyID() {
 		return enemyID;
 	}
+	/**
+	 * @return the currentRow
+	 */
+	public int getCurrentRow() {
+		return currentRow;
+	}
+
+
+	/**
+	 * @return the currentCol
+	 */
+	public int getCurrentCol() {
+		return currentCol;
+	}
+
+
+	/**
+	 * @param pointValue the pointValue to set
+	 */
+	public void setPointValue(int pointValue) {
+		this.pointValue = pointValue;
+	}
+
+
+	/**
+	 * @param moneyValue the moneyValue to set
+	 */
+	public void setMoneyValue(int moneyValue) {
+		this.moneyValue = moneyValue;
+	}
+
+
+	/**
+	 * @param currentRow the currentRow to set
+	 */
+	public void setCurrentRow(int currentRow) {
+		this.currentRow = currentRow;
+	}
+
+
+	/**
+	 * @param currentCol the currentCol to set
+	 */
+	public void setCurrentCol(int currentCol) {
+		this.currentCol = currentCol;
+	}
+
+
 	/**
 	 * @param pointValue the pointValue to set
 	 */

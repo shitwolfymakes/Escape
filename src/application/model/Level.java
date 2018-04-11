@@ -21,26 +21,30 @@ public class Level {
 	private int currentLevel;
 	private int currentRow;
 	private int currentCol;
-	private ArrayList<String> enemyList = new ArrayList<String>();
-
-	public Level( String levelNum ) {
-		// TODO: add getters and setters for this kind of stuff in Cortex.java
-		//totalEnemies = Integer.parseInt( Main.cortex.level.get("L_" + levelNum).get(9).get(0) );
-		//System.out.println(totalEnemies);
-		this.currentLevel = Integer.parseInt( levelNum );
+	private ArrayList<EnemyShip> enemyShips = new ArrayList<EnemyShip>();
+	
+	public Level(int levelNum) {
+		
+		this.currentLevel = levelNum;
 		this.currentRow = 4;
 		this.currentCol = 1;
+	}
+	
+	public ArrayList<EnemyShip> collectEnemies() {
 		
-		for (int i = 0; i < level.length ; i++) 
+		for (int r = 0; r < level.length ; r++) 
 	    { 
-	        for (int j=0; j<level[i].length; j++)
+	        for (int c = 0; c < level[c].length; c++)
 	        {
-	        	if ( level[i][j].equals("H1") )
-	        		enemyList.add("H1");
-	        	if ( level[i][j].equals("H2") )
-	        		enemyList.add("H2");
+	        	if ( level[r][c].equals("H1") )
+	        		enemyShips.add( new EnemyShip("H1", r, c) );
+	        		
+	        	if ( level[r][c].equals("H2") )
+	        		enemyShips.add( new EnemyShip("H2", r, c) );
 	        }//end inner for
 	    }//end outer for
+		
+		return enemyShips;
 	}
 	
 	// deprecated, level data is already stored in the cortex entry
@@ -90,6 +94,9 @@ public class Level {
 	public void updateCurrentLocation(int r, int c) {
 		this.currentCol = c;
 		this.currentRow = r;
+	}
+	public void updateEnemyLocation(EnemyShip e) {
+		this.currentCol = e.getCurrentCol() - 1;
 	}
 	
 }

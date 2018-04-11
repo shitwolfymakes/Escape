@@ -112,7 +112,7 @@ public class Cortex {
 				
 				List<String> weapons = new ArrayList<String>( Arrays.asList(tokens) );
 				//add to HashMap
-				weapon.put("W_"+ i, (ArrayList<String>) weapons);
+				weapon.put("W_"+ tokens[1], (ArrayList<String>) weapons);
 				i++;
 				System.out.println(weapons.toString());
 			}//end while
@@ -136,7 +136,7 @@ public class Cortex {
 				String[] tokens = line.split(",");
 				List<String> enemies = new ArrayList<String>( Arrays.asList(tokens) );
 				//add to HashMap
-				enemy.put("E_"+ i, (ArrayList<String>) enemies);
+				enemy.put("E_"+ tokens[1], (ArrayList<String>) enemies);
 				i++;
 				System.out.println(enemies.toString());
 			}//end while
@@ -161,7 +161,7 @@ public class Cortex {
 				
 				List<String> upgrades = new ArrayList<String>( Arrays.asList(tokens) );
 				//add to HashMap
-				upgrade.put("U_"+ i, (ArrayList<String>) upgrades);
+				upgrade.put("U_"+ tokens[1], (ArrayList<String>) upgrades);
 				i++;
 				System.out.println(upgrades.toString());
 			}//end while

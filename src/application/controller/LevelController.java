@@ -6,11 +6,30 @@
 
 package application.controller;
 
+import java.util.ArrayList;
+
+import application.Main;
+import application.model.EnemyShip;
+import application.model.Level;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
-public class LevelController {
+public class LevelController implements EventHandler<ActionEvent> {
+	
+	public ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
+	
+	@Override
+	public void handle(ActionEvent event) {
+		Level l = new Level( Main.player.getCurrentLevel() );
+		enemies = l.collectEnemies();
+		
+		
+	}//end handle()
+	
+	
 	
     @FXML
     private GridPane gridPane;
@@ -158,5 +177,7 @@ public class LevelController {
 	
     @FXML
     private ImageView g8x6;
+
+	
 
 }
