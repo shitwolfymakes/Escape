@@ -9,8 +9,6 @@
 
 package application;
 
-import java.io.File;
-
 import application.model.Cortex;
 import application.model.Level;
 import application.view.LevelView;
@@ -22,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
 
 public class Main extends Application {
 	
-	//public static final Cortex cortex = new Cortex();  // hashmap object containing the data
+	public static final Cortex cortex = new Cortex();  // hashmap object containing the data
 													   // of everything in the game.
 	public static Level model;						   // the model of the app
     public static LevelView view;					   // the view of the app
