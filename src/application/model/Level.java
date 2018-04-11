@@ -21,6 +21,7 @@ public class Level {
 	private int currentLevel;
 	private int currentRow;
 	private int currentCol;
+	private ArrayList<String> enemyList = new ArrayList<String>();
 
 	public Level( String levelNum ) {
 		// TODO: add getters and setters for this kind of stuff in Cortex.java
@@ -29,6 +30,17 @@ public class Level {
 		this.currentLevel = Integer.parseInt( levelNum );
 		this.currentRow = 4;
 		this.currentCol = 1;
+		
+		for (int i = 0; i < level.length ; i++) 
+	    { 
+	        for (int j=0; j<level[i].length; j++)
+	        {
+	        	if ( level[i][j].equals("H1") )
+	        		enemyList.add("H1");
+	        	if ( level[i][j].equals("H2") )
+	        		enemyList.add("H2");
+	        }//end inner for
+	    }//end outer for
 	}
 	
 	// deprecated, level data is already stored in the cortex entry
