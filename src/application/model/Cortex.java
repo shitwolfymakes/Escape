@@ -43,16 +43,16 @@ public class Cortex {
 
 	public void initCortex() {
 		loadLevels();
-		System.out.println("Levels loaded");
+		System.out.println("Levels loaded!");
 		loadWeapons();
-		System.out.println("Weapons hot");
+		System.out.println("Weapons hot!");
 		loadEnemies();
-		System.out.println("Enemies spotted");
+		System.out.println("Enemies spotted!");
 		loadUpgrades();
-		System.out.println("Upgrades developed");
+		System.out.println("Upgrades developed!");
 		//loadMods();
-		//System.out.println("Mods are asleep, upvote trebuchet");
-		System.out.println(cortex.toString());
+		//System.out.println("Mods are asleep, upvote trebuchet!");
+		System.out.println("Cortex compiled!");
 	}//end initCortex()
 
 	public void loadLevels() {
@@ -64,11 +64,12 @@ public class Cortex {
 
 			if ( ((File) levelFile).exists() ) {
 				System.out.println(levelFile + " exists");
-				//level.put( "L_"+ i, parseLevel(levelFile) );
-				//System.out.println(level.get("L_"+i));
+				level.put( "L_"+ i, parseLevel(levelFile) );
+				
 				i++;
 			} else break;
 		}//end while
+		
 		
 	}//end loadLevels()
 
@@ -78,7 +79,7 @@ public class Cortex {
 		
 		try {
 			Scanner scan = new Scanner( f );
-			
+			System.out.println( "level" + f.getName() + ":");
 			while(scan.hasNextLine())
 			{
 				String line = scan.nextLine();
@@ -87,7 +88,7 @@ public class Cortex {
 				List<String> levelLine = new ArrayList<String>( Arrays.asList(tokens) );
 				
 				fullLevel.add((ArrayList<String>) levelLine);
-				System.out.println(fullLevel.toString());
+				System.out.println(levelLine.toString());
 			}//end while
 			
 			scan.close();	// close the file!
