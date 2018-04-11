@@ -13,20 +13,21 @@ import java.util.Scanner;
 
 public class Level {
 
-	private int numRows;
-	private int numCols;
-	private char [][] level;
+	private static final int numRows = 7;
+	private static final int numCols = 10;
+	private String [][] level;
 	private int currentLevel;
-	
+	private int totalEnemies;
 	private int currentRow;
 	private int currentCol;
 
-	public Level( int rows, int cols ) {
-		this.numRows = rows;
-		this.numCols = cols;
+	public Level( ) {
+		currentRow = 4;
+		currentCol = 1;
 	}
 	
-	// Method to read in the data from level files & create a Level object
+	// deprecated, level data is already stored in the cortex entry
+	/*
 	public static Level parseLevel( String fileName ) {
 		
 		// open the file
@@ -66,7 +67,8 @@ public class Level {
 		}
 			
 		return l;
-	}
+	}//end parseLevel()
+	*/
 	
 	public void updateCurrentLocation(int r, int c) {
 		this.currentCol = c;
