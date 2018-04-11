@@ -9,6 +9,8 @@
 
 package application;
 
+import java.io.File;
+
 import application.model.Cortex;
 import application.model.Level;
 import application.view.LevelView;
@@ -29,13 +31,18 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 
 		try {
+			//File level1 = new File("../levels/level1csv.txt");
+			
 			// load the fxml file we need
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation( Main.class.getResource("../MainMenu.fxml") );
 			AnchorPane layout = (AnchorPane) loader.load();
-							
-			// Load the Board model 
-			model = Level.parseLevel("File:levels/level1.txt");
+			
+			//paint the scene
+			Scene scene = new Scene( layout );
+			/*
+			// Load the model 
+			model = Level.parseLevel(level1);
 			
 			// Load the Level view
 			view = new LevelView( model );
@@ -43,8 +50,9 @@ public class Main extends Application {
 			Scene scene = new Scene( layout );
 			
 			// TODO: connect the controller!
+			*/
 			
-			// Sets the scene to the stage & shows stage to user
+			// Sets the stage to the scene & shows stage to user
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
