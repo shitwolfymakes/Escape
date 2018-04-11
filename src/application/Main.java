@@ -21,37 +21,25 @@ import javafx.scene.layout.AnchorPane;
 
 public class Main extends Application {
 	
-	public static final Cortex cortex = new Cortex();  // hashmap object containing the data
-													   // of everything in the game.
-	public static PlayerProfile player = new PlayerProfile();
-	public Level model = new Level(1);						   // the model of the app
-    public static LevelView view;					   // the view of the app
+	public static final Cortex cortex = new Cortex();  		  // hashmap object containing the data
+													   		  // of everything in the game.
+	public static PlayerProfile player = new PlayerProfile(); // player profile
+	public static Level model;		   		  				  // the model of the app
+    public static LevelView view;					   		  // the view of the app
 	public static Stage stage;
 
 	@Override
 	public void start(Stage primaryStage) {
 		
+		stage = primaryStage;
 		try {
-			//File level1 = new File("../levels/level1csv.txt");
 			
 			// load the fxml file we need
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation( Main.class.getResource("../MainMenu.fxml") );
+			
 			AnchorPane layout = (AnchorPane) loader.load();
-			
-			//paint the scene
 			Scene scene = new Scene( layout );
-			/*
-			// Load the model 
-			model = Level.parseLevel(level1);
-			
-			// Load the Level view
-			view = new LevelView( model );
-			layout.getChildren().add( view );
-			Scene scene = new Scene( layout );
-			
-			// TODO: connect the controller!
-			*/
 			
 			// Sets the stage to the scene & shows stage to user
 			primaryStage.setScene(scene);
@@ -59,11 +47,12 @@ public class Main extends Application {
 			
 		} catch(Exception e) {
 			e.printStackTrace(); // TODO: handle this better!
-		}
-		stage = primaryStage;
-	}
+		}//end try/catch
+		
+	}//end start()
 	
 	public static void main(String[] args) {
 		launch(args);
-	}
-}
+	}//end main()
+	
+}//end class Main
