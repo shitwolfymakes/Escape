@@ -8,255 +8,497 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LevelController">
    <children>
-      <GridPane fx:id="gridPane" layoutX="-93.0" layoutY="-43.0" prefHeight="693.0" prefWidth="971.0" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="-93.0" AnchorPane.rightAnchor="-78.0" AnchorPane.topAnchor="-43.0">
+      <GridPane fx:id="gridPane" layoutX="-85.0" layoutY="-11.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="-80.0" AnchorPane.leftAnchor="-85.0" AnchorPane.rightAnchor="-86.0" AnchorPane.topAnchor="-10.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="92.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints maxWidth="118.0" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints maxWidth="93.0" minWidth="10.0" prefWidth="78.0" />
+            <ColumnConstraints maxWidth="93.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="115.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="103.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints minWidth="10.0" prefWidth="10.0" />
+          <ColumnConstraints minWidth="10.0" prefWidth="10.0" />
+          <ColumnConstraints maxWidth="118.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints maxWidth="93.0" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="44.0" />
-            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="100.0" />
-            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="100.0" />
-          <RowConstraints maxHeight="217.0" minHeight="0.0" prefHeight="100.0" />
-          <RowConstraints maxHeight="272.0" minHeight="0.0" prefHeight="100.0" />
-          <RowConstraints maxHeight="101.0" minHeight="0.0" prefHeight="100.0" />
-            <RowConstraints maxHeight="174.0" minHeight="10.0" prefHeight="100.0" />
-            <RowConstraints maxHeight="82.0" minHeight="0.0" prefHeight="50.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="0.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+          <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+          <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+          <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="217.0" minHeight="0.0" prefHeight="10.0" />
+            <RowConstraints maxHeight="272.0" minHeight="0.0" prefHeight="10.0" />
         </rowConstraints>
          <children>
-            <ImageView fx:id="g1x2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <image>
-                  <Image url="@../data/Escape%20Sprites/playership.png" />
+                  <Image url="@../data/pixels/bf360c.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g8x2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="2">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="95.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="8">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/bf360c.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g1x3" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ImageView fx:id="g2x1" fitHeight="100.0" fitWidth="100.0" layoutX="10.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.rowIndex="15">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/3f51b5.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g8x1" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.rowIndex="14">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/3f51b5.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g3x1" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.rowIndex="13">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/3f51b5.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g7x1" fitHeight="100.0" fitWidth="100.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="12">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/9e9e9e.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g6x1" fitHeight="100.0" fitWidth="100.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="12">
                <image>
-                  <Image url="@../data/Escape%20Sprites/spacedebris.png" />
+                  <Image url="@../data/pixels/9e9e9e.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g5x1" fitHeight="100.0" fitWidth="100.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="95.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="12">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/9e9e9e.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g4x1" fitHeight="100.0" fitWidth="100.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="11">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/9e9e9e.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g3x3" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="11">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/9e9e9e.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g2x3" fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="10">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/9e9e9e.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g1x3" fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.rowIndex="12">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g7x2" fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="2">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="11">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g6x2" fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="10">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g5x2" fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="9">
                <image>
-                  <Image url="@../data/Escape%20Sprites/level1enemy.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g4x2" fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="9">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g3x2" fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="8">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g2x2" fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="8">
                <image>
-                  <Image url="@../data/Escape%20Sprites/heavyattack.png" />
+                  <Image url="@../data/pixels/ffac40.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g5x4" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="8">
                <image>
-                  <Image url="@../data/Escape%20Sprites/lightattack.png" />
+                  <Image url="@../data/pixels/ffac40.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g4x4" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="8">
                <image>
-                  <Image url="@../data/Escape%20Sprites/lightattack.png" />
+                  <Image url="@../data/pixels/bf360c.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g3x4" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="195.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.rowIndex="16">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/3f51b5.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g2x4" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="185.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="18">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g1x4" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="185.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.rowIndex="17">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g8x3" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="3">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="175.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="20">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g7x3" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="3">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="21">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g6x3" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="20">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g5x3" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="19">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/616161.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g4x3" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="17">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/9e9e9e.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g6x4" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="17">
                <image>
-                  <Image url="@../data/Escape%20Sprites/level2enemy.png" />
-               </image></ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <ImageView fx:id="g4x5" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/spacedebris.png" />
-               </image></ImageView>
-            <ImageView fx:id="g3x5" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g2x5" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g1x5" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g8x4" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g7x4" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g5x5" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="5">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g7x6" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="6">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/level2enemy.png" />
-               </image></ImageView>
-            <ImageView fx:id="g6x6" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g5x6" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g4x6" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g3x6" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g2x6" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g1x6" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g8x5" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="5">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g7x5" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="5">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g6x5" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="5">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
-            <ImageView fx:id="g1x1" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
+                  <Image url="@../data/pixels/9e9e9e.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="g8x6" fitHeight="100.0" fitWidth="100.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="6">
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="18">
                <image>
-                  <Image url="@../data/Escape%20Sprites/background.png" />
-               </image></ImageView>
+                  <Image url="@../data/pixels/9e9e9e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="18">
+               <image>
+                  <Image url="@../data/pixels/9e9e9e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="19">
+               <image>
+                  <Image url="@../data/pixels/9e9e9e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../data/pixels/9e9e9e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.rowIndex="13">
+               <image>
+                  <Image url="@../data/pixels/1a237e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="17">
+               <image>
+                  <Image url="@../data/pixels/9e9e9e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="125.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="21">
+               <image>
+                  <Image url="@../data/pixels/ffac40.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="135.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="21">
+               <image>
+                  <Image url="@../data/pixels/ffac40.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="105.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="21">
+               <image>
+                  <Image url="@../data/pixels/bf360c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="115.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="21">
+               <image>
+                  <Image url="@../data/pixels/bf360c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="115.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="21">
+               <image>
+                  <Image url="@../data/pixels/bf360c.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="185.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.rowIndex="16">
+               <image>
+                  <Image url="@../data/pixels/1a237e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="185.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="16">
+               <image>
+                  <Image url="@../data/pixels/1a237e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="13">
+               <image>
+                  <Image url="@../data/pixels/1a237e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="13">
+               <image>
+                  <Image url="@../data/pixels/1a237e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="13">
+               <image>
+                  <Image url="@../data/pixels/1a237e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="125.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../data/pixels/1a237e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="125.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="16">
+               <image>
+                  <Image url="@../data/pixels/ffffff.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="125.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="16">
+               <image>
+                  <Image url="@../data/pixels/1a237e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="135.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="16">
+               <image>
+                  <Image url="@../data/pixels/1a237e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="195.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="13">
+               <image>
+                  <Image url="@../data/pixels/3f51b5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="195.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="13">
+               <image>
+                  <Image url="@../data/pixels/3f51b5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="195.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="16">
+               <image>
+                  <Image url="@../data/pixels/3f51b5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="15">
+               <image>
+                  <Image url="@../data/pixels/f44236.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="15">
+               <image>
+                  <Image url="@../data/pixels/3f51b5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="14">
+               <image>
+                  <Image url="@../data/pixels/3f51b5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="155.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="16">
+               <image>
+                  <Image url="@../data/pixels/3f51b5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="155.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.rowIndex="15">
+               <image>
+                  <Image url="@../data/pixels/9e9e9e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="185.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.rowIndex="14">
+               <image>
+                  <Image url="@../data/pixels/9e9e9e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="14">
+               <image>
+                  <Image url="@../data/pixels/f44236.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="175.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="14">
+               <image>
+                  <Image url="@../data/pixels/ffffff.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="175.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="15">
+               <image>
+                  <Image url="@../data/pixels/ffffff.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="175.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="13">
+               <image>
+                  <Image url="@../data/pixels/ffffff.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="175.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="15">
+               <image>
+                  <Image url="@../data/pixels/ffffff.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="145.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="14">
+               <image>
+                  <Image url="@../data/pixels/ffffff.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="14">
+               <image>
+                  <Image url="@../data/pixels/9e9e9e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="165.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="15">
+               <image>
+                  <Image url="@../data/pixels/9e9e9e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="195.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="14">
+               <image>
+                  <Image url="@../data/pixels/3f51b5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="195.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="15">
+               <image>
+                  <Image url="@../data/pixels/3f51b5.png" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-281.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
