@@ -6,6 +6,7 @@
 
 package application.model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class PlayerProfile {
@@ -35,7 +36,7 @@ public class PlayerProfile {
 	}
 	
 	// run this on first time playing, then follow with initProfile()
-	public void createProfile(String username, int difficulty)
+	public void createProfile(String username, int difficulty) throws IOException
 	{
 		// set new profile to default values
 		PlayerProfile p = new PlayerProfile(username);
@@ -58,7 +59,7 @@ public class PlayerProfile {
 		return p;
 	}//end initProfile()
 	
-	public void saveProfile(PlayerProfile p)
+	public void saveProfile(PlayerProfile p) throws IOException
 	{
 		s.updateSave(p);
 	}//end saveProfile

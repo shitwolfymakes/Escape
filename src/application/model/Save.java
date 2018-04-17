@@ -6,8 +6,10 @@
 
 package application.model;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -77,10 +79,24 @@ public class Save {
 	}//end parseSave()
 
 	// use in PlayerProfile.java: updateSave( p );
-	public void updateSave(PlayerProfile p)
+	public void updateSave(PlayerProfile p) throws IOException
 	{
-		//TODO: Take in the current PlayerProfile, and write all it's data into a new 
-		//			save file. See /saves/readme.txt for the save file structure
+		String filename = String.format("../saves/%s.txt", p.getUsername());
+		FileWriter fw = new FileWriter(filename);
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		String uname = String.format("username,%s", p.getUsername());
+		bw.write(uname);
+		String diff = String.format("difficulty,%d", p.getDifficultyLevel());
+		bw.write(diff);
+		String points = String.format("points,%d", p.getPoints());
+		bw.write(points);
+		String money = String.format("money,%d", p.getMoney());
+		bw.write(money);
+		String lunlocked = String.format("levels_unlocked,%d", p.getNumLevelsUnlocked());
+		bw.write(lunlocked);
+		String upgrades = String.format("upgrades,%s", p.getUpgrades());
+		bw.write(upgrades);
 		
 	}//end updateSave()
 
