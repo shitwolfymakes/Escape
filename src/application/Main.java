@@ -49,11 +49,11 @@ public class Main extends Application {
 			AnchorPane layout = (AnchorPane) loader.load();
 			
 			// adds music, once for each audio file to be played
-			Media media = new Media(new File("<theme song>").toURI().toString());
-			MediaPlayer player = new MediaPlayer(media);
+			//Media media = new Media(new File("<theme song>").toURI().toString());
+			//MediaPlayer player = new MediaPlayer(media);
 			//needs to be added as a view
-			MediaView mediaView = new MediaView(player);
-			layout.getChildren().add(mediaView);
+			//MediaView mediaView = new MediaView(player);
+			//layout.getChildren().add(mediaView);
 			
 			Scene scene = new Scene( layout );
 			
@@ -63,7 +63,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
-			player.play();
+			//player.play();
 			
 			
 		} catch(Exception e) {
