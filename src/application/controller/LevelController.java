@@ -49,7 +49,7 @@ public class LevelController implements EventHandler<KeyEvent> {
 		
 	}//end handle()
 
-
+/*
 
 	@FXML
 	private GridPane gridPane;
@@ -198,6 +198,6 @@ public class LevelController implements EventHandler<KeyEvent> {
 	@FXML
 	private ImageView g8x6;
 
-
+*/
 
 }
