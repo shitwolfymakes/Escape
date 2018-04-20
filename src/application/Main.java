@@ -34,7 +34,7 @@ public class Main extends Application {
 	public static PlayerProfile player = new PlayerProfile(); // player profile
 	public static Level model;		   		  				  // the model of the app
     public static LevelView view = new LevelView();			  // the view of the app
-    public ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
+    public static ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
 	public static Stage stage;
 
 	@Override
@@ -73,7 +73,7 @@ public class Main extends Application {
 		
 	}//end start()
 	
-	public void startLevel() {
+	public static void startLevel() {
 		// could probably move this into Level.java
 		Main.model = new Level( Main.player.getCurrentLevel() );
 		enemies = Main.model.collectEnemies();
@@ -126,7 +126,7 @@ public class Main extends Application {
 		
 	}//end startLevel()
 	
-	public void startHonestJohn() {
+	public static void startHonestJohn() {
 		
 	}//end startHonestJohn
 	

@@ -31,6 +31,7 @@ public class MainMenuController implements EventHandler<Event>{
 
     @FXML
     public void start(Event event) {
+    	/*
     	try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
@@ -45,6 +46,8 @@ public class MainMenuController implements EventHandler<Event>{
 		}catch( IOException e ) {
 			e.printStackTrace();
 		}
+		*/
+    	Main.startLevel();
     }
 
     @Override
