@@ -12,6 +12,7 @@ package application;
 import java.io.File;
 import java.util.ArrayList;
 
+import application.controller.LevelController;
 import application.model.Cortex;
 import application.model.EnemyShip;
 import application.model.Level;
@@ -91,7 +92,7 @@ public class Main extends Application {
 			Scene scene = new Scene( layout );
 			
 			// connects the controller
-			//scene.setOnKeyPressed( new LevelController() );
+			scene.setOnKeyPressed( new LevelController() );
 
 			// Sets the scene to the stage & shows stage to the user
 			Main.stage.setScene(scene);
