@@ -73,7 +73,7 @@ public class Main extends Application {
 	}//end start()
 	
 	public void startLevel() {
-		// could probally move this into Level.java
+		// could probably move this into Level.java
 		Main.model = new Level( Main.player.getCurrentLevel() );
 		enemies = Main.model.collectEnemies();
 		
