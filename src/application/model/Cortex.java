@@ -44,14 +44,19 @@ public class Cortex {
 	public void initCortex() {
 		loadLevels();
 		System.out.println("Levels loaded!");
+		System.out.println("");
 		loadWeapons();
 		System.out.println("Weapons hot!");
+		System.out.println("");
 		loadEnemies();
 		System.out.println("Enemies spotted!");
+		System.out.println("");
 		loadUpgrades();
 		System.out.println("Upgrades developed!");
+		System.out.println("");
 		//loadMods();
 		//System.out.println("Mods are asleep, upvote trebuchet!");
+		//System.out.println("");
 		System.out.println("Cortex compiled!");
 	}//end initCortex()
 
@@ -65,7 +70,6 @@ public class Cortex {
 			if ( ((File) levelFile).exists() ) {
 				System.out.println(levelFile + " exists");
 				level.put( "L_"+ i, (ArrayList<String>) parseLevel(levelFile) );
-				
 				i++;
 			} else break;
 		}//end while
@@ -79,7 +83,7 @@ public class Cortex {
 		
 		try {
 			Scanner scan = new Scanner( f );
-			System.out.println( "level" + f.getName() + ":");
+			System.out.println( f.getName() + ":");
 			while(scan.hasNextLine())
 			{
 				String levelLine = scan.nextLine();
