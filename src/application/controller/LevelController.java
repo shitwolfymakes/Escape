@@ -19,59 +19,33 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
-public class LevelController implements EventHandler<ActionEvent> {
+public class LevelController implements EventHandler<KeyEvent> {
 
-	public ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
+	
 
 	@Override
-	public void handle(ActionEvent event) {
-		Main.model = new Level( Main.player.getCurrentLevel() );
-		enemies = Main.model.collectEnemies();
+	public void handle(KeyEvent event) {
 		
-		try {
-			// load the fxml file we need
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( Main.class.getResource("Level.fxml") );
-			AnchorPane layout = (AnchorPane) loader.load();
-
-			// Load the Level view
-			//Main.view = new LevelView( Main.model );
-			Main.view = new LevelView();
-			layout.getChildren().add( Main.view );
-			Scene scene = new Scene( layout );
-
-			// Sets the scene to the stage & shows stage to the user
-			Main.stage.setScene(scene);
-		} catch(IOException e) {
-			e.printStackTrace();
-		}//end try/catch
 		
-		// move all enemies to the left once per second
-		while (enemies.size() > 0)
-		{
-			try {
-				Thread.sleep(1000);
-
-				for ( EnemyShip e : enemies ) {
-					// need an isTileOccupied()
-
-					if (e.getCurrentCol() == 11) {
-						// jumping the barrier
-						Main.model.enemyJumpBarrier(e);
-					} else if ( e.getCurrentCol() < 10 )
-						continue;
-					else Main.model.updateEnemyLocation(e);
-				}//end for
-
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}//end try/catch
-			
-		}//end while
+		// get the user input
+		char key = event.getCode().toString.charAt(0);
+		//add move methods to the board.java, switch on key
+		
+		//TODO: move pacman based on input - MODEL
+		Main.model.move( key );
+		
+		//TODO: update the view to show movement - VIEW
+		
+		
+		//TODO: End game when reaches end - MODEL
+		//		- switch level to Honest John's 
+		boolean isOver = Main.model.isGameOver();
+		
+		// if is over, load next level(Honest John's)
 		
 	}//end handle()
 
