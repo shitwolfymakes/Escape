@@ -9,7 +9,6 @@
 
 package application;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import application.controller.LevelController;
@@ -17,6 +16,7 @@ import application.model.Cortex;
 import application.model.EnemyShip;
 import application.model.Level;
 import application.model.PlayerProfile;
+import application.model.PlayerShip;
 import application.view.LevelView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -31,11 +31,12 @@ public class Main extends Application {
 	
 	public static final Cortex cortex = new Cortex();  		  // hashmap object containing the data
 													   		  // of everything in the game.
-	public static PlayerProfile player = new PlayerProfile(); // player profile
+	public static PlayerProfile profile = new PlayerProfile(); // player profile
 	public static Level model = new Level();		   		  // the model of the app
     public static LevelView view = new LevelView();			  // the view of the app
     public static ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
 	public static Stage stage;
+	public static PlayerShip player = new PlayerShip();
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -74,8 +75,10 @@ public class Main extends Application {
 	}//end start()
 	
 	public static void startLevel() {
+		Main.player = new PlayerShip(3, 1);
+		
 		// could probably move this into Level.java
-		//Main.model = new Level( Main.player.getCurrentLevel() );
+		//Main.model = new Level( Main.profile.getCurrentLevel() );
 		enemies = Main.model.collectEnemies();
 		
 		// all this should be moved to Main.startLevel()

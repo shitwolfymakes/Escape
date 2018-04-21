@@ -16,6 +16,8 @@ public class LevelController implements EventHandler<KeyEvent> {
 	@Override
 	public void handle(KeyEvent event) {
 		
+		// TODO: add logic to check if key pressed is a function key
+		
 		// get the user input
 		char key = event.getCode().toString().charAt(0);
 		//add move methods to the board.java, switch on key

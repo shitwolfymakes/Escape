@@ -133,32 +133,41 @@ public class Level {
 	
 	public void moveUp() {
 		// check if the row above is a wall
-		if( this.level[this.currentRow-1][this.currentCol] != "b" )
+		if( this.level[this.currentRow-1][this.currentCol] != "b" ) {
 			this.updateCurrentLocation( this.currentRow-1, this.currentCol );
+			System.out.println("player moved to: " + (this.currentRow-1) + "," + this.currentCol);
+		}
 	}//end moveUp()
 	
 	public void moveDown() {
 		// check if the row below is a wall
-		if( this.level[this.currentRow+1][this.currentCol] != "b" )
+		if( this.level[this.currentRow+1][this.currentCol] != "b" ) {
 			this.updateCurrentLocation( this.currentRow+1, this.currentCol );
+			System.out.println("player moved to: " + (this.currentRow+1) + "," + this.currentCol);
+		}
 	}//end moveDown()
 	
 	public void moveRight() {
 		// check if the column to right is a wall
-		if( this.level[this.currentRow][this.currentCol+1] != "b" )
+		if( this.level[this.currentRow][this.currentCol+1] != "b" ) {
 			this.updateCurrentLocation( this.currentRow, this.currentCol+1 );
+			System.out.println("player moved to: " + this.currentRow + "," + (this.currentCol+1));
+		}
 	}//end moveRight()
 	
 	public void moveLeft() {
 		// check if the column to left is a wall
-		if( this.level[this.currentRow][this.currentCol-1] != "b" )
+		if( this.level[this.currentRow][this.currentCol-1] != "b" ) {
 			this.updateCurrentLocation( this.currentRow, this.currentCol-1 );
+			System.out.println("player moved to: " + this.currentRow + "," + (this.currentCol-1));
+		}
 	}//end moveLeft()
 	
 	public void updateCurrentLocation(int r, int c) {
 		this.currentCol = c;
 		this.currentRow = r;
-		System.out.println("player location updated!");
+		Main.player.setCurrentLocation(r, c);
+		
 	}//end updateCurrentLocation()
 	
 	public void updateEnemyLocation(EnemyShip e) {
