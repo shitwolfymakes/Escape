@@ -36,7 +36,7 @@ public class Main extends Application {
     public static LevelView view = new LevelView();			  // the view of the app
     public static ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
 	public static Stage stage;
-	public static PlayerShip player = new PlayerShip();
+	public static PlayerShip player = new PlayerShip(-1, -1);
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -75,7 +75,7 @@ public class Main extends Application {
 	}//end start()
 	
 	public static void startLevel() {
-		Main.player = new PlayerShip(3, 1);
+		Main.player.setCurrentLocation(3, 1);
 		
 		// could probably move this into Level.java
 		//Main.model = new Level( Main.profile.getCurrentLevel() );
