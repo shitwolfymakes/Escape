@@ -10,6 +10,7 @@ package application.controller;
 import java.io.IOException;
 
 import application.Main;
+import application.model.Level;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -31,8 +32,12 @@ public class MainMenuController implements EventHandler<Event>{
 
     @FXML
     public void start(Event event) {
+    	
+    	Main.model = new Level(1);
     	/*
     	try {
+    		
+    		
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation( LevelController.class.getResource("../../Level.fxml") );
