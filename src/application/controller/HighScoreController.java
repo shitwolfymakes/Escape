@@ -1,18 +1,24 @@
 package application.controller;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 import application.Main;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class HighScoreController implements Initializable{
@@ -23,17 +29,47 @@ public class HighScoreController implements Initializable{
     @FXML
     private Button back;
     
+    @FXML
+    private TextField name;
+    
     ArrayList<String> scoreTest = new ArrayList<String>();
-
+    
+	Scanner scan;
+    
+    
+    
+    
+    
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Will fill ListView with data.
-		scoreTest.add(String.format("%-10s %100d","ToddRogers", 999999));
-		scoreTest.add(String.format("%-10s %100d","HonestJoe123", 1500));
-		scoreTest.add(String.format("%-10s %100d","flaminIndo", 1250));
-		scoreView.setItems(FXCollections.observableArrayList(scoreTest));
+	public void initialize(URL arg0, ResourceBundle arg1) { 
 		
+		
+		
+		
+		// TODO Will fill ListView with data.
+		ObservableList<String> items =FXCollections.observableArrayList ();
+		try 
+		{
+			scan = new Scanner(new File("data/highscores.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		while(scan.hasNextLine())
+		{
+			String line = scan.nextLine();
+			String[] tokens = line.split(",");
+			
+			
+			
+			items.add(String.format("%-70s \t%s", tokens[0], tokens[1]));
+			Collections.sort(items);
+			Collections.reverse(items);
+			scoreView.setItems(items);
+		}
+				
 	}
+	
 	
 	public void back() {
 		try {
