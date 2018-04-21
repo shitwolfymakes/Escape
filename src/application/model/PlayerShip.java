@@ -11,6 +11,8 @@ public class PlayerShip extends Ship {
 	private int currentRow;
 	private int currentCol;
 	
+	public PlayerShip() {} //end default constructor 
+	
 	public PlayerShip(int r, int c) {
 		this.currentRow = r;
 		this.currentCol = c;
@@ -23,7 +25,7 @@ public class PlayerShip extends Ship {
 		
 		//for (int i = 0; i < getNumWeapons(); i++)
 		System.out.println(this.toString());
-	}//end PlayerShip()
+	}//end overloaded constructor
 
 	public void setCurrentLocation(int row, int column) {
 		this.currentRow = row;
