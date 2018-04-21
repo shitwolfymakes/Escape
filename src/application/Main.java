@@ -36,7 +36,7 @@ public class Main extends Application {
     public static LevelView view = new LevelView();			  // the view of the app
     public static ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
 	public static Stage stage;
-	public static PlayerShip player;
+	public static PlayerShip player = new PlayerShip();
 
 	@Override
 	public void start(Stage primaryStage) {
