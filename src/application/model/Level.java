@@ -124,42 +124,42 @@ public class Level {
 	
 	public void move( char letter ) {
 		switch( letter ) {
-			case 'W': moveUp();
-			case 'A': moveDown();
-			case 'S': moveLeft();
-			case 'D': moveRight();
+			case 'W': moveUp(); break;
+			case 'A': moveLeft(); break;
+			case 'S': moveDown(); break;
+			case 'D': moveRight(); break;
 		}//end switch
 	}//end move()
 	
 	public void moveUp() {
 		// check if the row above is a wall
-		if( this.level[this.currentRow-1][this.currentCol] != "b" ) {
-			this.updateCurrentLocation( this.currentRow-1, this.currentCol );
+		if( !(this.level[this.currentRow-1][this.currentCol].equals("b")) ) {
 			System.out.println("player moved to: " + (this.currentRow-1) + "," + this.currentCol);
+			this.updateCurrentLocation( this.currentRow-1, this.currentCol );
 		}
 	}//end moveUp()
 	
 	public void moveDown() {
 		// check if the row below is a wall
-		if( this.level[this.currentRow+1][this.currentCol] != "b" ) {
-			this.updateCurrentLocation( this.currentRow+1, this.currentCol );
+		if( !(this.level[this.currentRow+1][this.currentCol].equals("b")) ) {
 			System.out.println("player moved to: " + (this.currentRow+1) + "," + this.currentCol);
+			this.updateCurrentLocation( this.currentRow+1, this.currentCol );
 		}
 	}//end moveDown()
 	
 	public void moveRight() {
 		// check if the column to right is a wall
-		if( this.level[this.currentRow][this.currentCol+1] != "b" ) {
-			this.updateCurrentLocation( this.currentRow, this.currentCol+1 );
+		if( !(this.level[this.currentRow][this.currentCol+1].equals("b")) ) {
 			System.out.println("player moved to: " + this.currentRow + "," + (this.currentCol+1));
+			this.updateCurrentLocation( this.currentRow, this.currentCol+1 );
 		}
 	}//end moveRight()
 	
 	public void moveLeft() {
 		// check if the column to left is a wall
-		if( this.level[this.currentRow][this.currentCol-1] != "b" ) {
-			this.updateCurrentLocation( this.currentRow, this.currentCol-1 );
+		if( !(this.level[this.currentRow][this.currentCol-1].equals("b")) ) {
 			System.out.println("player moved to: " + this.currentRow + "," + (this.currentCol-1));
+			this.updateCurrentLocation( this.currentRow, this.currentCol-1 );
 		}
 	}//end moveLeft()
 	
