@@ -6,10 +6,6 @@
 
 package application.model;
 
-import java.util.ArrayList;
-
-import application.Main;
-
 public class PlayerShip extends Ship {
 	
 	private int currentRow;
