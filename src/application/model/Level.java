@@ -31,25 +31,30 @@ public class Level {
 		
 	}
 	
+	/** 
+	 * 
+	 * @return ArrayList of EnemyShips containing data on all the enemies in the level
+	 */
 	public ArrayList<EnemyShip> collectEnemies() {
-		
-		for (int r = 0; r < 7 ; r++) 
-	    { 
-	        for (int c = 0; c < 10; c++)
-	        {
+		for (int r = 0; r < 7 ; r++) { 
+	        for (int c = 0; c < 10; c++) {
 	        	if ( level[r][c].equals("H1") )
 	        		enemyShips.add( new EnemyShip("H1", r, c) );
 	        	if ( level[r][c].equals("H2") )
 	        		enemyShips.add( new EnemyShip("H2", r, c) );
-	        	
 	        }//end inner for
 	    }//end outer for
 		
 		return enemyShips;
 	}
 	
+	/**
+	 * 
+	 * @param eachRow ArrayList of strings containing all the level data
+	 * @return int length of the longest row
+	 */
 	public int getLongestRow(ArrayList<String> eachRow) {
-		int tmp = 0;
+		int length = 0;
 		for (int i = 1; i < 7; i++)
 		{
 			String line = eachRow.get(i-1).toString();
@@ -57,11 +62,16 @@ public class Level {
 			String line2 = eachRow.get(i).toString();
 			String[] tokens2 = line2.split(",");
 		
-			tmp = Math.max(tokens.length, tokens2.length);
+			length = Math.max(tokens.length, tokens2.length);
 		}
-		return tmp;
+		return length;
 	}
 	
+	/**
+	 * 
+	 * @param levelNum number of the level to be loaded
+	 * @return a 2D String array containing all objects in the level
+	 */
 	public String[][] parseLevel(int levelNum) {
 		
 		ArrayList<String> eachRow = new ArrayList<String>();
@@ -111,6 +121,40 @@ public class Level {
 		return matrix;
 	}//end parseLevel()
 	
+	
+	public void move( char letter ) {
+		switch( letter ) {
+			case 'W': moveUp();
+			case 'A': moveDown();
+			case 'S': moveLeft();
+			case 'D': moveRight();
+		}//end switch
+	}//end move()
+	
+	public void moveUp() {
+		// check if the row above is a wall
+		if( this.level[this.currentRow-1][this.currentCol] != "b" )
+			this.updateCurrentLocation( this.currentRow-1, this.currentCol );
+	}//end moveUp()
+	
+	public void moveDown() {
+		// check if the row below is a wall
+		if( this.level[this.currentRow+1][this.currentCol] != "b" )
+			this.updateCurrentLocation( this.currentRow+1, this.currentCol );
+	}//end moveDown()
+	
+	public void moveRight() {
+		// check if the column to right is a wall
+		if( this.level[this.currentRow][this.currentCol+1] != "b" )
+			this.updateCurrentLocation( this.currentRow, this.currentCol+1 );
+	}//end moveRight()
+	
+	public void moveLeft() {
+		// check if the column to left is a wall
+		if( this.level[this.currentRow][this.currentCol-1] != "b" )
+			this.updateCurrentLocation( this.currentRow, this.currentCol-1 );
+	}//end moveLeft()
+	
 	public void updateCurrentLocation(int r, int c) {
 		this.currentCol = c;
 		this.currentRow = r;
@@ -119,10 +163,20 @@ public class Level {
 	
 	public void updateEnemyLocation(EnemyShip e) {
 		this.currentCol = e.getCurrentCol() - 1;
+		System.out.println(e.getName() + " moved to: " + e.getCurrentRow() + ", " + e.getCurrentCol());
 	}//end updateEnemyLocation()
 	
 	public void enemyJumpBarrier(EnemyShip e) {
 		this.currentCol = e.getCurrentCol() - 2;
+		System.out.println(e.getName() + " jumped the barrier to: " + e.getCurrentRow() + ", " + e.getCurrentCol());
 	}//end enemyJumpBarrier()
+	
+	public boolean isLevelOver() {
+		if (Main.enemies.size() == 0) {
+			System.out.println("Level complete!");
+			return true;
+		}
+		return false;
+	}//end isLevelOver()
 	
 }//end class Level
