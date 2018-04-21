@@ -20,6 +20,7 @@ public class LevelController implements EventHandler<KeyEvent> {
 		
 		// get the user input
 		char key = event.getCode().toString().charAt(0);
+		System.out.println(key);
 		//add move methods to the board.java, switch on key
 		
 		//TODO: move pacman based on input - MODEL
