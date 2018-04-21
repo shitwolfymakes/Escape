@@ -64,7 +64,8 @@ public class Level {
 	
 	public String[][] parseLevel(int levelNum) {
 		
-		ArrayList<String> eachRow = Main.cortex.getLevel().get("L_"+levelNum);
+		ArrayList<String> eachRow = new ArrayList<String>();
+		eachRow = Main.cortex.getLevel().get("L_"+levelNum);
 		int longestRow = getLongestRow(eachRow);
 		
 		String[][] matrix = new String[7][longestRow];
@@ -78,16 +79,22 @@ public class Level {
 			for (int j = 0; j < tokens.length; j++)
 				matrix[i][j] = tokens[j];
 			for ( int j = tokens.length - 1; j < matrix[i].length; j++)
-				if ( matrix[i][j] == null )
+				if ( matrix[i][j] == null ) 
 					 matrix[i][j] = String.valueOf(-1);
+			
+			//System.out.println();
 		}//end outer for
 		
+		// print level array to console
+		System.out.println("");
+		System.out.println("Level Array: ");
 		for( int i = 0; i < 7; i++ ) {
 			for( int j = 0; j < matrix[i].length; j++ ) {
 				System.out.printf("%s,",matrix[i][j]);
 			}//end inner for
 			System.out.println("");
 		}//end outer for
+		System.out.println("");
 		
 		for( int r = 0; r < 7; r++ ) {
 			for( int c = 0; c < matrix[r].length; c++ ) {
