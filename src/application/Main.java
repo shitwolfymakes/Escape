@@ -32,7 +32,7 @@ public class Main extends Application {
 	public static final Cortex cortex = new Cortex();  		  // hashmap object containing the data
 													   		  // of everything in the game.
 	public static PlayerProfile player = new PlayerProfile(); // player profile
-	public static Level model;		   		  				  // the model of the app
+	public static Level model = new Level();		   		  // the model of the app
     public static LevelView view = new LevelView();			  // the view of the app
     public static ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
 	public static Stage stage;
@@ -75,14 +75,14 @@ public class Main extends Application {
 	
 	public static void startLevel() {
 		// could probably move this into Level.java
-		Main.model = new Level( Main.player.getCurrentLevel() );
+		//Main.model = new Level( Main.player.getCurrentLevel() );
 		enemies = Main.model.collectEnemies();
 		
 		// all this should be moved to Main.startLevel()
 		try {
 			// load the fxml file we need
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( Main.class.getResource("Level.fxml") );
+			loader.setLocation( Main.class.getResource("../Level.fxml") );
 			AnchorPane layout = (AnchorPane) loader.load();
 
 			// Load the Level view
