@@ -10,6 +10,8 @@ public class PlayerShip extends Ship {
 	
 	private int currentRow;
 	private int currentCol;
+	private int previousRow;
+	private int previousCol;
 	
 	public PlayerShip() {} //end default constructor 
 	
@@ -44,6 +46,15 @@ public class PlayerShip extends Ship {
 	 */
 	public int getCurrentCol() {
 		return currentCol;
+	}
+	
+	public void setPreviousLocation(int row, int column) {
+		this.previousRow = row;
+		this.previousCol = column;
+	}
+	
+	public String toString() {
+		return "Player Ship at: " + this.currentRow + "," + this.currentCol;
 	}
 	
 }//end class PlayerShip

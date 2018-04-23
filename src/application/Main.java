@@ -91,6 +91,7 @@ public class Main extends Application {
 			// Load the Level view
 			//Main.view = new LevelView( Main.model );
 			Main.view = new LevelView();
+			Main.view.setUpView();
 			layout.getChildren().add( Main.view );
 			Scene scene = new Scene( layout );
 			

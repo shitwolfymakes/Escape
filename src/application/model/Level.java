@@ -18,6 +18,8 @@ public class Level {
 	private int currentLevel;
 	private int currentRow;
 	private int currentCol;
+	private int previousRow;
+	private int previousCol;
 	private ArrayList<EnemyShip> enemyShips = new ArrayList<EnemyShip>();
 	
 	public Level() {};
@@ -25,8 +27,8 @@ public class Level {
 	public Level(int levelNum) {
 		
 		this.currentLevel = levelNum;
-		this.currentRow = 4;
-		this.currentCol = 1;
+		this.currentRow = Main.player.getCurrentRow();
+		this.currentCol = Main.player.getCurrentCol();
 		this.level = parseLevel(this.currentLevel);
 		
 	}
@@ -96,6 +98,54 @@ public class Level {
 		}//end outer for
 		
 		// print level array to console
+		printLevel(levelNum);
+//		System.out.println("");
+//		System.out.println("Level Array: ");
+//		for( int i = 0; i < 7; i++ ) {
+//			for( int j = 0; j < matrix[i].length; j++ ) {
+//				System.out.printf("%s,",matrix[i][j]);
+//			}//end inner for
+//			System.out.println("");
+//		}//end outer for
+//		System.out.println("");
+//		
+//		for( int r = 0; r < 7; r++ ) {
+//			for( int c = 0; c < matrix[r].length; c++ ) {
+//				String code = "";
+//				code = matrix[r][c];
+//				
+//				if( code == null )
+//					continue;
+//				else if ( code.equals("p") )
+//					updateCurrentLocation(r,c);
+//			}//end inner for
+//		}//end outer for
+		
+		return matrix;
+	}//end parseLevel()
+	
+	
+	public void printLevel(int levelNum) {
+		ArrayList<String> eachRow = new ArrayList<String>();
+		eachRow = Main.cortex.getLevel().get("L_"+levelNum);
+		int longestRow = getLongestRow(eachRow);
+		String[][] matrix = new String[7][longestRow];
+		
+		
+		for (int i = 0; i < 7; i++)
+		{
+			String line = eachRow.get(i).toString();
+			String[] tokens = line.split(",");
+			
+			// fill the array
+			for (int j = 0; j < tokens.length; j++)
+				matrix[i][j] = tokens[j];
+			for ( int j = tokens.length - 1; j < matrix[i].length; j++)
+				if ( matrix[i][j] == null ) 
+					 matrix[i][j] = String.valueOf(-1);
+			
+			//System.out.println();
+		}//end outer for
 		System.out.println("");
 		System.out.println("Level Array: ");
 		for( int i = 0; i < 7; i++ ) {
@@ -117,55 +167,68 @@ public class Level {
 					updateCurrentLocation(r,c);
 			}//end inner for
 		}//end outer for
-		
-		return matrix;
-	}//end parseLevel()
-	
+	}
 	
 	public void move( char letter ) {
 		switch( letter ) {
 			case 'W': moveUp();
-			case 'A': moveDown();
-			case 'S': moveLeft();
+				break;
+			case 'S': moveDown();
+				break;
+			case 'A': moveLeft();
+				break;
 			case 'D': moveRight();
+				break;
 		}//end switch
 	}//end move()
 	
 	public void moveUp() {
 		// check if the row above is a wall
-		if( this.level[this.currentRow-1][this.currentCol] != "b" ) {
-			this.updateCurrentLocation( this.currentRow-1, this.currentCol );
-			System.out.println("player moved to: " + (this.currentRow-1) + "," + this.currentCol);
+		if (!Main.model.level[Main.player.getCurrentRow()-1][Main.player.getCurrentCol()].equals("b") ) {
+			//System.out.println("" + Main.model.level[Main.model.currentRow][Main.model.currentCol]);
+			this.updateCurrentLocation( Main.model.currentRow-1, Main.model.currentCol );
+			//Main.player.setCurrentLocation(Main.player.getCurrentRow()-1,Main.player.getCurrentCol());
+			System.out.println("player moved to: " + (Main.model.currentRow) + "," + Main.model.currentCol);	
 		}
 	}//end moveUp()
 	
 	public void moveDown() {
 		// check if the row below is a wall
-		if( this.level[this.currentRow+1][this.currentCol] != "b" ) {
-			this.updateCurrentLocation( this.currentRow+1, this.currentCol );
-			System.out.println("player moved to: " + (this.currentRow+1) + "," + this.currentCol);
+		//System.out.println("" + Main.model.currentRow + Main.model.currentCol);
+		if( !Main.model.level[Main.player.getCurrentRow()+1][Main.player.getCurrentCol()].equals("b") ) {
+			this.updateCurrentLocation( Main.model.currentRow+1, Main.model.currentCol );
+			System.out.println("player moved to: " + (Main.model.currentRow+1) + "," + Main.model.currentCol);
+		
 		}
 	}//end moveDown()
 	
 	public void moveRight() {
 		// check if the column to right is a wall
-		if( this.level[this.currentRow][this.currentCol+1] != "b" ) {
-			this.updateCurrentLocation( this.currentRow, this.currentCol+1 );
-			System.out.println("player moved to: " + this.currentRow + "," + (this.currentCol+1));
+		System.out.println("" + Main.model.currentRow + Main.model.currentCol);
+		if( !Main.model.level[Main.player.getCurrentRow()][Main.player.getCurrentCol()+1].equals("b") ) {
+			this.updateCurrentLocation( Main.model.currentRow, Main.model.currentCol+1 );
+			System.out.println("player moved to: " + Main.model.currentRow + "," + (Main.model.currentCol+1));
+			
 		}
 	}//end moveRight()
 	
 	public void moveLeft() {
 		// check if the column to left is a wall
-		if( this.level[this.currentRow][this.currentCol-1] != "b" ) {
-			this.updateCurrentLocation( this.currentRow, this.currentCol-1 );
-			System.out.println("player moved to: " + this.currentRow + "," + (this.currentCol-1));
+		System.out.println("" + Main.player.getCurrentRow() + Main.player.getCurrentCol());
+		if( !Main.model.level[Main.model.currentRow][Main.model.currentCol-1].equals("b") ) {
+			this.updateCurrentLocation( Main.model.currentRow, Main.model.currentCol-1 );
+			System.out.println("player moved to: " + Main.model.currentRow + "," + (Main.model.currentCol-1));
+			
 		}
 	}//end moveLeft()
 	
-	public void updateCurrentLocation(int r, int c) {
-		this.currentCol = c;
-		this.currentRow = r;
+	public void updateCurrentLocation(int r, int c) {	
+		Main.model.previousCol = Main.model.currentCol;
+		Main.model.previousRow = Main.model.currentRow;
+		
+		Main.model.currentCol = c;
+		Main.model.currentRow = r;
+		Main.player.setPreviousLocation(r, c);
 		Main.player.setCurrentLocation(r, c);
 		
 	}//end updateCurrentLocation()
@@ -182,10 +245,39 @@ public class Level {
 	
 	public boolean isLevelOver() {
 		if (Main.enemies.size() == 0) {
-			System.out.println("Level complete!");
+			//System.out.println("Level complete!");
 			return true;
 		}
 		return false;
 	}//end isLevelOver()
+	
+	public int getPreviousRow() {
+		return Main.model.previousRow;
+	}
+	
+	public int getPreviousColumn() {
+		return Main.model.previousCol;
+	}
+	
+	public int getCurrentRow() {
+		return Main.model.currentRow;
+	}
+	
+	public int getCurrentColumn() {
+		return Main.model.currentCol;
+	}
+	
+	
+	public int getRows() {
+		return numRows;
+	}
+	
+	public int getCols() {
+		return numCols;
+	}
+	
+	public String getLevelLocation( int row, int col ) {
+		return this.level[row][col];
+	}
 	
 }//end class Level
