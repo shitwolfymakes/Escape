@@ -80,6 +80,7 @@ public class Main extends Application {
 		// could probably move this into Level.java
 		//Main.model = new Level( Main.profile.getCurrentLevel() );
 		enemies = Main.model.collectEnemies();
+		System.out.println("");
 		
 		// all this should be moved to Main.startLevel()
 		try {
@@ -104,6 +105,8 @@ public class Main extends Application {
 			e.printStackTrace();
 		}//end try/catch
 		
+		//TODO: make this a thread
+		/* 
 		// move all enemies to the left once per second
 		while (enemies.size() > 0)
 		{
@@ -127,6 +130,7 @@ public class Main extends Application {
 			}//end try/catch
 			
 		}//end while
+		*/
 		
 	}//end startLevel()
 	

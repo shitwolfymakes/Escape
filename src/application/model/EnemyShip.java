@@ -18,7 +18,7 @@ public class EnemyShip extends Ship {
 	private String enemyID;
 	private int currentRow;
 	private int currentCol;
-	
+	private int numWeapons;
 	
 	public EnemyShip(String enemyID, int r, int c) {
 		this.currentRow = r;
@@ -37,13 +37,12 @@ public class EnemyShip extends Ship {
 		super.setSpriteLink(enemyShipData.get(6));
 		super.setNumWeapons(enemyShipData.get(7));
 		
-		for (int i = 0; i < getNumWeapons(); i++)
-			addWeapons(enemyShipData.get(8+i));
+		for (int i = 1; i <= getNumWeapons(); i++)
+			super.addWeapons(enemyShipData.get(7+i));
 		
-		System.out.println(this.toString());
+		System.out.println(getEnemyID() + " spawned at " + this.currentRow + ", " + this.currentCol );
 	}
 
-	
 	/**
 	 * @return the pointValue
 	 */
@@ -80,8 +79,6 @@ public class EnemyShip extends Ship {
 	public int getCurrentRow() {
 		return currentRow;
 	}
-
-
 	/**
 	 * @return the currentCol
 	 */
@@ -89,39 +86,30 @@ public class EnemyShip extends Ship {
 		return currentCol;
 	}
 
-
 	/**
 	 * @param pointValue the pointValue to set
 	 */
 	public void setPointValue(int pointValue) {
 		this.pointValue = pointValue;
 	}
-
-
 	/**
 	 * @param moneyValue the moneyValue to set
 	 */
 	public void setMoneyValue(int moneyValue) {
 		this.moneyValue = moneyValue;
 	}
-
-
 	/**
 	 * @param currentRow the currentRow to set
 	 */
 	public void setCurrentRow(int currentRow) {
 		this.currentRow = currentRow;
 	}
-
-
 	/**
 	 * @param currentCol the currentCol to set
 	 */
 	public void setCurrentCol(int currentCol) {
 		this.currentCol = currentCol;
 	}
-
-
 	/**
 	 * @param pointValue the pointValue to set
 	 */

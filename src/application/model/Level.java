@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import application.Main;
 
 public class Level {
-
+	
 	private static final int numRows = 7;
 	private static final int numCols = 10;
 	private String[][] level;
@@ -20,6 +20,7 @@ public class Level {
 	private int currentCol;
 	private int previousRow;
 	private int previousCol;
+	private int longestRow = 0;
 	private ArrayList<EnemyShip> enemyShips = new ArrayList<EnemyShip>();
 	
 	public Level() {};
@@ -38,11 +39,14 @@ public class Level {
 	 */
 	public ArrayList<EnemyShip> collectEnemies() {
 		for (int r = 0; r < 7 ; r++) { 
-	        for (int c = 0; c < 10; c++) {
-	        	if ( level[r][c].equals("H1") )
-	        		enemyShips.add( new EnemyShip("H1", r, c) );
-	        	if ( level[r][c].equals("H2") )
-	        		enemyShips.add( new EnemyShip("H2", r, c) );
+	        for (int c = 0; c < longestRow; c++) {
+	        	switch(level[r][c]) {
+	        		case "b" :  break;
+	        		case "-1" : break;
+	        		case " " :  break;
+	        		case "p" :  break;
+	        		default: enemyShips.add( new EnemyShip(level[r][c].toString(), r, c) );
+	        	}//end switch
 	        }//end inner for
 	    }//end outer for
 		
@@ -65,6 +69,7 @@ public class Level {
 		
 			length = Math.max(tokens.length, tokens2.length);
 		}
+		this.longestRow = length;
 		return length;
 	}
 	
