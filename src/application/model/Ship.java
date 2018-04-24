@@ -49,10 +49,10 @@ public class Ship {
 		return weapons;
 	}
 	/**
-	 * @param i the hullPoints to set
+	 * @param hullPoints the hullPoints to set
 	 */
-	public void setHullPoints(int i) {
-		this.hullPoints = i;
+	public void setHullPoints(int hullPoints) {
+		this.hullPoints = hullPoints;
 	}
 	/**
 	 * @param shieldPoints the shieldPoints to set
