@@ -28,9 +28,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	public ParallelTransition parallelTransition;
 	
 	@FXML ImageView background1, background2;
-	
-
-	
+		
 	@Override
 	public void handle(KeyEvent event) {
 		
@@ -39,19 +37,15 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		// get the user input
 		char key = event.getCode().toString().charAt(0);
 		System.out.println(key);
-		//add move methods to the board.java, switch on key
 		
-		//TODO: move pacman based on input - MODEL
+		// move player based on input - MODEL
 		if (event.getCode() != KeyCode.SPACE)	{
 			Main.model.move( key );
+			// update the view to show movement - VIEW
 			Main.view.update(Main.model.getCurrentRow(), Main.model.getCurrentColumn(), Main.player.getPreviousRow(), Main.player.getPreviousCol());
 			//System.out.println(""+key);
 		}
 		//else fire bullet
-		
-		
-		//TODO: update the view to show movement - VIEW
-			
 		
 		//TODO: End game when reaches end - MODEL
 		//		- switch level to Honest John's 
@@ -59,12 +53,14 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		if (isOver)
 			Main.startHonestJohn();
 		
-		// if is over, load next level(Honest John's)
-		
 	}//end handle()
 	
+	@Override
+	public void initialize(URL url, ResourceBundle resources) {
+		initializeBackground();		
+	}//end initialize()
 	
-	/*
+	/**
 	 * @param none
 	 * @return none
 	 * 
@@ -78,7 +74,6 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		 translateTransition.setFromX(0);
 		 translateTransition.setToX(-1 * BACKGROUND_WIDTH);
 		 translateTransition.setInterpolator(Interpolator.LINEAR);
-
 		   
 		 TranslateTransition translateTransition2 =
 		        new TranslateTransition(Duration.millis(10000), background2);
@@ -92,14 +87,6 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		 
 		 parallelTransition.setCycleCount(Animation.INDEFINITE);
 	     parallelTransition.play();
-	
-
-	 };
-
-
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		initializeBackground();		
-	}
+	 }//end initializeBackground()
 
 }//end class LevelController
