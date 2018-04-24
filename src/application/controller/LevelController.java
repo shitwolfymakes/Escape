@@ -42,11 +42,16 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		//add move methods to the board.java, switch on key
 		
 		//TODO: move pacman based on input - MODEL
-		if (event.getCode() != KeyCode.SPACE)	
+		if (event.getCode() != KeyCode.SPACE)	{
 			Main.model.move( key );
+			Main.view.update(Main.model.getCurrentRow(), Main.model.getCurrentColumn(), Main.player.getPreviousRow(), Main.player.getPreviousCol());
+			//System.out.println(""+key);
+		}
 		//else fire bullet
 		
+		
 		//TODO: update the view to show movement - VIEW
+			
 		
 		//TODO: End game when reaches end - MODEL
 		//		- switch level to Honest John's 
