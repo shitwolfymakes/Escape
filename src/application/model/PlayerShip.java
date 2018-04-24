@@ -26,7 +26,7 @@ public class PlayerShip extends Ship {
 		//super.addWeapons(Main.cortex.getWeapon("W_"+ Main.profile.getCurrentWeaponID()));
 		
 		//for (int i = 0; i < getNumWeapons(); i++)
-		System.out.println(this.toString());
+		//System.out.println(this.toString());
 	}//end overloaded constructor
 
 	public void setCurrentLocation(int row, int column) {
@@ -46,6 +46,20 @@ public class PlayerShip extends Ship {
 	 */
 	public int getCurrentCol() {
 		return currentCol;
+	}
+	
+	/**
+	 * @return the currentRow
+	 */
+	public int getPreviousRow() {
+		return previousRow;
+	}
+
+	/**
+	 * @return the currentCol
+	 */
+	public int getPreviousCol() {
+		return previousCol;
 	}
 	
 	public void setPreviousLocation(int row, int column) {

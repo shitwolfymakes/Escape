@@ -29,6 +29,9 @@ public class LevelView extends GridPane{
 				// board[r][c] 
 				
 				String code = Main.model.getLevelLocation(r,c);
+				if (code.equals("p")) {
+					Main.player.setCurrentLocation(r, c);
+				}
 				ImageView img = chooseImage( code );
 				//System.out.println(""+r+","+c+code);
 				this.add( img, c, r );
@@ -46,6 +49,7 @@ public class LevelView extends GridPane{
 			case "p" : return getPlayerImage();
 			case " " : return getDefaultImage();
 			case "b" : return getDefaultImage();
+			case "s" : return getBulletImage();
 			default: return getDefaultImage();
 		}//end switch
 	}//end chooseImage()

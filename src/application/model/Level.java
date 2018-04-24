@@ -27,9 +27,9 @@ public class Level {
 	public Level(int levelNum) {
 		
 		this.currentLevel = levelNum;
+		this.level = parseLevel(this.currentLevel);
 		this.currentRow = Main.player.getCurrentRow();
 		this.currentCol = Main.player.getCurrentCol();
-		this.level = parseLevel(this.currentLevel);
 		
 	}
 	
@@ -188,7 +188,6 @@ public class Level {
 			//System.out.println("" + Main.model.level[Main.model.currentRow][Main.model.currentCol]);
 			this.updateCurrentLocation( Main.model.currentRow-1, Main.model.currentCol );
 			//Main.player.setCurrentLocation(Main.player.getCurrentRow()-1,Main.player.getCurrentCol());
-			System.out.println("player moved to: " + (Main.model.currentRow) + "," + Main.model.currentCol);	
 		}
 	}//end moveUp()
 	
@@ -197,7 +196,6 @@ public class Level {
 		//System.out.println("" + Main.model.currentRow + Main.model.currentCol);
 		if( !Main.model.level[Main.player.getCurrentRow()+1][Main.player.getCurrentCol()].equals("b") ) {
 			this.updateCurrentLocation( Main.model.currentRow+1, Main.model.currentCol );
-			System.out.println("player moved to: " + (Main.model.currentRow+1) + "," + Main.model.currentCol);
 		
 		}
 	}//end moveDown()
@@ -207,7 +205,6 @@ public class Level {
 		System.out.println("" + Main.model.currentRow + Main.model.currentCol);
 		if( !Main.model.level[Main.player.getCurrentRow()][Main.player.getCurrentCol()+1].equals("b") ) {
 			this.updateCurrentLocation( Main.model.currentRow, Main.model.currentCol+1 );
-			System.out.println("player moved to: " + Main.model.currentRow + "," + (Main.model.currentCol+1));
 			
 		}
 	}//end moveRight()
@@ -217,7 +214,6 @@ public class Level {
 		System.out.println("" + Main.player.getCurrentRow() + Main.player.getCurrentCol());
 		if( !Main.model.level[Main.model.currentRow][Main.model.currentCol-1].equals("b") ) {
 			this.updateCurrentLocation( Main.model.currentRow, Main.model.currentCol-1 );
-			System.out.println("player moved to: " + Main.model.currentRow + "," + (Main.model.currentCol-1));
 			
 		}
 	}//end moveLeft()
@@ -228,8 +224,8 @@ public class Level {
 		
 		Main.model.currentCol = c;
 		Main.model.currentRow = r;
-		Main.player.setPreviousLocation(r, c);
-		Main.player.setCurrentLocation(r, c);
+		Main.player.setPreviousLocation(Main.model.previousRow, Main.model.previousCol);
+		Main.player.setCurrentLocation(Main.model.currentRow, Main.model.currentCol);
 		
 	}//end updateCurrentLocation()
 	

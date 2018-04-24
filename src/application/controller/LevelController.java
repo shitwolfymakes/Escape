@@ -43,7 +43,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		//TODO: move pacman based on input - MODEL
 		if (event.getCode() != KeyCode.SPACE)	{
 			Main.model.move( key );
-			Main.view.update(Main.model.getCurrentRow(), Main.model.getCurrentColumn(), Main.model.getPreviousRow(), Main.model.getPreviousColumn());
+			Main.view.update(Main.model.getCurrentRow(), Main.model.getCurrentColumn(), Main.player.getPreviousRow(), Main.player.getPreviousCol());
 			//System.out.println(""+key);
 		}
 		//else fire bullet
