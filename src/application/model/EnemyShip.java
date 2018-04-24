@@ -30,7 +30,7 @@ public class EnemyShip extends Ship {
 		
 		setEnemyID(enemyShipData.get(0));
 		setName(enemyShipData.get(1));
-		super.setHullPoints(enemyShipData.get(2));
+		super.setHullPoints(Integer.parseInt(enemyShipData.get(2)));
 		//super.setShieldPoints(enemyShipData.get(3)); // Not using this in this version
 		setPointValue(enemyShipData.get(4));
 		setMoneyValue(enemyShipData.get(5));
