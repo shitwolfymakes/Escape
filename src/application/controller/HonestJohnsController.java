@@ -6,6 +6,6 @@
 
 package application.controller;
 
-public class SplashScreenController {
+public class HonestJohnsController {
 
 }
