@@ -6,6 +6,8 @@
 
 package application.model;
 
+import application.Main;
+
 public class PlayerShip extends Ship {
 	
 	private int currentRow;
@@ -19,7 +21,7 @@ public class PlayerShip extends Ship {
 		this.currentRow = r;
 		this.currentCol = c;
 		
-		//super.setHullPoints(Main.profile.getCurrentHull())
+		super.setHullPoints(Main.profile.getCurrentHull());
 		//super.setShieldPoints(Main.profile.getCurrentShield()); // Not using this in this version
 		//super.setNumWeapons(Main.profile.getNumWeapons());
 		super.setSpriteLink("data/Escape Sprites/playership.png");

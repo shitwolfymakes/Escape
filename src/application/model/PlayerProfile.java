@@ -12,6 +12,8 @@ import java.util.ArrayList;
 public class PlayerProfile {
 	
 	private String username;
+	private int currentHull;
+	//private int currentShields;
 	private int currentLevel;
 	private int difficultyLevel;
 	private int points;
@@ -118,6 +120,20 @@ public class PlayerProfile {
 	 */
 	public Save getS() {
 		return s;
+	}
+
+	/**
+	 * @return the currentHull
+	 */
+	public int getCurrentHull() {
+		return currentHull;
+	}
+
+	/**
+	 * @param currentHull the currentHull to set
+	 */
+	public void setCurrentHull(int currentHull) {
+		this.currentHull = currentHull;
 	}
 
 	/**
