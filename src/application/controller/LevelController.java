@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.model.PlayerBullet;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.ParallelTransition;
@@ -26,6 +27,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	
 	private int BACKGROUND_WIDTH = 2000;
 	public ParallelTransition parallelTransition;
+	Thread th;
 	
 	@FXML ImageView background1, background2;
 	
@@ -49,8 +51,9 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			// update the view to show movement - VIEW
 			Main.view.update(Main.model.getCurrentRow(), Main.model.getCurrentColumn(), Main.player.getPreviousRow(), Main.player.getPreviousCol());
 			//System.out.println(""+key);
-		} else {
-			
+		} else if (event.getCode() == KeyCode.SPACE) {
+			PlayerBullet b = new PlayerBullet();
+			Main.addPlayerBullet(b);
 		}
 		//else fire bullet
 		

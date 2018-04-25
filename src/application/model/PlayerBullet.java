@@ -11,21 +11,122 @@ import application.Main;
 
 public class PlayerBullet {
 	   public final int MAX_MISSILES = 10;
-	   public boolean missileActive;
-	   public double missilePositionX;
-	   public double missilePositionY;
-	   public double oldMissilePositionX;
-	   public double oldMissilePositionY;
+	   private boolean missileActive;
+
+	private int currentRow;
+	   private int currentCol;
+	   private int prevRow;
+	   private int prevCol;
 	   private String spriteLink = "data/test_sprites/Yello_Dot.png";
 	   
 	   public PlayerBullet() {
 		   missileActive = true;
-		   missilePositionX = Main.player.getCurrentRow()+1;
-		   missilePositionY = Main.player.getCurrentCol();
+		   currentRow = Main.player.getCurrentRow()+1;
+		   currentCol = Main.player.getCurrentCol();
 		   //missile position will be updated during first move
-		   oldMissilePositionX = 0;
-		   oldMissilePositionY = 0;
+		   prevRow = 0;
+		   prevCol = 0;
 	   }
 	   
+	   /**
+	    * The update method in PlayerBullet first checks if the position of the 
+	    * bullet outside of boundaries, and deactivates bullet in this case.
+	    * It then removes a bullet if it is not active. If bullet is not removed,
+	    * it moves one to the right.
+	    */
+	   public void update() {
+		   if (this.getCurrentCol() > Main.model.getCols()){
+			   this.setMissileActive(false);
+		   }
+		   if (this.isMissileActive() == false) {
+			   Main.removePlayerBullet(this);
+		   }
+		   this.currentCol = currentCol+1;
+		   //Main.view.updateBullet(this.currentRow, this.currentCol, this.prevRow, this.prevCol);
+	   }
+	   /**
+	 * @return the missileActive
+	 */
+	
+	
+	public boolean isMissileActive() {
+		return missileActive;
+	}
+	/**
+	 * @param missileActive the missileActive to set
+	 */
+	public void setMissileActive(boolean missileActive) {
+		this.missileActive = missileActive;
+	}
+
+	/**
+	 * @return the currentRow
+	 */
+	public int getCurrentRow() {
+		return currentRow;
+	}
+
+	/**
+	 * @param currentRow the currentRow to set
+	 */
+	public void setCurrentRow(int currentRow) {
+		this.currentRow = currentRow;
+	}
+
+	/**
+	 * @return the currentCol
+	 */
+	public int getCurrentCol() {
+		return currentCol;
+	}
+
+	/**
+	 * @param currentCol the currentCol to set
+	 */
+	public void setCurrentCol(int currentCol) {
+		this.currentCol = currentCol;
+	}
+
+	/**
+	 * @return the prevRow
+	 */
+	public int getPrevRow() {
+		return prevRow;
+	}
+
+	/**
+	 * @param prevRow the prevRow to set
+	 */
+	public void setPrevRow(int prevRow) {
+		this.prevRow = prevRow;
+	}
+
+	/**
+	 * @return the prevCol
+	 */
+	public int getPrevCol() {
+		return prevCol;
+	}
+
+	/**
+	 * @param prevCol the prevCol to set
+	 */
+	public void setPrevCol(int prevCol) {
+		this.prevCol = prevCol;
+	}
+
+	/**
+	 * @return the spriteLink
+	 */
+	public String getSpriteLink() {
+		return spriteLink;
+	}
+
+	/**
+	 * @param spriteLink the spriteLink to set
+	 */
+	public void setSpriteLink(String spriteLink) {
+		this.spriteLink = spriteLink;
+	}
 	   
 }

@@ -36,7 +36,7 @@ public class Main extends Application {
 	public static Level model = new Level();		   		  // the model of the app
     public static LevelView view = new LevelView();			  // the view of the app
     public static ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
-    public static ArrayList<PlayerBullet> playerBullets = new ArrayList<PlayerBullet>();
+    public static ArrayList<PlayerBullet> playerBullets; 
 	public static Stage stage;
 	public static PlayerShip player = new PlayerShip(-1, -1);
 
@@ -83,6 +83,7 @@ public class Main extends Application {
 		//Main.model = new Level( Main.profile.getCurrentLevel() );
 		enemies = Main.model.collectEnemies();
 		System.out.println("");
+		playerBullets = new ArrayList<PlayerBullet>();
 		
 		// all this should be moved to Main.startLevel()
 		try {
@@ -135,6 +136,18 @@ public class Main extends Application {
 		*/
 		
 	}//end startLevel()
+	
+	public static void addPlayerBullet(PlayerBullet b) {
+		playerBullets.add(b);
+		System.out.println(playerBullets);
+	}
+	
+	public static void removePlayerBullet(PlayerBullet b) {
+		playerBullets.remove(b);
+		System.out.println(playerBullets);
+	}
+	
+
 	
 	public static void startHonestJohn() {
 		

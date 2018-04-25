@@ -11,6 +11,7 @@ import java.io.IOException;
 
 import application.Main;
 import application.model.Level;
+import application.model.PlayerBullet;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -32,9 +33,11 @@ public class MainMenuController implements EventHandler<Event>{
 
     @FXML
     public void start(Event event) {
-    	
+
     	Main.model = new Level(1);
     	Main.startLevel();
+    	Main.model.start();
+    	//memory overloads because I don't know how to kill the thread still :/
     }
 
     @Override

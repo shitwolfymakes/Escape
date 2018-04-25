@@ -41,7 +41,12 @@ public class LevelView extends GridPane{
 	
 	public void update( int currentRow, int currentCol, int previousRow, int previousCol ) {
 		this.add( chooseImage("p"), currentCol, currentRow );
-		this.add( chooseImage(" "), previousCol, previousRow );
+		this.add( chooseImage("v"), previousCol, previousRow );
+	}
+	
+	public void updateBullet( int currentRow, int currentCol, int previousRow, int previousCol ) {
+		this.add( chooseImage("s"), currentCol, currentRow );
+		this.add( chooseImage("v"), previousCol, previousRow );
 	}
 	
 	public ImageView chooseImage(String code) {
@@ -51,6 +56,7 @@ public class LevelView extends GridPane{
 			case "b" : return getDefaultImage();
 			case "s" : return getBulletImage();
 			case "e" : return getEnemyImage();
+			case "v" : return getBlackImage();
 			default: return getDefaultImage();
 		}//end switch
 	}//end chooseImage()
@@ -82,7 +88,16 @@ public class LevelView extends GridPane{
 	
 	public ImageView getDefaultImage() {
 		//TODO: update, to grab spriteLink from cortex entry
-		ImageView img = new ImageView("File:test_sprites/default.png");
+		ImageView img = new ImageView("File:data/test_sprites/default.png");
+		img.setFitHeight(imgSize);
+		img.setFitWidth(imgSize);
+		
+		return img;
+	}//end getDefaultImage()
+	
+	public ImageView getBlackImage() {
+		//TODO: update, to grab spriteLink from cortex entry
+		ImageView img = new ImageView("File:data/test_sprites/Yello_Dot2.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		
