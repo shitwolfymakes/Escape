@@ -28,7 +28,12 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	public ParallelTransition parallelTransition;
 	
 	@FXML ImageView background1, background2;
-		
+	
+	/**
+	 * The handle function in LevelController effectively acts as a listener for 
+	 * key presses.
+	 * @param event
+	 */
 	@Override
 	public void handle(KeyEvent event) {
 		
@@ -44,6 +49,8 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			// update the view to show movement - VIEW
 			Main.view.update(Main.model.getCurrentRow(), Main.model.getCurrentColumn(), Main.player.getPreviousRow(), Main.player.getPreviousCol());
 			//System.out.println(""+key);
+		} else {
+			
 		}
 		//else fire bullet
 		

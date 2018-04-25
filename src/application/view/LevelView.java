@@ -50,6 +50,7 @@ public class LevelView extends GridPane{
 			case " " : return getDefaultImage();
 			case "b" : return getDefaultImage();
 			case "s" : return getBulletImage();
+			case "e" : return getEnemyImage();
 			default: return getDefaultImage();
 		}//end switch
 	}//end chooseImage()
@@ -74,7 +75,8 @@ public class LevelView extends GridPane{
 	public ImageView getEnemyImage() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:test_sprites/test_enemy.png");
-		
+		img.setFitHeight(imgSize);
+		img.setFitWidth(imgSize);
 		return img;
 	}//end getEnemyImage()
 	

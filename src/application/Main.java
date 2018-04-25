@@ -15,6 +15,7 @@ import application.controller.LevelController;
 import application.model.Cortex;
 import application.model.EnemyShip;
 import application.model.Level;
+import application.model.PlayerBullet;
 import application.model.PlayerProfile;
 import application.model.PlayerShip;
 import application.view.LevelView;
@@ -35,6 +36,7 @@ public class Main extends Application {
 	public static Level model = new Level();		   		  // the model of the app
     public static LevelView view = new LevelView();			  // the view of the app
     public static ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
+    public static ArrayList<PlayerBullet> playerBullets = new ArrayList<PlayerBullet>();
 	public static Stage stage;
 	public static PlayerShip player = new PlayerShip(-1, -1);
 
