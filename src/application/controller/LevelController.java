@@ -6,6 +6,7 @@
 
 package application.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -15,19 +16,34 @@ import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	
+	private boolean running = false;
 	private int BACKGROUND_WIDTH = 2000;
 	public ParallelTransition parallelTransition;
-	Thread th;
+
+    @FXML
+    private Label hullLabel;
+    
+
+    @FXML
+    private Label scoreLabel;
+	//Thread th;
 	
 	@FXML ImageView background1, background2;
 	
@@ -67,7 +83,10 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	
 	@Override
 	public void initialize(URL url, ResourceBundle resources) {
-		initializeBackground();		
+		running = true;
+		runUpdates();
+		initializeBackground();	
+		
 	}//end initialize()
 	
 	/**
@@ -99,4 +118,53 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	     parallelTransition.play();
 	 }//end initializeBackground()
 
+	public void runUpdates() {
+		//seconds = 30;
+		
+			Thread th = new Thread( new Task<Object>() {                // put the task in its own thread
+				
+				@Override
+				protected String call() throws Exception {
+					String score = "";	
+					String hull = "";
+					//String status3 = "";
+					//PlayerBullet bullet;
+					//Image image = new Image("File:" + bullet.getSpriteLink());
+					while (running) {	
+						score =  "Score:"+(Main.model.getScore()) ;
+						hull = "Hull Points Remaining:"+(Main.player.getHullPoints());
+						//image = ""+workout.exercises.get(x).getName();
+					
+						
+						final String fscore = score;
+						final String fhull = hull;
+						//final String fstat3 = status3;
+						//final Image istat = image;
+							// update the label on the JavaFx Application Thread!
+						Platform.runLater(new Runnable() {
+							@Override
+							public void run() {
+								for (PlayerBullet b : Main.playerBullets.toArray(new PlayerBullet[Main.playerBullets.size()])) {
+									Main.view.updateBullet(b.getCurrentRow(), b.getCurrentCol(), b.getPrevRow(), b.getPrevCol());
+								}
+								//System.out.println("HERE");
+								hullLabel.setText("TEST");
+								scoreLabel.setText("TEST");
+								
+								}
+							
+							});
+							Thread.sleep(100);
+						
+					}
+					return null;
+				}
+			
+			});
+			th.setDaemon(true);									
+			th.start();
+			
+	}
+	
+	
 }//end class LevelController

@@ -7,12 +7,16 @@
 package application.view;
 
 import application.Main;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 public class LevelView extends GridPane{
 	
 	private int imgSize;
+	private ImageView lastImg;
+	private Node lastNode;
 	public LevelView() {
 		imgSize = 100;
 		
@@ -41,7 +45,26 @@ public class LevelView extends GridPane{
 	
 	public void update( int currentRow, int currentCol, int previousRow, int previousCol ) {
 		this.add( chooseImage("p"), currentCol, currentRow );
-		this.add( chooseImage("v"), previousCol, previousRow );
+		//lastNode = getNodeByRowColumnIndex(previousRow, previousCol, this);
+		//System.out.println("Last Node at:" + lastNode.getLayoutX() + "," + lastNode.getLayoutY());
+		//this.getChildren().remove(lastNode);
+		this.add( chooseImage(" "), previousCol, previousRow );
+		
+	}
+	
+	
+	public Node getNodeByRowColumnIndex ( int row,  int column, GridPane gridPane) {
+	    Node result = null;
+	    ObservableList<Node> childrens = this.getChildren();
+
+	    for (Node node : childrens) {
+	        if(GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
+	            result = node;
+	            break;
+	        }
+	    }
+
+	    return result;
 	}
 	
 	public void updateBullet( int currentRow, int currentCol, int previousRow, int previousCol ) {

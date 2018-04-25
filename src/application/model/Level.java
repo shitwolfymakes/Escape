@@ -40,7 +40,7 @@ public class Level implements Runnable{
 	}
 	
 
-	
+	//THREAD STARTS IN MAINMENUCONTROLLER
 	public synchronized void start(){
 		if (running)
 			return;
@@ -72,7 +72,7 @@ public class Level implements Runnable{
 				System.out.println("move");
 			}
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -364,6 +364,10 @@ public class Level implements Runnable{
 	 */
 	public String getLevelLocation( int row, int col ) {
 		return this.level[row][col];
+	}
+	
+	public int getScore() {
+		return 100;
 	}
 	
 }//end class Level

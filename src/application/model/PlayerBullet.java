@@ -21,11 +21,11 @@ public class PlayerBullet {
 	   
 	   public PlayerBullet() {
 		   missileActive = true;
-		   currentRow = Main.player.getCurrentRow()+1;
-		   currentCol = Main.player.getCurrentCol();
+		   currentRow = Main.player.getCurrentRow();
+		   currentCol = Main.player.getCurrentCol()+1;
 		   //missile position will be updated during first move
-		   prevRow = 0;
-		   prevCol = 0;
+		   prevRow = currentRow;
+		   prevCol = currentCol;
 	   }
 	   
 	   /**
@@ -41,6 +41,7 @@ public class PlayerBullet {
 		   if (this.isMissileActive() == false) {
 			   Main.removePlayerBullet(this);
 		   }
+		   this.prevCol = currentCol;
 		   this.currentCol = currentCol+1;
 		   //Main.view.updateBullet(this.currentRow, this.currentCol, this.prevRow, this.prevCol);
 	   }

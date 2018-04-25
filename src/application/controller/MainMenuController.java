@@ -36,7 +36,9 @@ public class MainMenuController implements EventHandler<Event>{
 
     	Main.model = new Level(1);
     	Main.startLevel();
+    	//starts bullet controller thread
     	Main.model.start();
+    	
     	//memory overloads because I don't know how to kill the thread still :/
     }
 
