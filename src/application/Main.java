@@ -32,17 +32,19 @@ import javafx.scene.media.MediaView;
 
 public class Main extends Application {
 	
-	public static final Cortex cortex = new Cortex();  		  // hashmap object containing the data
-													   		  // of everything in the game.
-	public static PlayerProfile profile = new PlayerProfile(); // player profile
-	public static Level model = new Level();		   		  // the model of the app
-    public static LevelView view = new LevelView();			  // the view of the app
-    public static ArrayList<EnemyShip> enemies = new ArrayList<EnemyShip>();
-    public static ArrayList<PlayerBullet> playerBullets; 
 	public static Stage stage;
-	public static PlayerShip player = new PlayerShip(-1, -1);
+	public static final Cortex cortex = new Cortex(); // hashmap object containing the data
+													  // of everything in the game.
+	
+	public static PlayerProfile profile 	  = new PlayerProfile();    // player profile
+	public static Level 		model	      = new Level();		   	// the model of the app
+    public static LevelView 	view 		  = new LevelView();		// the view of the app
+	public static PlayerShip 	player 		  = new PlayerShip(-1, -1);
 	public static BulletHandler bulletHandler = new BulletHandler();
-	public static EnemyHandler enemyHandler = new EnemyHandler();
+	public static EnemyHandler 	enemyHandler  = new EnemyHandler();
+	
+	public static ArrayList<EnemyShip>    enemies       = new ArrayList<EnemyShip>();
+    public static ArrayList<PlayerBullet> playerBullets;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -53,7 +55,6 @@ public class Main extends Application {
 			// load the fxml file we need
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation( Main.class.getResource("../MainMenu.fxml") );
-			
 			AnchorPane layout = (AnchorPane) loader.load();
 			
 			// adds music, once for each audio file to be played
@@ -65,14 +66,11 @@ public class Main extends Application {
 			
 			Scene scene = new Scene( layout );
 			
-			
-			
 			// Sets the stage to the scene & shows stage to user
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
 			//player.play();
-			
 			
 		} catch(Exception e) {
 			e.printStackTrace(); // TODO: handle this better!
@@ -83,8 +81,6 @@ public class Main extends Application {
 	public static void startLevel() {
 		Main.player.setCurrentLocation(3, 1);
 		
-		// could probably move this into Level.java
-		//Main.model = new Level( Main.profile.getCurrentLevel() );
 		enemies = Main.model.collectEnemies();
 		System.out.println("");
 		playerBullets = new ArrayList<PlayerBullet>();
@@ -111,34 +107,7 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}//end try/catch
-		
-		//TODO: make this a thread
-		/* 
-		// move all enemies to the left once per second
-		while (enemies.size() > 0)
-		{
-			try {
-				Thread.sleep(1000);
-
-				for ( EnemyShip e : enemies ) {
-					// need an isTileOccupied()
-
-					if (e.getCurrentCol() == 11) {
-						// jumping the barrier
-						Main.model.enemyJumpBarrier(e);
-					} else if ( e.getCurrentCol() < 10 )
-						continue;
-					else Main.model.updateEnemyLocation(e);
-				}//end for
-
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}//end try/catch
 			
-		}//end while
-		*/
-		
 	}//end startLevel()
 	
 	public static void addPlayerBullet(PlayerBullet b) {
@@ -155,10 +124,23 @@ public class Main extends Application {
 		enemies.remove(e);
 	}
 	
-
-	
 	public static void startHonestJohn() {
-		
+		try {
+			// Load the fxml file we need
+			FXMLLoader loader = new FXMLLoader();
+			
+			// The ../ is important to get the location in the directory structure
+			//  otherwise it throws IllegalStateException
+			loader.setLocation( Main.class.getResource("../HonestJohns.fxml") );
+			AnchorPane layout = (AnchorPane) loader.load();
+			Scene scene = new Scene( layout );
+
+			// Sets the scene to the stage & shows stage to the user
+			stage.setScene(scene);
+			stage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}//end startHonestJohn
 	
 	public static void main(String[] args) {
