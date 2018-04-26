@@ -12,7 +12,9 @@ package application;
 import java.util.ArrayList;
 
 import application.controller.LevelController;
+import application.model.BulletHandler;
 import application.model.Cortex;
+import application.model.EnemyHandler;
 import application.model.EnemyShip;
 import application.model.Level;
 import application.model.PlayerBullet;
@@ -39,6 +41,8 @@ public class Main extends Application {
     public static ArrayList<PlayerBullet> playerBullets; 
 	public static Stage stage;
 	public static PlayerShip player = new PlayerShip(-1, -1);
+	public static BulletHandler bulletHandler = new BulletHandler();
+	public static EnemyHandler enemyHandler = new EnemyHandler();
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -145,6 +149,10 @@ public class Main extends Application {
 	public static void removePlayerBullet(PlayerBullet b) {
 		playerBullets.remove(b);
 		System.out.println(playerBullets);
+	}
+	
+	public static void removeEnemy(EnemyShip e) {
+		enemies.remove(e);
 	}
 	
 

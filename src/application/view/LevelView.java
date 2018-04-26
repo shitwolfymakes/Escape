@@ -14,9 +14,10 @@ import javafx.scene.layout.GridPane;
 
 public class LevelView extends GridPane{
 	
+	
 	private int imgSize;
-	private ImageView lastImg;
-	private Node lastNode;
+	//private ImageView lastImg;
+	//private Node lastNode;
 	public LevelView() {
 		imgSize = 100;
 		
@@ -45,41 +46,35 @@ public class LevelView extends GridPane{
 	
 	public void update( int currentRow, int currentCol, int previousRow, int previousCol ) {
 		this.add( chooseImage("p"), currentCol, currentRow );
-		//lastNode = getNodeByRowColumnIndex(previousRow, previousCol, this);
-		//System.out.println("Last Node at:" + lastNode.getLayoutX() + "," + lastNode.getLayoutY());
-		//this.getChildren().remove(lastNode);
-		this.add( chooseImage(" "), previousCol, previousRow );
-		
+		this.add( chooseImage("d"), previousCol, previousRow );
+
 	}
 	
-	
-	public Node getNodeByRowColumnIndex ( int row,  int column, GridPane gridPane) {
-	    Node result = null;
-	    ObservableList<Node> childrens = this.getChildren();
-
-	    for (Node node : childrens) {
-	        if(GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
-	            result = node;
-	            break;
-	        }
-	    }
-
-	    return result;
+	public void removeEnemy(int currentRow, int currentCol) {
+		this.add( chooseImage("j"), currentCol, currentRow );
 	}
+	
 	
 	public void updateBullet( int currentRow, int currentCol, int previousRow, int previousCol ) {
 		this.add( chooseImage("s"), currentCol, currentRow );
 		this.add( chooseImage("v"), previousCol, previousRow );
 	}
 	
+	public void updateEnemy(int currentRow, int currentCol, int previousRow, int previousCol ) {
+		this.add( chooseImage("e"), currentCol, currentRow );
+		this.add( chooseImage("j"), previousCol, previousRow );
+	}
+	
 	public ImageView chooseImage(String code) {
 		switch( code ) {
 			case "p" : return getPlayerImage();
 			case " " : return getDefaultImage();
+			case "d" : return getBlackShipImage();
 			case "b" : return getDefaultImage();
 			case "s" : return getBulletImage();
 			case "e" : return getEnemyImage();
 			case "v" : return getBlackImage();
+			case "j" : return getBlackEnemy1Image();
 			default: return getDefaultImage();
 		}//end switch
 	}//end chooseImage()
@@ -101,9 +96,16 @@ public class LevelView extends GridPane{
 		return img;
 	}//end getBulletImage()
 	
+	public ImageView getBlackShipImage(){
+		ImageView img = new ImageView("File:data/Escape Sprites/playership_black.png");
+		img.setFitHeight(imgSize);
+		img.setFitWidth(imgSize);
+		return img;
+	}
+	
 	public ImageView getEnemyImage() {
 		//TODO: update, to grab spriteLink from cortex entry
-		ImageView img = new ImageView("File:test_sprites/test_enemy.png");
+		ImageView img = new ImageView("File:data/Escape Sprites/level1enemy.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
@@ -120,7 +122,16 @@ public class LevelView extends GridPane{
 	
 	public ImageView getBlackImage() {
 		//TODO: update, to grab spriteLink from cortex entry
-		ImageView img = new ImageView("File:data/test_sprites/Yello_Dot2.png");
+		ImageView img = new ImageView("File:data/test_sprites/Black_Dot.png");
+		img.setFitHeight(imgSize);
+		img.setFitWidth(imgSize);
+		
+		return img;
+	}//end getDefaultImage()
+	
+	public ImageView getBlackEnemy1Image() {
+		//TODO: update, to grab spriteLink from cortex entry
+		ImageView img = new ImageView("File:data/Escape Sprites/level1enemy_black.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -48,5 +49,15 @@
             <Image url="@../data/Screen_background/pixil-frame-0%20(17).png" />
          </image>
       </ImageView>
+      <Label fx:id="hullLabel" layoutX="523.0" layoutY="14.0" prefHeight="38.0" prefWidth="175.0" text="Label">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="scoreLabel" layoutX="356.0" layoutY="19.0" text="Label">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

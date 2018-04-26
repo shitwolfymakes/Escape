@@ -10,6 +10,7 @@ package application.controller;
 import java.io.IOException;
 
 import application.Main;
+import application.model.BulletHandler;
 import application.model.Level;
 import application.model.PlayerBullet;
 import javafx.event.Event;
@@ -37,7 +38,8 @@ public class MainMenuController implements EventHandler<Event>{
     	Main.model = new Level(1);
     	Main.startLevel();
     	//starts bullet controller thread
-    	Main.model.start();
+    	Main.bulletHandler.start();
+    	Main.enemyHandler.start();
     	
     	//memory overloads because I don't know how to kill the thread still :/
     }

@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.model.EnemyShip;
 import application.model.PlayerBullet;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
@@ -65,7 +66,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		if (event.getCode() != KeyCode.SPACE)	{
 			Main.model.move( key );
 			// update the view to show movement - VIEW
-			Main.view.update(Main.model.getCurrentRow(), Main.model.getCurrentColumn(), Main.player.getPreviousRow(), Main.player.getPreviousCol());
+			Main.view.update(Main.model.getCurrentRow(), Main.model.getCurrentColumn(), Main.model.getPreviousRow(), Main.model.getPreviousColumn());
 			//System.out.println(""+key);
 		} else if (event.getCode() == KeyCode.SPACE) {
 			PlayerBullet b = new PlayerBullet();
@@ -147,10 +148,21 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 								for (PlayerBullet b : Main.playerBullets.toArray(new PlayerBullet[Main.playerBullets.size()])) {
 									Main.view.updateBullet(b.getCurrentRow(), b.getCurrentCol(), b.getPrevRow(), b.getPrevCol());
 								}
+								for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.enemies.size()])) {
+									
+										if (e.getCurrentCol()<10){
+											Main.view.updateEnemy(e.getCurrentRow(), e.getCurrentCol(), e.getPrevRow(), e.getPrevCol());
+										}
+										if (!e.isActive()){	   
+											Main.view.removeEnemy(e.getCurrentRow(), e.getCurrentCol());
+											Main.removeEnemy(e);
+										}
+								}
+									
 								//System.out.println("HERE");
 								hullLabel.setText("TEST");
 								scoreLabel.setText("TEST");
-								
+								Main.model.isLevelOver();
 								}
 							
 							});

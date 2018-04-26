@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import application.Main;
 
-public class Level implements Runnable{
+public class Level {
 	
 	private static final int numRows = 7;
 	private static final int numCols = 10;
@@ -22,8 +22,7 @@ public class Level implements Runnable{
 	private int previousCol;
 	private int longestRow = 0;
 	private ArrayList<EnemyShip> enemyShips = new ArrayList<EnemyShip>();
-	public Thread bulletHandler;
-	public boolean running = false;
+
 	
 	public Level() {};
 	
@@ -40,46 +39,6 @@ public class Level implements Runnable{
 	}
 	
 
-	//THREAD STARTS IN MAINMENUCONTROLLER
-	public synchronized void start(){
-		if (running)
-			return;
-		running = true;
-		bulletHandler = new Thread(this);
-		bulletHandler.start();
-	}
-	
-	public synchronized void stop(){
-		if (!running)
-			return;
-		running = false;
-		try {
-			bulletHandler.join();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	
-	public void run() {
-		
-		while (running)
-		{
-			
-			for (PlayerBullet b : Main.playerBullets.toArray(new PlayerBullet[Main.playerBullets.size()])) {
-				b.update();
-				System.out.println("move");
-			}
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		stop();
-	}
 	
 	/** 
 	 * The collectEnemies method reads in data from level.txt and populates an ArrayList of enemy ships 

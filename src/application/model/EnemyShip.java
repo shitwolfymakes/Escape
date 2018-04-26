@@ -18,12 +18,16 @@ public class EnemyShip extends Ship {
 	private String enemyID;
 	private int currentRow;
 	private int currentCol;
+	private int prevCol;
+	private int prevRow;
 	private int numWeapons;
+	private boolean active = true;
 	
 	public EnemyShip(String enemyID, int r, int c) {
 		this.currentRow = r;
 		this.currentCol = c;
-		
+		this.prevRow = currentRow;
+		this.prevCol = currentCol;
 		ArrayList<String> enemyShipData = new ArrayList<String>();
 		// store data grabbed from the Cortex entry
 		enemyShipData = Main.cortex.getEnemy().get("E_"+ enemyID);
@@ -42,7 +46,19 @@ public class EnemyShip extends Ship {
 		
 		System.out.println(getEnemyID() + " spawned at " + this.currentRow + ", " + this.currentCol );
 	}
-
+	
+	   public void update() {
+		   if (this.getCurrentCol() < 2){
+			   this.setActive(false);
+			   //collision set to false
+		   }
+		   if (this.isActive()){
+			   this.prevCol = currentCol;
+			   this.currentCol = currentCol-1;
+			   System.out.println("Enemies left:" + Main.enemies.size());
+			   System.out.println("Ship at:" +this.currentCol);
+		   }
+	   }
 	/**
 	 * @return the pointValue
 	 */
@@ -139,6 +155,47 @@ public class EnemyShip extends Ship {
 	 */
 	public void setEnemyID(String enemyID) {
 		this.enemyID = enemyID;
+	}
+	/**
+	 * @return the prevCol
+	 */
+	public int getPrevCol() {
+		return prevCol;
+	}
+
+	/**
+	 * @param prevCol the prevCol to set
+	 */
+	public void setPrevCol(int prevCol) {
+		this.prevCol = prevCol;
+	}
+
+	/**
+	 * @return the prevRow
+	 */
+	public int getPrevRow() {
+		return prevRow;
+	}
+
+	/**
+	 * @param prevRow the prevRow to set
+	 */
+	public void setPrevRow(int prevRow) {
+		this.prevRow = prevRow;
+	}
+
+	/**
+	 * @return the active
+	 */
+	public boolean isActive() {
+		return active;
+	}
+
+	/**
+	 * @param active the active to set
+	 */
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 	
 }//end class EnemyShip

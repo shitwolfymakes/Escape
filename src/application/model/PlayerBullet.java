@@ -43,7 +43,6 @@ public class PlayerBullet {
 		   }
 		   this.prevCol = currentCol;
 		   this.currentCol = currentCol+1;
-		   //Main.view.updateBullet(this.currentRow, this.currentCol, this.prevRow, this.prevCol);
 	   }
 	   /**
 	 * @return the missileActive
