@@ -22,6 +22,7 @@ public class EnemyShip extends Ship {
 	private int prevRow;
 	private int numWeapons;
 	private boolean active = true;
+	private boolean dead = false;
 	
 	public EnemyShip(String enemyID, int r, int c) {
 		this.currentRow = r;
@@ -47,18 +48,31 @@ public class EnemyShip extends Ship {
 		System.out.println(getEnemyID() + " spawned at " + this.currentRow + ", " + this.currentCol );
 	}
 	
-	   public void update() {
-		   if (this.getCurrentCol() < 2){
-			   this.setActive(false);
-			   //collision set to false
+	public void update1()
+	{
+		if(Main.model.crash(this.getCurrentRow(), this.getCurrentCol()) && this.getCurrentCol() < 10)
+		   {
+			   this.setDead(true);
 		   }
-		   if (this.isActive()){
-			   this.prevCol = currentCol;
-			   this.currentCol = currentCol-1;
-			   System.out.println("Enemies left:" + Main.enemies.size());
-			   System.out.println("Ship at:" +this.currentCol);
+		   if(Main.model.shot(this.getCurrentRow(), this.getCurrentCol()) && this.getCurrentCol() < 10)
+		   {
+			   this.setDead(true);
 		   }
+	}
+
+	public void update() {
+		
+	   if (this.getCurrentCol() < 2){
+		   this.setActive(false);
+		   //collision set to false
 	   }
+	   if (this.isActive()){
+		   this.prevCol = currentCol;
+		   this.currentCol = currentCol-1;
+		   System.out.println("Enemies left:" + Main.enemies.size());
+		   System.out.println("Ship at:" +this.currentCol);
+	   }
+   }
 	/**
 	 * @return the pointValue
 	 */
@@ -197,5 +211,17 @@ public class EnemyShip extends Ship {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	
+	public boolean isDead() {
+		return dead;
+	}
+
+	/**
+	 * @param active the active to set
+	 */
+	public void setDead(boolean dead) {
+		this.dead = dead;
+	}
+	
 	
 }//end class EnemyShip

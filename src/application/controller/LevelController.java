@@ -150,12 +150,21 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 								}
 								for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.enemies.size()])) {
 									
-										if (e.getCurrentCol()<10){
+										if (e.getCurrentCol()<10)
+										{
 											Main.view.updateEnemy(e.getCurrentRow(), e.getCurrentCol(), e.getPrevRow(), e.getPrevCol());
 										}
-										if (!e.isActive()){	   
+										if (!e.isActive()){	 
+											//Main.view.killEnemy(e.getCurrentRow(), e.getCurrentCol());	
 											Main.view.removeEnemy(e.getCurrentRow(), e.getCurrentCol());
 											Main.removeEnemy(e);
+											
+										}
+										if (e.isDead()){	 
+											Main.view.killEnemy(e.getCurrentRow(), e.getCurrentCol());	
+											//Main.view.removeEnemy(e.getCurrentRow(), e.getCurrentCol());
+											Main.removeEnemy(e);
+											
 										}
 								}
 									
@@ -177,6 +186,5 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			th.start();
 			
 	}
-	
 	
 }//end class LevelController

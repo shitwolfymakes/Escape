@@ -64,6 +64,9 @@ public class LevelView extends GridPane{
 		this.add( chooseImage("e"), currentCol, currentRow );
 		this.add( chooseImage("j"), previousCol, previousRow );
 	}
+	public void killEnemy(int currentRow, int currentCol) {
+		this.add( chooseImage("k"), currentCol, currentRow );
+	}
 	
 	public ImageView chooseImage(String code) {
 		switch( code ) {
@@ -75,6 +78,7 @@ public class LevelView extends GridPane{
 			case "e" : return getEnemyImage();
 			case "v" : return getBlackImage();
 			case "j" : return getBlackEnemy1Image();
+			case "k" : return getExplodinglvl1Image();
 			default: return getDefaultImage();
 		}//end switch
 	}//end chooseImage()
@@ -133,9 +137,17 @@ public class LevelView extends GridPane{
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:data/Escape Sprites/level1enemy_black.png");
 		img.setFitHeight(imgSize);
-		img.setFitWidth(imgSize);
-		
+		img.setFitWidth(imgSize);		
 		return img;
 	}//end getDefaultImage()
+	
+	public ImageView getExplodinglvl1Image() {
+		//TODO: update, to grab spriteLink from cortex entry
+		ImageView img = new ImageView("File:data/Escape Sprites/explodinglvl1enemy.png");
+		img.setFitHeight(imgSize);
+		img.setFitWidth(imgSize);		
+		return img;
+	}//end getDefaultImage()
+	
 	
 }//end class LevelView

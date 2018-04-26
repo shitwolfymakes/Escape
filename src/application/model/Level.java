@@ -23,6 +23,8 @@ public class Level {
 	private int longestRow = 0;
 	private ArrayList<EnemyShip> enemyShips = new ArrayList<EnemyShip>();
 
+	private boolean crash;
+	private boolean shot;
 	
 	public Level() {};
 	
@@ -267,6 +269,30 @@ public class Level {
 		return false;
 	}//end isLevelOver()
 	
+	public boolean crash(int r, int c)
+	{
+		if(r == this.getCurrentRow() && c == this.getCurrentColumn())
+			crash = true;
+		
+		return crash;
+	}
+	public boolean shot(int r, int c)
+	{
+		for(PlayerBullet b: Main.playerBullets)
+		{
+			if(r == b.getCurrentRow() && c == b.getCurrentCol())
+			{
+				shot = true;
+			}
+		}
+		return shot;
+	
+	}
+	
+	
+	/////// Getter and Setters ////////
+	
+	
 	/**
 	 * gets the previous row position.
 	 * @return previous row coordinate.
@@ -328,5 +354,7 @@ public class Level {
 	public int getScore() {
 		return 100;
 	}
+	
+	
 	
 }//end class Level

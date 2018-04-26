@@ -34,6 +34,16 @@ public class EnemyHandler implements Runnable {
 		
 		while (running)
 		{
+			for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.playerBullets.size()])) {
+				e.update1();
+				//System.out.println("move");
+			}
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.playerBullets.size()])) {
 				e.update();
