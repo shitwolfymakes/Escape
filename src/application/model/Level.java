@@ -293,6 +293,7 @@ public class Level {
 				if ( es.getCurrentCol() == pb.getCurrentCol() && es.getCurrentRow() == pb.getCurrentRow() ) {
 					System.out.println("Hit!");
 					es.setDead(true);
+					b.remove();
 					//e.remove();
 					//pb.setMissileActive(false);
 					shot = true;
