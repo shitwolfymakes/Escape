@@ -290,7 +290,7 @@ public class Level {
 			PlayerBullet pb = b.next();
 			while (e.hasNext()) {
 				EnemyShip es = e.next();
-				if ( es.getCurrentCol() == pb.getCurrentCol() && es.getCurrentRow() == pb.getCurrentRow() ) {
+				if ( es.getCurrentCol() == pb.getCurrentCol()-1 && es.getCurrentRow() == pb.getCurrentRow() ) {
 					System.out.println("Hit!");
 					es.setDead(true);
 					b.remove();

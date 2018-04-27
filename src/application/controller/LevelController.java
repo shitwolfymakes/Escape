@@ -71,7 +71,10 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			//System.out.println(""+key);
 		} else if (event.getCode() == KeyCode.SPACE) {
 			PlayerBullet b = new PlayerBullet();
-			Main.addPlayerBullet(b);
+			if (Main.playerBullets.size() < 10) {
+				Main.addPlayerBullet(b);	
+			}
+			
 		}
 		//else fire bullet
 
