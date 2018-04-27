@@ -14,6 +14,6 @@
             <Image url="@../data/Screen_background/GameOverBG.png" />
          </image>
       </ImageView>
-      <Button fx:id="mainMenu" layoutX="365.0" layoutY="445.0" mnemonicParsing="false" onAction="#handle" text="Main Menu" />
+      <Button fx:id="highScores" layoutX="365.0" layoutY="445.0" mnemonicParsing="false" onAction="#handle" text="High Scores" />
    </children>
 </AnchorPane>
