@@ -11,66 +11,40 @@ import java.util.ArrayList;
 
 public class PlayerProfile {
 	
-	private String username;
-	private int currentHull;
+	//private String username;
+	//private int currentHull;
 	//private int currentShields;
 	private int currentLevel;
-	private int difficultyLevel;
+	//private int difficultyLevel;
 	private int points;
 	private int money;
-	private int numLevelsUnlocked;
-	private ArrayList<String> upgrades = new ArrayList<String>();
+	//private int numLevelsUnlocked;
+	//private ArrayList<String> upgrades = new ArrayList<String>();
 	
-	private Save s = new Save();
+	//private Save s = new Save();
 	
 	public PlayerProfile() {
-		this.numLevelsUnlocked = -1;
+		//this.numLevelsUnlocked = -1;
 		this.currentLevel 	   = -1;
 		this.points		 	   = 0;
 		this.money		 	   = 0;
-		this.upgrades          = null;
-		this.username	       = null;
+		//this.upgrades          = null;
+		//this.username	       = null;
 	}//end empty constructor
 	
-	public PlayerProfile(String username) 
-	{
-		this.username = username;
-	}
-	
 	// run this on first time playing, then follow with initProfile()
-	public void createProfile(String username, int difficulty) throws IOException
+	public void createProfile()
 	{
 		// set new profile to default values
-		PlayerProfile p = new PlayerProfile(username);
-		p.setDifficultyLevel(difficulty);
+		PlayerProfile p = new PlayerProfile();
+		//p.setDifficultyLevel(difficulty);
+		p.setCurrentLevel(1);
 		p.setPoints(0);
 		p.setMoney(0);
-		p.setNumLevelsUnlocked(1);
+		//p.setNumLevelsUnlocked(1);
 		
 		// save the newly made profile
-		s.updateSave(p);
-	}
-	
-	public PlayerProfile initProfile(String username)
-	{
-		// create the current profile, and populate it with
-		//    the data stored in the save file
-		PlayerProfile p = new PlayerProfile(username);
-		s.parseSave(getUsername(), p);
-		
-		return p;
-	}//end initProfile()
-	
-	public void saveProfile(PlayerProfile p) throws IOException
-	{
-		s.updateSave(p);
-	}//end saveProfile
-
-	/**
-	 * @return the username
-	 */
-	public String getUsername() {
-		return username;
+		//s.updateSave(p);
 	}
 
 	/**
@@ -78,13 +52,6 @@ public class PlayerProfile {
 	 */
 	public int getCurrentLevel() {
 		return currentLevel;
-	}
-
-	/**
-	 * @return the difficultyLevel
-	 */
-	public int getDifficultyLevel() {
-		return difficultyLevel;
 	}
 
 	/**
@@ -102,59 +69,10 @@ public class PlayerProfile {
 	}
 
 	/**
-	 * @return the numLevelsUnlocked
-	 */
-	public int getNumLevelsUnlocked() {
-		return numLevelsUnlocked;
-	}
-
-	/**
-	 * @return the upgrades
-	 */
-	public ArrayList<String> getUpgrades() {
-		return upgrades;
-	}
-
-	/**
-	 * @return the s
-	 */
-	public Save getS() {
-		return s;
-	}
-
-	/**
-	 * @return the currentHull
-	 */
-	public int getCurrentHull() {
-		return currentHull;
-	}
-
-	/**
-	 * @param currentHull the currentHull to set
-	 */
-	public void setCurrentHull(int currentHull) {
-		this.currentHull = currentHull;
-	}
-
-	/**
-	 * @param username the username to set
-	 */
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	/**
 	 * @param currentLevel the currentLevel to set
 	 */
 	public void setCurrentLevel(int currentLevel) {
 		this.currentLevel = currentLevel;
-	}
-
-	/**
-	 * @param difficultyLevel the difficultyLevel to set
-	 */
-	public void setDifficultyLevel(int difficultyLevel) {
-		this.difficultyLevel = difficultyLevel;
 	}
 
 	/**
@@ -170,26 +88,7 @@ public class PlayerProfile {
 	public void setMoney(int money) {
 		this.money = money;
 	}
-
-	/**
-	 * @param numLevelsUnlocked the numLevelsUnlocked to set
-	 */
-	public void setNumLevelsUnlocked(int numLevelsUnlocked) {
-		this.numLevelsUnlocked = numLevelsUnlocked;
-	}
-
-	/**
-	 * @param s the s to set
-	 */
-	public void setS(Save s) {
-		this.s = s;
-	}
-
-	/**
-	 * @param upgrades the upgrades to add
-	 */
-	public void addUpgrades(String upgrade) {
-		upgrades.add(upgrade);
-	}
+	
+	
 
 }//end PlayerProfile

@@ -49,11 +49,6 @@ public class Main extends Application {
 	public static BulletHandler bulletHandler = new BulletHandler();
 	public static EnemyHandler  enemyHandler  = new EnemyHandler();
 	public static CollisionDetector collisionDetector = new CollisionDetector();
-
-	// threads to be used
-	public Thread levelUpdaterThread;
-	public Thread collisionDetectorThread;
-	public Thread enemyShipThread;
 	
 	@Override
 	public void start(Stage primaryStage) {

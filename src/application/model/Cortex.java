@@ -100,8 +100,6 @@ public class Cortex {
 	}//end parseLevel()
 
 	public void loadWeapons() {
-		int	i = 0;
-		
 		try {
 			Scanner scan = new Scanner( new File("data/weapons/weapons.txt") );
 			
@@ -113,7 +111,6 @@ public class Cortex {
 				List<String> weapons = new ArrayList<String>( Arrays.asList(tokens) );
 				//add to HashMap
 				weapon.put("W_"+ tokens[1], (ArrayList<String>) weapons);
-				i++;
 				System.out.println(weapons.toString());
 			}//end while
 			
@@ -125,8 +122,6 @@ public class Cortex {
 	}//end loadWeapons()
 
 	public void loadEnemies() {
-		int	i = 0;
-		
 		try {
 			Scanner scan = new Scanner( new File("data/enemies/enemies.txt") );
 			
@@ -137,7 +132,6 @@ public class Cortex {
 				List<String> enemies = new ArrayList<String>( Arrays.asList(tokens) );
 				//add to HashMap
 				enemy.put("E_"+ tokens[1], (ArrayList<String>) enemies);
-				i++;
 				System.out.println(enemies.toString());
 			}//end while
 			
@@ -149,8 +143,6 @@ public class Cortex {
 	}//end loadEnemies()
 
 	public void loadUpgrades() {
-		int	i = 0;
-		
 		try {
 			Scanner scan = new Scanner( new File("data/upgrades/upgrades.txt") );
 			
@@ -162,7 +154,6 @@ public class Cortex {
 				List<String> upgrades = new ArrayList<String>( Arrays.asList(tokens) );
 				//add to HashMap
 				upgrade.put("U_"+ tokens[1], (ArrayList<String>) upgrades);
-				i++;
 				System.out.println(upgrades.toString());
 			}//end while
 			
