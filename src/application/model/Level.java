@@ -276,17 +276,19 @@ public class Level {
 		
 		return crash;
 	}
+	// needs to check each enemy against all the bullets
 	public boolean shot(int r, int c)
 	{
 		for(PlayerBullet b: Main.playerBullets)
-		{
-			if(r == b.getCurrentRow() && c == b.getCurrentCol())
-			{
-				shot = true;
-			}
-		}
+			for(EnemyShip e: Main.enemies)
+				if ( b.getCurrentCol() == e.getCurrentCol() && b.getCurrentRow() == e.getCurrentRow() )
+				{
+					Main.enemies.remove(Main.enemies.indexOf(e));
+					Main.playerBullets.remove(Main.playerBullets.indexOf(b));
+					System.out.println("Hit!");
+					shot = true;
+				}
 		return shot;
-	
 	}
 	
 	
