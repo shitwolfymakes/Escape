@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -23,48 +22,41 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-public class HighScoreController implements Initializable{
+public class HighScoreController implements Initializable {
 
-	@FXML
-	private ListView<String> scoreView;
-
-	@FXML
-	private Button back, nameEnter;
-
-	@FXML
-	private TextField name;
-
-	ArrayList<String> scoreTest = new ArrayList<String>();
-
-	Scanner scan;
+	@FXML private ListView<String> scoreView;
+	@FXML private Button 		   back, nameEnter;
+	@FXML private TextField 	   name;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) { 
 		displayHighScores();
-	}//end initialize
+	}//end initialize()
 
 	public void displayHighScores() {
-		// TODO Will fill ListView with data.
-		ObservableList<String> items = FXCollections.observableArrayList ();
-		try 
-		{
-			scan = new Scanner(new File("data/highscores.txt"));
+		try {
+			// Fill ListView with data.
+			ObservableList<String> items = FXCollections.observableArrayList ();
+			Scanner 			   scan  = new Scanner(new File("data/highscores.txt"));
+			
+			while(scan.hasNextLine())
+			{
+				String line = scan.nextLine();
+				String[] tokens = line.split(",");
+
+				items.add(String.format("%-70s \t%s", tokens[0], tokens[1]));
+				Collections.sort(items);
+				Collections.reverse(items);
+				scoreView.setItems(items);
+			}//end while
+			
+			scan.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}//end try/catch
-		while(scan.hasNextLine())
-		{
-			String line = scan.nextLine();
-			String[] tokens = line.split(",");
-
-			items.add(String.format("%-70s \t%s", tokens[0], tokens[1]));
-			Collections.sort(items);
-			Collections.reverse(items);
-			scoreView.setItems(items);
-		}//end while
 		
-	}
+	}//end displayHighScores()
 
 	public void back() {
 		try {
@@ -93,9 +85,8 @@ public class HighScoreController implements Initializable{
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		}//end try/catch
 		displayHighScores();
-
 	}//end addName()
 
 }//end class highScoreController
