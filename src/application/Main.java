@@ -10,6 +10,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import application.controller.LevelController;
 import application.model.BulletHandler;
@@ -41,8 +42,8 @@ public class Main extends Application {
 	public static Level 		model 	= new Level();		      // the model of the app
     public static LevelView 	view 	= new LevelView();		  // the view of the app
     
-    public static ArrayList<EnemyShip> 	  enemies = new ArrayList<EnemyShip>();
-    public static ArrayList<PlayerBullet> playerBullets; 
+    public static List<EnemyShip> 	  enemies = new ArrayList<EnemyShip>();
+    public static List<PlayerBullet> playerBullets; 
 	
 	public static BulletHandler bulletHandler = new BulletHandler();
 	public static EnemyHandler  enemyHandler  = new EnemyHandler();

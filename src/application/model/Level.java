@@ -7,6 +7,7 @@
 package application.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import application.Main;
 
@@ -269,6 +270,7 @@ public class Level {
 		return false;
 	}//end isLevelOver()
 	
+	//checks for collisions [WORKING]
 	public boolean crash(int r, int c)
 	{
 		if(r == this.getCurrentRow() && c == this.getCurrentColumn())
@@ -276,24 +278,32 @@ public class Level {
 		
 		return crash;
 	}
-	// needs to check each enemy against all the bullets
-	public boolean shot(int r, int c)
+
+	//checks for collisions [WORKING]
+	public boolean shot()
 	{
-		for(PlayerBullet b: Main.playerBullets)
-			for(EnemyShip e: Main.enemies)
-				if ( b.getCurrentCol() == e.getCurrentCol() && b.getCurrentRow() == e.getCurrentRow() )
-				{
-					Main.enemies.remove(Main.enemies.indexOf(e));
-					Main.playerBullets.remove(Main.playerBullets.indexOf(b));
+		boolean shot = false;
+		Iterator<EnemyShip>    e = Main.enemies.iterator();
+		Iterator<PlayerBullet> b = Main.playerBullets.iterator();
+		
+		while (b.hasNext()) {
+			PlayerBullet pb = b.next();
+			while (e.hasNext()) {
+				EnemyShip es = e.next();
+				if ( es.getCurrentCol() == pb.getCurrentCol() && es.getCurrentRow() == pb.getCurrentRow() ) {
 					System.out.println("Hit!");
+					e.remove();
+					b.remove();
 					shot = true;
-				}
+				}//end if
+			}//end inner while
+		}//end outer while
+		
 		return shot;
-	}
+	}//end shot()
 	
 	
 	/////// Getter and Setters ////////
-	
 	
 	/**
 	 * gets the previous row position.

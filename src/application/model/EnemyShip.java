@@ -54,7 +54,7 @@ public class EnemyShip extends Ship {
 		   {
 			   this.setDead(true);
 		   }
-		   if(Main.model.shot(this.getCurrentRow(), this.getCurrentCol()) && this.getCurrentCol() < 10)
+		   if(Main.model.shot())
 		   {
 			   this.setDead(true);
 		   }
