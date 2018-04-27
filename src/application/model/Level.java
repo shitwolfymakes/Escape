@@ -23,8 +23,8 @@ public class Level {
 	private int longestRow = 0;
 	private ArrayList<EnemyShip> enemyShips = new ArrayList<EnemyShip>();
 
-	private boolean crash;
-	private boolean shot;
+	private boolean crash = false;
+	private boolean shot  = false;
 	
 	public Level() {};
 	
