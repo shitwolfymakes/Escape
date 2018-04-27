@@ -51,14 +51,21 @@ public class EnemyShip extends Ship {
 	public void update1()
 	{
 		if(Main.model.crash(this.getCurrentRow(), this.getCurrentCol()) && this.getCurrentCol() < 10)
-		   {
-			   this.setDead(true);
-			   Main.player.setDead(true);
-		   }
-		   if(Main.model.shot())
-		   {
-			   this.setDead(true);
-		   }
+			{
+				// TODO: play explodey animation
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			    this.setDead(true);
+			    Main.player.setDead(true);
+		    }
+		    if(Main.model.shot())
+		    {
+		    	this.setDead(true);
+		    }
 	}
 
 	public void update() {
