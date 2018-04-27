@@ -1,7 +1,9 @@
 package application.controller;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -23,54 +25,47 @@ import javafx.scene.layout.AnchorPane;
 
 public class HighScoreController implements Initializable{
 
-    @FXML
-    private ListView<String> scoreView;
-    
-    @FXML
-    private Button back;
-    
-    @FXML
-    private TextField name;
-    
-    ArrayList<String> scoreTest = new ArrayList<String>();
-    
+	@FXML
+	private ListView<String> scoreView;
+
+	@FXML
+	private Button back, nameEnter;
+
+	@FXML
+	private TextField name;
+
+	ArrayList<String> scoreTest = new ArrayList<String>();
+
 	Scanner scan;
-    
-    
-    
-    
-    
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) { 
-		
-		
-		
-		
+		displayHighScores();
+	}//end initialize
+
+	public void displayHighScores() {
 		// TODO Will fill ListView with data.
-		ObservableList<String> items =FXCollections.observableArrayList ();
+		ObservableList<String> items = FXCollections.observableArrayList ();
 		try 
 		{
 			scan = new Scanner(new File("data/highscores.txt"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}//end try/catch
 		while(scan.hasNextLine())
 		{
 			String line = scan.nextLine();
 			String[] tokens = line.split(",");
-			
-			
-			
+
 			items.add(String.format("%-70s \t%s", tokens[0], tokens[1]));
 			Collections.sort(items);
 			Collections.reverse(items);
 			scoreView.setItems(items);
-		}
-				
+		}//end while
+		
 	}
-	
-	
+
 	public void back() {
 		try {
 			// Load the FXML document (we created with SceneBuilder)
@@ -80,12 +75,27 @@ public class HighScoreController implements Initializable{
 			// Load the layout from the FXML and add it to the scene
 			AnchorPane layout = (AnchorPane) loader.load();				
 			Scene scene = new Scene( layout );
-						
+
 			// Set the scene to stage and show the stage to the user
 			Main.stage.setScene(scene);
 		}catch( IOException e ) {
 			e.printStackTrace();
-		}
-	}
+		}//end try/catch
+	}//end back()
 
-}
+	public void addName() {
+		String str = String.format( "\n%d,%s", Main.profile.getPoints(), name.getText() );
+		name.setText("");
+		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter("data/highscores.txt", true));
+			bw.write(str);
+			bw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		displayHighScores();
+
+	}//end addName()
+
+}//end class highScoreController
