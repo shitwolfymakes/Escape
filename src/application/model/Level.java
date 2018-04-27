@@ -292,8 +292,9 @@ public class Level {
 				EnemyShip es = e.next();
 				if ( es.getCurrentCol() == pb.getCurrentCol() && es.getCurrentRow() == pb.getCurrentRow() ) {
 					System.out.println("Hit!");
-					e.remove();
-					b.remove();
+					es.setDead(true);
+					//e.remove();
+					//pb.setMissileActive(false);
 					shot = true;
 				}//end if
 			}//end inner while
