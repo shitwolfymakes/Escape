@@ -14,6 +14,7 @@ import java.util.List;
 
 import application.controller.LevelController;
 import application.model.BulletHandler;
+import application.model.CollisionDetector;
 import application.model.Cortex;
 import application.model.EnemyHandler;
 import application.model.EnemyShip;
@@ -47,6 +48,7 @@ public class Main extends Application {
 	
 	public static BulletHandler bulletHandler = new BulletHandler();
 	public static EnemyHandler  enemyHandler  = new EnemyHandler();
+	public static CollisionDetector collisionDetector = new CollisionDetector();
 
 	// threads to be used
 	public Thread levelUpdaterThread;

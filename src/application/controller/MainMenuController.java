@@ -40,6 +40,7 @@ public class MainMenuController implements EventHandler<Event>{
     	//starts bullet controller thread
     	Main.bulletHandler.start();
     	Main.enemyHandler.start();
+    	Main.collisionDetector.start();
     	
     	//memory overloads because I don't know how to kill the thread still :/
     }

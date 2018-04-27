@@ -2,20 +2,20 @@ package application.model;
 
 import application.Main;
 
-public class BulletHandler implements Runnable {
-	public Thread bulletHandler;
+public class CollisionDetector implements Runnable {
+	public Thread collisionDetector;
 	public boolean running = false;
 	
-	public BulletHandler() {}
+	public CollisionDetector() {}
 	
 	//THREAD STARTS IN MAINMENUCONTROLLER
 	public synchronized void start(){
 		if (running)
 			return;
 		running = true;
-		bulletHandler = new Thread(this);
-		bulletHandler.setDaemon(true);
-		bulletHandler.start();
+		collisionDetector = new Thread(this);
+		collisionDetector.setDaemon(true);
+		collisionDetector.start();
 	}
 	
 	public synchronized void stop(){
@@ -23,7 +23,7 @@ public class BulletHandler implements Runnable {
 			return;
 		running = false;
 		try {
-			bulletHandler.join();
+			collisionDetector.join();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,18 +35,19 @@ public class BulletHandler implements Runnable {
 		
 		while (running)
 		{
-			
-			for (PlayerBullet b : Main.playerBullets.toArray(new PlayerBullet[Main.playerBullets.size()])) {
-				b.update();
+			for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.playerBullets.size()])) {
+				e.update1();
 				//System.out.println("move");
 			}
 			try {
-				Thread.sleep(100);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+
 		}
 		stop();
 	}
+
 }

@@ -14,6 +14,7 @@ public class EnemyHandler implements Runnable {
 			return;
 		running = true;
 		enemyHandler = new Thread(this);
+		enemyHandler.setDaemon(true);
 		enemyHandler.start();
 	}
 	
