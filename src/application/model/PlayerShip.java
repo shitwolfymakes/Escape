@@ -14,6 +14,7 @@ public class PlayerShip extends Ship {
 	private int currentCol;
 	private int previousRow;
 	private int previousCol;
+	private boolean dead = false;
 	
 	public PlayerShip() {} //end default constructor 
 	
@@ -72,5 +73,14 @@ public class PlayerShip extends Ship {
 	public String toString() {
 		return "Player Ship at: " + this.currentRow + "," + this.currentCol;
 	}
+
+	public boolean isDead() {
+		return dead;
+	}
+
+	public void setDead(boolean dead) {
+		this.dead = dead;
+	}
+
 	
 }//end class PlayerShip

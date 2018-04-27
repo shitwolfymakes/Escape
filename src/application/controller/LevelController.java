@@ -34,7 +34,7 @@ import javafx.util.Duration;
 
 public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	
-	private boolean running = false;
+	private boolean running = true;
 	private int BACKGROUND_WIDTH = 2000;
 	public ParallelTransition parallelTransition;
 
@@ -171,11 +171,41 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 								//System.out.println("HERE");
 								hullLabel.setText("TEST");
 								scoreLabel.setText("TEST");
-								Main.model.isLevelOver();
+								if(Main.model.isLevelOver()) {
+									running = false;
+									if(Main.player.isDead()==true) {
+										try {
+											
+											FXMLLoader loader = new FXMLLoader();
+											loader.setLocation( HighScoreController.class.getResource("../../DeathScreen.fxml"));
+
+											AnchorPane layout = (AnchorPane) loader.load();				
+											Scene scene = new Scene( layout );
+														
+											Main.stage.setScene(scene);
+										}catch( IOException e ) {
+											e.printStackTrace();
+										}
+										
+									}else {
+										try {
+										
+											FXMLLoader loader = new FXMLLoader();
+											loader.setLocation( HighScoreController.class.getResource("../../HonestJohns.fxml"));
+
+											AnchorPane layout = (AnchorPane) loader.load();				
+											Scene scene = new Scene( layout );
+													
+											Main.stage.setScene(scene);
+										}catch( IOException e ) {
+										e.printStackTrace();
+									}
 								}
+							}
 							
-							});
-							Thread.sleep(100);
+							}
+						});
+						Thread.sleep(100);
 						
 					}
 					return null;
