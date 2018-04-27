@@ -172,20 +172,6 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 							scoreLabel.setText("TEST");
 							if(Main.model.isLevelOver()) {
 								running = false;
-								if(Main.player.isDead()==true) {
-									try {
-
-										FXMLLoader loader = new FXMLLoader();
-										loader.setLocation( HighScoreController.class.getResource("../../DeathScreen.fxml"));
-
-										AnchorPane layout = (AnchorPane) loader.load();				
-										Scene scene = new Scene( layout );
-
-										Main.stage.setScene(scene);
-									}catch( IOException e ) {
-										e.printStackTrace();
-									}//end try/catch
-								} else {
 									try {
 
 										FXMLLoader loader = new FXMLLoader();
@@ -198,8 +184,24 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									}catch( IOException e ) {
 										e.printStackTrace();
 									}//end try/catch
-								}//end else
-							}//end if level over
+								
+							
+							}
+							if(Main.player.isDead()==true) {
+								try {
+									running = false;
+									Main.enemies.clear();
+									FXMLLoader loader = new FXMLLoader();
+									loader.setLocation( HighScoreController.class.getResource("../../DeathScreen.fxml"));
+
+									AnchorPane layout = (AnchorPane) loader.load();				
+									Scene scene = new Scene( layout );
+
+									Main.stage.setScene(scene);
+								}catch( IOException e ) {
+									e.printStackTrace();
+								}//end try/catch
+							}
 
 						}//end run()
 					});

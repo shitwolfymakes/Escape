@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DeathScreenController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../data/Screen_background/GameOverBG.png" />
          </image>
       </ImageView>
-      <Button fx:id="highScores" layoutX="365.0" layoutY="445.0" mnemonicParsing="false" onAction="#handle" text="High Scores" />
+      <Button fx:id="mainMenu" layoutX="365.0" layoutY="445.0" mnemonicParsing="false" onAction="#handle" text="Main Menu" />
    </children>
 </AnchorPane>

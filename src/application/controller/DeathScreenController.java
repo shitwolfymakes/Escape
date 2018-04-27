@@ -14,15 +14,16 @@ import javafx.scene.layout.AnchorPane;
 public class DeathScreenController implements EventHandler<Event>{
 
     @FXML
-    private Button highScores;
+    private Button mainMenu;
 
 
     @Override
     public void handle(Event event) {
+    	Main.player.setDead(false);
     	try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(DeathScreenController.class.getResource("../../HighScores.fxml") );
+			loader.setLocation(DeathScreenController.class.getResource("../../MainMenu.fxml") );
 
 			// Load the layout from the FXML and add it to the scene
 			AnchorPane layout = (AnchorPane) loader.load();				
