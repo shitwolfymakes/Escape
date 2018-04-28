@@ -1,8 +1,9 @@
 /**
- * 
+ * this controls the main menu
  * 
  * @author wolfyCSA
  */
+
 
 package application.controller;
 
@@ -31,8 +32,13 @@ public class MainMenuController implements EventHandler<Event>{
 
     @FXML
     private Button highScoreButton;
-
-    @FXML
+    /**
+     * this loads a new level. starts the Level thread, bulletHandler thread, enemyHandler thread,
+     * and collisionDetector.
+     * 
+     * @param event
+     */
+    @FXML 
     public void start(Event event) {
 
     	Main.model = new Level(1);
@@ -44,7 +50,14 @@ public class MainMenuController implements EventHandler<Event>{
     	
     	//memory overloads because I don't know how to kill the thread still :/
     }
-
+    /**
+     * 
+     * 
+     * 
+     * @event
+     * 
+     * loads the credits.fxml
+     */
     @Override
 	public void handle(Event event) {
     	try {
@@ -62,7 +75,11 @@ public class MainMenuController implements EventHandler<Event>{
 			e.printStackTrace();
 		}
     }
-
+    /**
+     * loads the highschores.fxml
+     * 
+     * @param event
+     */
     @FXML
     public void highScore(Event event) {
     	try {

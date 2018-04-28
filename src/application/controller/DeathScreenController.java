@@ -1,5 +1,11 @@
 package application.controller;
-
+/**
+ * 
+ * @author Michael Indo
+ * 
+ * this controls the death screen fxml
+ * 
+ */
 import java.io.IOException;
 
 import application.Main;
@@ -16,7 +22,11 @@ public class DeathScreenController implements EventHandler<Event>{
     @FXML
     private Button highScores;
 
-
+    /**
+     * @param event
+     * this loads the high score fxml
+     * 
+     */
     @Override
     public void handle(Event event) {
     	Main.player.setDead(false);

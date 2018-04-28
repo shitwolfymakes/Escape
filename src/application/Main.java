@@ -4,7 +4,7 @@
  * 		2018 Spring Semester of CS 3443.001
  * 
  * 
- * @author wolfyCSA
+ * @author indomichael, icekold736, CaseyCannon423, wolfyCSA, Mpoznecki
  */
 
 package application;
@@ -59,7 +59,10 @@ public class Main extends Application {
 	public static AudioClip bulletSound;
 	public static AudioClip explosionSound;
 	
-	
+	/**
+	 * @param primaryStage
+	 * 
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		
