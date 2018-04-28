@@ -60,7 +60,7 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 			cashString += String.valueOf(cashAmount);
 		    money.setText(cashString);
 		    cashString = "$";
-		}
+		}//end if
 		if(((Button)event.getSource()).equals(startLevel)) {
 			
 	    	Main.startLevel();
@@ -68,21 +68,17 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 	    	Main.bulletHandler.start();
 	    	Main.enemyHandler.start();
 	    	Main.collisionDetector.start();
-			
-		}
+		}//end if
 		
-		
+	}//end handle()
 	
-	}
     /**
      * @param url, resources
      * 
      * loads the cash amount and updates the font style for the fxml
-     * 
      */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
 		cashString += String.valueOf(cashAmount);
 		money.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
 		dialogue.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
@@ -92,9 +88,6 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 		startLevel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
 	    money.setText(cashString);
 	    cashString = "$";
-	    
-		
-	}
+	}//end initialize()
 	
-
-}
+}//end class HonestJohnController
