@@ -5,7 +5,13 @@
  */
 
 package application.controller;
-
+/**
+ * @author indomichael
+ * 
+ * this class is the controller for honest john's. It lets the user purchase libations for his/her
+ * journey through space. It also loads the next level. 
+ * 
+ */
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -42,6 +48,11 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
     @FXML
     private Text menu;
 
+    /**
+     * @param event
+     * 
+     * checks what button the user presses, and either buys beer or starts the next level
+     */
 	@Override
 	public void handle(Event event) {
 		if(((Button)event.getSource()).equals(buyBeer)) {
@@ -64,7 +75,12 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 		
 	
 	}
-
+    /**
+     * @param url, resources
+     * 
+     * loads the cash amount and updates the font style for the fxml
+     * 
+     */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
