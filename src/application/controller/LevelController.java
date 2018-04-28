@@ -71,7 +71,10 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			//System.out.println(""+key);
 		} else if (event.getCode() == KeyCode.SPACE) {
 			PlayerBullet b = new PlayerBullet();
-			Main.addPlayerBullet(b);
+			if (Main.playerBullets.size() < 10) {
+				Main.addPlayerBullet(b);	
+			}
+			
 		}
 		//else fire bullet
 
@@ -135,7 +138,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 				//PlayerBullet bullet;
 				//Image image = new Image("File:" + bullet.getSpriteLink());
 				while (running) {	
-					score =  "Score:"+(Main.model.getScore()) ;
+					score =  "Score:"+(Main.profile.getPoints()) ;
 					hull = "Hull Points Remaining:"+(Main.player.getHullPoints());
 
 					final String fscore = score;
@@ -169,7 +172,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 							}//end for
 
 							hullLabel.setText("TEST");
-							scoreLabel.setText("TEST");
+							scoreLabel.setText(fscore);
 							if(Main.model.isLevelOver()) {
 								running = false;
 									try {
