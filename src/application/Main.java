@@ -51,6 +51,13 @@ public class Main extends Application {
 	public static EnemyHandler  enemyHandler  = new EnemyHandler();
 	public static CollisionDetector collisionDetector = new CollisionDetector();
 	
+	public static Media bulletSound;
+	public static MediaPlayer bulletSoundPlayer;
+	public static MediaView bulletSoundMediaView;
+	public static Media explosionSound;
+	public static MediaPlayer explosionSoundPlayer;
+	public static MediaView explosionSoundMediaView;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		
@@ -65,10 +72,23 @@ public class Main extends Application {
 			
 			// adds music, once for each audio file to be played
 			Media gameMusic = new Media(new File("data/music/Kevin_MacLeod_-_Ouroboros_-_Full_Mix.wav").toURI().toString());
+			bulletSound = new Media(new File("data/music/Photon gun shot.wav").toURI().toString());
+			explosionSound = new Media(new File("data/music/Explosion+3.wav").toURI().toString());
+			
+			// creates players for all the media
 			MediaPlayer gameMusicPlayer = new MediaPlayer(gameMusic);
+			bulletSoundPlayer = new MediaPlayer(bulletSound);
+			explosionSoundPlayer = new MediaPlayer(explosionSound);
+			
 			//needs to be added as a view
 			MediaView gameMusicMediaView = new MediaView(gameMusicPlayer);
+			bulletSoundMediaView = new MediaView(bulletSoundPlayer);
+			explosionSoundMediaView = new MediaView(explosionSoundPlayer);
+			
+			// add music to the layout
 			layout.getChildren().add(gameMusicMediaView);
+			layout.getChildren().add(bulletSoundMediaView);
+			layout.getChildren().add(explosionSoundMediaView);
 			
 			Scene scene = new Scene( layout );
 			
