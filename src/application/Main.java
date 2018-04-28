@@ -29,6 +29,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -54,12 +55,10 @@ public class Main extends Application {
 	public static Media gameMusic;
 	public static MediaPlayer gameMusicPlayer;
 	public static MediaView gameMusicMediaView;
-	public static Media bulletSound;
-	public static MediaPlayer bulletSoundPlayer;
-	public static MediaView bulletSoundMediaView;
-	public static Media explosionSound;
-	public static MediaPlayer explosionSoundPlayer;
-	public static MediaView explosionSoundMediaView;
+	
+	public static AudioClip bulletSound;
+	public static AudioClip explosionSound;
+	
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -75,23 +74,17 @@ public class Main extends Application {
 			
 			// adds music, once for each audio file to be played
 			gameMusic = new Media(new File("data/music/Kevin_MacLeod_-_Ouroboros_-_Full_Mix.wav").toURI().toString());
-			bulletSound = new Media(new File("data/music/Photon gun shot.wav").toURI().toString());
-			explosionSound = new Media(new File("data/music/Explosion+3.wav").toURI().toString());
+			bulletSound = new AudioClip(new File("data/music/Photon gun shot.wav").toURI().toString());
+			explosionSound = new AudioClip(new File("data/music/Explosion+3.wav").toURI().toString());
 			
 			// creates players for all the media
 			gameMusicPlayer = new MediaPlayer(gameMusic);
-			bulletSoundPlayer = new MediaPlayer(bulletSound);
-			explosionSoundPlayer = new MediaPlayer(explosionSound);
 			
 			//needs to be added as a view
 			gameMusicMediaView = new MediaView(gameMusicPlayer);
-			bulletSoundMediaView = new MediaView(bulletSoundPlayer);
-			explosionSoundMediaView = new MediaView(explosionSoundPlayer);
 			
 			// add music to the layout
 			layout.getChildren().add(gameMusicMediaView);
-			layout.getChildren().add(bulletSoundMediaView);
-			layout.getChildren().add(explosionSoundMediaView);
 			
 			Scene scene = new Scene( layout );
 			
