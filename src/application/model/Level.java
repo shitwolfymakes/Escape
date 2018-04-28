@@ -101,7 +101,6 @@ public class Level {
 		{
 			String line = eachRow.get(i).toString();
 			String[] tokens = line.split(",");
-			
 			// fill the array
 			for (int j = 0; j < tokens.length; j++)
 				matrix[i][j] = tokens[j];
