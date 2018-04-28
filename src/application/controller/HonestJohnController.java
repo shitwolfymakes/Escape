@@ -63,7 +63,6 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 		}
 		if(((Button)event.getSource()).equals(startLevel)) {
 			
-			Main.model = new Level(Main.profile.getCurrentLevel());
 	    	Main.startLevel();
 	    	//starts bullet controller thread
 	    	Main.bulletHandler.start();
