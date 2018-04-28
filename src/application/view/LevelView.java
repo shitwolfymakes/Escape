@@ -1,6 +1,7 @@
 /**
+ * the view places the sprites onto the gridpane and moves them around the map
  * 
- * @author wolfyCSA
+ * @author indomichael, icekold736, CaseyCannon423, wolfyCSA, Mpoznecki
  *
  */
 
@@ -25,8 +26,9 @@ public class LevelView extends GridPane{
 		//this.setUpView();
 	}
 
-	// TODO: create the other getter methods 
-	// TODO: find a way to get this to update the view
+	/**
+	 * populates the Gridpane with ImageViews
+	 */
 	
 	public void setUpView() {
 		
@@ -44,23 +46,46 @@ public class LevelView extends GridPane{
 			}
 		}
 	}
-	
+	/**
+	 * @param currentRow, currentCol, previousRow, previousCol
+	 * 
+	 * moves the player ship to the new coordinates given as paramters. replaces the previous sprite with
+	 * a black shadow 
+	 */
 	public void update( int currentRow, int currentCol, int previousRow, int previousCol ) {
 		this.add( chooseImage("p"), currentCol, currentRow );
 		this.add( chooseImage("d"), previousCol, previousRow );
 
 	}
-	
+	/**
+	 * removes the enemy from the Gridpane by replacing the ship with a black shadow
+	 * 
+	 * @param currentRow
+	 * @param currentCol
+	 */
 	public void removeEnemy(int currentRow, int currentCol) {
 		this.add( chooseImage("j"), currentCol, currentRow );
 	}
 	
-	
+    /**
+     * @param currentRow, currentCol, previousRow, previousCol
+     * 
+     * moves the bullets one Gridpane. replaces previous bullet with a black shadow
+     */
 	public void updateBullet( int currentRow, int currentCol, int previousRow, int previousCol ) {
 		this.add( chooseImage("s"), currentCol, currentRow );
 		this.add( chooseImage("v"), previousCol, previousRow );
 	}
-	
+	/**
+	 * 
+	 * @param currentRow
+	 * @param currentCol
+	 * @param previousRow
+	 * @param previousCol
+	 * @param e
+	 * 
+	 * moves the enemy one gridpane. replaces the image with a black ship.
+	 */
 	public void updateEnemy(int currentRow, int currentCol, int previousRow, int previousCol, EnemyShip e) {
 		this.add( chooseEnemyImage(e), currentCol, currentRow );
 		if (e.getSpriteLink().equals("data/Escape Sprites/level1enemy.png")) {
@@ -69,6 +94,13 @@ public class LevelView extends GridPane{
 			this.add(chooseImage("m"), previousCol, previousRow);
 		}
 	}
+	/**
+	 * @param currentRow
+	 * @param currentCol
+	 * @param e
+	 * 
+	 * replaces the enemy sprite with an exploding ship
+	 */
 	public void killEnemy(int currentRow, int currentCol, EnemyShip e) {
 		if (e.getSpriteLink().equals("data/Escape Sprites/level1enemy.png")) {
 			this.add(chooseImage("k"), currentCol, currentRow );
@@ -81,7 +113,12 @@ public class LevelView extends GridPane{
 	//	this.add( chooseImage("k"), currentCol, currentRow );
 //	}
 	}
-	
+	/**
+	 * picks an image based on the code passed as an arg 
+	 * @param code
+	 * @return ImageView
+	 *
+	 */
 	public ImageView chooseImage(String code) {
 		switch( code ) {
 			case "p" : return getPlayerImage();
@@ -97,14 +134,22 @@ public class LevelView extends GridPane{
 			default: return getDefaultImage();
 		}//end switch
 	}//end chooseImage()
-	
+	/**
+	 * picks the enemy ship to spawn 
+	 * @param eShip
+	 * @return
+	 */
 	public ImageView chooseEnemyImage(EnemyShip eShip) {
 		ImageView img = new ImageView("File:" + eShip.getSpriteLink());
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
 	}
-	
+	/**
+	 * grabs the image of the player
+	 * 
+	 * @return ImageVieew
+	 */
 	public ImageView getPlayerImage() {
 		//TODO: update, to grab spriteLink from profile object
 		ImageView img = new ImageView("File:data/Escape Sprites/playership.png");
@@ -112,7 +157,10 @@ public class LevelView extends GridPane{
 		img.setFitWidth(imgSize);
 		return img;
 	}//end getPlayerImage()
-	
+	/**
+	 * gets the bullet image
+	 * @return ImageView
+	 */
 	public ImageView getBulletImage() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:data/test_sprites/Yello_Dot.png");
@@ -120,14 +168,20 @@ public class LevelView extends GridPane{
 		img.setFitWidth(imgSize);
 		return img;
 	}//end getBulletImage()
-	
+	/**
+	 * gets the shadow of the players ship
+	 * @return ImageView
+	 */
 	public ImageView getBlackShipImage(){
 		ImageView img = new ImageView("File:data/Escape Sprites/playership_black.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
 	}
-	
+	/**
+	 * gets the default iamge
+	 * @return  ImageView
+	 */
 	public ImageView getDefaultImage() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:data/test_sprites/default.png");
@@ -136,7 +190,10 @@ public class LevelView extends GridPane{
 		
 		return img;
 	}//end getDefaultImage()
-	
+	/**
+	 * gets the shadow of the bullet
+	 * @return ImageView
+	 */
 	public ImageView getBlackImage() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:data/test_sprites/Black_Dot.png");
@@ -145,7 +202,10 @@ public class LevelView extends GridPane{
 		
 		return img;
 	}//end getDefaultImage()
-	
+	/**
+	 * gets the shadow of the level1 enemy1 ship
+	 * @return ImageView
+	 */
 	public ImageView getBlackEnemy1Image() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:data/Escape Sprites/level1enemy_black.png");
@@ -153,7 +213,10 @@ public class LevelView extends GridPane{
 		img.setFitWidth(imgSize);		
 		return img;
 	}//end getDefaultImage()
-	
+	/**
+	 * gets the shadow of the enemy2 ship
+	 * @return
+	 */
 	public ImageView getBlackEnemy2Image() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:data/Escape Sprites/level2enemy_black.png");
@@ -161,7 +224,10 @@ public class LevelView extends GridPane{
 		img.setFitWidth(imgSize);		
 		return img;
 	}//end getDefaultImage()
-	
+	/**
+	 * gets the image of the explosing level one ship
+	 * @return ImageView
+	 */
 	public ImageView getExplodinglvl1Image() {
 		//TODO: update, to grab spriteLink from cortex entry
 		ImageView img = new ImageView("File:data/Escape Sprites/explodinglvl1enemy.png");
@@ -169,7 +235,10 @@ public class LevelView extends GridPane{
 		img.setFitWidth(imgSize);		
 		return img;
 	}//end getDefaultImage()
-	
+	/**
+	 * gets the image of the exploding level 2 ship
+	 * @return ImageView
+	 */
 	public ImageView getExplodinglvl2Image() {
 		
 		ImageView img = new ImageView("File:data/Escape Sprites/explodinglevel2enemy.png");
