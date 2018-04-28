@@ -178,8 +178,8 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									Main.removeEnemy(e);
 								}//end if
 							}//end for
-
-							//hullLabel.setText("TEST");
+							String levelNum = String.format("Level: %d", Main.profile.getCurrentLevel());
+							hullLabel.setText(levelNum);
 							scoreLabel.setText(fscore);
 							if(Main.model.isLevelOver()) {
 								running = false;

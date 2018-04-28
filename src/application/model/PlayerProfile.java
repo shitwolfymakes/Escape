@@ -1,6 +1,9 @@
 /**
  *	This class stores the data for the current player
- *
+ * @author indomichael
+ * @author IceKold736
+ * @author Mpoznecki
+ * @author caseycannon423
  * @author wolfyCSA
  */
 
@@ -19,7 +22,9 @@ public class PlayerProfile {
 	//private ArrayList<String> upgrades = new ArrayList<String>();
 	
 	//private Save s = new Save();
-	
+	/**
+	 * Creates a new player profile
+	 */
 	public PlayerProfile() {
 		//this.numLevelsUnlocked = -1;
 		this.currentLevel 	   = 1;
@@ -30,6 +35,9 @@ public class PlayerProfile {
 	}//end empty constructor
 	
 	// run this on first time playing, then follow with initProfile()
+	/**
+	 * Creates a new profile for user
+	 */
 	public void createProfile()
 	{
 		// set new profile to default values
@@ -80,7 +88,7 @@ public class PlayerProfile {
 	}
 	
 	/**
-	 * @param points the points to set
+	 * @param points to be added to points
 	 */
 	public void addPoints(int points) {
 		this.points += points;
