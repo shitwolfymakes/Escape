@@ -1,6 +1,9 @@
 /**
  * 	Subclass of Ship.java. Governs the player ship object
- * 
+ * @author Mpoznecki
+ * @author IceKold736
+ * @author indomichael
+ * @author caseycannon423
  * @author wolfyCSA
  */
 
@@ -14,8 +17,16 @@ public class PlayerShip extends Ship {
 	private int previousCol;
 	private boolean dead = false;
 	
+	/**
+	 * Default constructor for playership object
+	 */
 	public PlayerShip() {} //end default constructor 
 	
+	/**
+	 * Constructor for playership at certain coordinates
+	 * @param r starting row
+	 * @param c starting column
+	 */
 	public PlayerShip(int r, int c) {
 		this.currentRow = r;
 		this.currentCol = c;
@@ -30,6 +41,11 @@ public class PlayerShip extends Ship {
 		//System.out.println(this.toString());
 	}//end overloaded constructor
 
+	/**
+	 * Sets a location of a playership based on given coordinates
+	 * @param row to be set
+	 * @param column to be set
+	 */
 	public void setCurrentLocation(int row, int column) {
 		this.currentRow = row;
 		this.currentCol = column;
@@ -63,19 +79,35 @@ public class PlayerShip extends Ship {
 		return previousCol;
 	}
 	
+	/**
+	 * sets a previous location
+	 * @param row to be set
+	 * @param column to be set
+	 */
 	public void setPreviousLocation(int row, int column) {
 		this.previousRow = row;
 		this.previousCol = column;
 	}
 	
+	/**
+	 * Designated default print for PlayerShip
+	 */
 	public String toString() {
 		return "Player Ship at: " + this.currentRow + "," + this.currentCol;
 	}
 
+	/**
+	 * Checks if ship is dead
+	 * @return true if dead, false if not
+	 */
 	public boolean isDead() {
 		return dead;
 	}
-
+	
+	/**
+	 * Sets dead to true or false
+	 * @param dead boolean that is true if dead or false if not
+	 */
 	public void setDead(boolean dead) {
 		this.dead = dead;
 	}

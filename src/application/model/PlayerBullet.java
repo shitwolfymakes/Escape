@@ -1,7 +1,10 @@
 /**
  * 	When the player presses the fire button, a PlayerBullet object
  *  		is created. This Object stores the data on the bullet.
- *  
+ * @author caseycannon423
+ * @author Mpoznecki
+ * @author indomichael
+ * @author IceKold736 
  * @author wolfyCSA
  */
 
@@ -13,12 +16,15 @@ public class PlayerBullet {
 	   public final int MAX_MISSILES = 10;
 	   private boolean missileActive;
 
-	private int currentRow;
+	   private int currentRow;
 	   private int currentCol;
 	   private int prevRow;
 	   private int prevCol;
 	   private String spriteLink = "data/test_sprites/Yello_Dot.png";
 	   
+	   /**
+	    * The PlayerBullet method constructor player bullet objects
+	    */
 	   public PlayerBullet() {
 		   missileActive = true;
 		   currentRow = Main.player.getCurrentRow();
@@ -44,11 +50,11 @@ public class PlayerBullet {
 		   this.prevCol = currentCol;
 		   this.currentCol = currentCol+1;
 	   }
-	   /**
+	   
+	   
+	 /**
 	 * @return the missileActive
 	 */
-	
-	
 	public boolean isMissileActive() {
 		return missileActive;
 	}
