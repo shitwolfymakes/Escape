@@ -1,4 +1,10 @@
-
+/**
+ * This class is the controller for level. It produces the main javafx thread.
+ * It also loads the scrolling background for the game.
+ * 
+ * @author indomichael, icekold736, CaseyCannon423, wolfyCSA, Mpoznecki
+ *
+ */
 
 package application.controller;
 
@@ -26,14 +32,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
-
-/**
- * This class is the controller for level. It produces the main javafx thread.
- * It also loads the scrolling background for the game.
- * 
- * @author indomichael, icekold736, CaseyCannon423, wolfyCSA, Mpoznecki
- *
- */
 
 public class LevelController implements EventHandler<KeyEvent>, Initializable {
 
