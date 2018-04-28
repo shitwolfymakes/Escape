@@ -31,6 +31,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 
 public class LevelController implements EventHandler<KeyEvent>, Initializable {
@@ -114,6 +115,8 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	@Override
 
 	public void initialize(URL url, ResourceBundle resources) {
+		hullLabel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
+		scoreLabel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
 		if (runNum == 0) {
 			running = true;
 			runUpdates();
