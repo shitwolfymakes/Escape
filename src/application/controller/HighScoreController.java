@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 import application.Main;
+import application.model.PlayerProfile;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -59,6 +60,8 @@ public class HighScoreController implements Initializable {
 	}//end displayHighScores()
 
 	public void back() {
+		Main.profile = new PlayerProfile();
+		Main.profile.setCurrentLevel(1);
 		try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();

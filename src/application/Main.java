@@ -63,6 +63,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		
+		Main.profile = new PlayerProfile();
+		Main.profile.setCurrentLevel(1);
 		stage = primaryStage;
 		try {
 			
@@ -105,10 +107,10 @@ public class Main extends Application {
 	}
 	
 	public static void startLevel() {
+		Main.model = new Level(Main.profile.getCurrentLevel());
 		Main.player.setCurrentLocation(3, 1);
 		
 		// could probably move this into Level.java
-		//Main.model = new Level( Main.profile.getCurrentLevel() );
 		enemies = Main.model.collectEnemies();
 		System.out.println("");
 		playerBullets = new ArrayList<PlayerBullet>();
@@ -121,7 +123,6 @@ public class Main extends Application {
 			AnchorPane layout = (AnchorPane) loader.load();
 
 			// Load the Level view
-			//Main.view = new LevelView( Main.model );
 			Main.view = new LevelView();
 			Main.view.setUpView();
 			layout.getChildren().add( Main.view );

@@ -22,7 +22,7 @@ public class PlayerProfile {
 	
 	public PlayerProfile() {
 		//this.numLevelsUnlocked = -1;
-		this.currentLevel 	   = -1;
+		this.currentLevel 	   = 1;
 		this.points		 	   = 0;
 		this.money		 	   = 0;
 		//this.upgrades          = null;
