@@ -1,19 +1,15 @@
 /**
- * this controls the main menu
+ * This controls the main menu
  * 
  * @author wolfyCSA
  */
 
-
 package application.controller;
-
 
 import java.io.IOException;
 
 import application.Main;
-import application.model.BulletHandler;
 import application.model.Level;
-import application.model.PlayerBullet;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
