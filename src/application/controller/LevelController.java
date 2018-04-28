@@ -175,6 +175,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 							scoreLabel.setText(fscore);
 							if(Main.model.isLevelOver()) {
 								running = false;
+								Main.profile.setCurrentLevel(Main.profile.getCurrentLevel() +1);
 									try {
 
 										FXMLLoader loader = new FXMLLoader();
