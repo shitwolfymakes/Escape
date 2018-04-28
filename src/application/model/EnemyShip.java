@@ -77,8 +77,6 @@ public class EnemyShip extends Ship {
 	   if (this.isActive()){
 		   this.prevCol = currentCol;
 		   this.currentCol = currentCol-1;
-		   System.out.println("Enemies left:" + Main.enemies.size());
-		   System.out.println("Ship at:" +this.currentCol);
 	   }
    }
 	/**
