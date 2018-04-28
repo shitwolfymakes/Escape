@@ -6,9 +6,6 @@
 
 package application.model;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 public class PlayerProfile {
 	
 	//private String username;
