@@ -1,8 +1,4 @@
-/**
- * 
- * 
- * @author wolfyCSA
- */
+
 
 package application.controller;
 
@@ -32,6 +28,14 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
+/**
+ * This class is the controller for level. It produces the main javafx thread.
+ * It also loads the scrolling background for the game.
+ * 
+ * @author indomichael, icekold736, CaseyCannon423, wolfyCSA, Mpoznecki
+ *
+ */
+
 public class LevelController implements EventHandler<KeyEvent>, Initializable {
 
 	private boolean running = true;
@@ -45,7 +49,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 
 	@FXML
 	private Label scoreLabel;
-	//Thread th;
+	
 
 	@FXML ImageView background1, background2;
 
@@ -85,8 +89,13 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			Main.startHonestJohn();
 
 	}//end handle()
-
+	/**
+	 * this method loads the thread and the scrolling background.
+	 * 
+	 * @param url, resources
+	 */
 	@Override
+
 	public void initialize(URL url, ResourceBundle resources) {
 		if (runNum == 0) {
 			running = true;
@@ -124,7 +133,12 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		parallelTransition.setCycleCount(Animation.INDEFINITE);
 		parallelTransition.play();
 	}//end initializeBackground()
-
+	
+	/**
+	 * runUpdates() is the main thread that updates the javaFX document
+	 * 
+	 */
+	
 	public void runUpdates() {
 		//seconds = 30;
 
