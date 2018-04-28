@@ -21,7 +21,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -75,6 +74,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			//System.out.println(""+key);
 		} else if (event.getCode() == KeyCode.SPACE) {
 			PlayerBullet b = new PlayerBullet();
+			Main.bulletSound.play();
 			if (Main.playerBullets.size() < 10) {
 				Main.addPlayerBullet(b);	
 			}

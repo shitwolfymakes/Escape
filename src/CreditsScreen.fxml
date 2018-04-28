@@ -14,37 +14,37 @@
             <Image url="@PHHighScoreBG.png" />
          </image>
       </ImageView>
-      <Text fx:id="text1" fill="WHITE" layoutX="168.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By The Boolean Boyz">
+      <Text fx:id="text1" fill="WHITE" layoutX="14.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By The Boolean Boyz">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <Text fx:id="text2" fill="WHITE" layoutX="369.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="wolfy">
+      <Text fx:id="text2" fill="WHITE" layoutX="338.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="wolfy">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="text3" fill="WHITE" layoutX="364.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Casey">
+      <Text fx:id="text3" fill="WHITE" layoutX="334.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Casey">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="text4" fill="WHITE" layoutX="355.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Michael">
+      <Text fx:id="text4" fill="WHITE" layoutX="325.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Michael">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="text5" fill="WHITE" layoutX="368.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin">
+      <Text fx:id="text5" fill="WHITE" layoutX="337.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="text6" fill="WHITE" layoutX="353.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="andr01d">
+      <Text fx:id="text6" fill="WHITE" layoutX="322.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="andr01d">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="text7" fill="WHITE" layoutX="179.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Music Courtesy of Kevin Macleod">
+      <Text fx:id="text7" fill="WHITE" layoutX="25.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Music Courtesy of Kevin Macleod">
          <font>
             <Font size="28.0" />
          </font>
