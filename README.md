@@ -13,10 +13,10 @@ Game controls:
 3. Remember to enter your name into the high score board when you're done!
 
 Features included in demo that did not make it into the final build:
--.Upgrades are not yet implemented
--.Honest John only sells ice cold beer
--.Hull points are not implemented, players die upon collision with enemy ship
--.Enemies do not shoot
--.Smooth movement is not implemented
--.ImagesViews cannot be removed from gridpane due to limitations in JavaFx
--.Modding is not yet supported, but customs level.txt's can be implemented! 
+——Upgrades are not yet implemented
+——Honest John only sells ice cold beer
+——Hull points are not implemented, players die upon collision with enemy ship
+——Enemies do not shoot
+——Smooth movement is not implemented
+——ImagesViews cannot be removed from gridpane due to limitations in JavaFx
+——Modding is not yet supported, but customs level.txt's can be implemented! 
