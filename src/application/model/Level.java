@@ -217,7 +217,7 @@ public class Level {
 	 */
 	public void moveLeft() {
 		// check if the column to left is a wall
-		if( !(this.level[this.currentRow][this.currentCol-1].equals("b")) ) {
+		if( this.currentCol >= 0 ) {
 			this.updateCurrentLocation( this.currentRow, this.currentCol-1 );
 			System.out.println(Main.player.toString());
 		}

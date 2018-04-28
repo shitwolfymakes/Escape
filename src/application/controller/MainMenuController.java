@@ -27,7 +27,7 @@ public class MainMenuController implements EventHandler<Event>{
     private Button startButton;
 
     @FXML
-    private Button loadButton;
+    private Button creditsButton;
 
     @FXML
     private Button highScoreButton;
@@ -47,7 +47,20 @@ public class MainMenuController implements EventHandler<Event>{
 
     @Override
 	public void handle(Event event) {
-    	System.out.print("dink");
+    	try {
+			// Load the FXML document (we created with SceneBuilder)
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation( HighScoreController.class.getResource("../../CreditsScreen.fxml") );
+
+			// Load the layout from the FXML and add it to the scene
+			AnchorPane layout = (AnchorPane) loader.load();				
+			Scene scene = new Scene( layout );
+						
+			// Set the scene to stage and show the stage to the user
+			Main.stage.setScene(scene);
+		}catch( IOException e ) {
+			e.printStackTrace();
+		}
     }
 
     @FXML
