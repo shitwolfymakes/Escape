@@ -9,6 +9,8 @@ package application.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Main;
+import application.model.Level;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -47,7 +49,18 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 			cashString += String.valueOf(cashAmount);
 		    money.setText(cashString);
 		    cashString = "$";
-	}
+		}
+		if(((Button)event.getSource()).equals(startLevel)) {
+			
+			Main.model = new Level(Main.profile.getCurrentLevel());
+	    	Main.startLevel();
+	    	//starts bullet controller thread
+	    	Main.bulletHandler.start();
+	    	Main.enemyHandler.start();
+	    	Main.collisionDetector.start();
+			
+		}
+		
 		
 	
 	}
@@ -64,6 +77,7 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 		startLevel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
 	    money.setText(cashString);
 	    cashString = "$";
+	    
 		
 	}
 	
