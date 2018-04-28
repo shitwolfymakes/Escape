@@ -108,6 +108,7 @@ public class Main extends Application {
 	
 	public static void startLevel() {
 		Main.model = new Level(Main.profile.getCurrentLevel());
+		Main.model = new Level(6);
 		Main.player.setCurrentLocation(3, 1);
 		
 		// could probably move this into Level.java
