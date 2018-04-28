@@ -1,9 +1,6 @@
 /**
  *	This class stores the data for the current player
- * @author indomichael
- * @author IceKold736
- * @author Mpoznecki
- * @author caseycannon423
+ * 
  * @author wolfyCSA
  */
 

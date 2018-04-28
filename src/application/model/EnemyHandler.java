@@ -3,9 +3,9 @@ package application.model;
 import application.Main;
 
 /**
+ * EnemyHandler class controls and updates the Enemy Ship thread
  * 
- * @author EnemyHandler class controls and updates the Enemy Ship thread
- *
+ * @author wolfyCSA, caseycannon423, IceKold736, Mpoznecki, indomichael
  */
 
 
