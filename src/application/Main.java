@@ -62,6 +62,7 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
+		
 		Main.profile = new PlayerProfile();
 		Main.profile.setCurrentLevel(1);
 		stage = primaryStage;
