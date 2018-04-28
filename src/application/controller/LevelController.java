@@ -165,8 +165,9 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									Main.view.removeEnemy(e.getCurrentRow(), e.getCurrentCol());
 									Main.removeEnemy(e);
 								}//end if
-								if (e.isDead()){	 
-									Main.view.killEnemy(e.getCurrentRow(), e.getCurrentCol());	
+								if (e.isDead()){
+									
+									Main.view.killEnemy(e.getCurrentRow(), e.getCurrentCol(), e);	
 									//Main.view.removeEnemy(e.getCurrentRow(), e.getCurrentCol());
 									Main.removeEnemy(e);
 								}//end if

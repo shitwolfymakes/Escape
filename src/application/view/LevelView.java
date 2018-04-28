@@ -69,8 +69,17 @@ public class LevelView extends GridPane{
 			this.add(chooseImage("m"), previousCol, previousRow);
 		}
 	}
-	public void killEnemy(int currentRow, int currentCol) {
-		this.add( chooseImage("k"), currentCol, currentRow );
+	public void killEnemy(int currentRow, int currentCol, EnemyShip e) {
+		if (e.getSpriteLink().equals("data/Escape Sprites/level1enemy.png")) {
+			this.add(chooseImage("k"), currentCol, currentRow );
+		} else {
+			this.add(chooseImage("u"), currentCol, currentRow);
+		}
+		//this.add( chooseImage("k"), currentCol, currentRow );
+		
+	//public void killEnemy2(int currentRow, int currentCol) {
+	//	this.add( chooseImage("k"), currentCol, currentRow );
+//	}
 	}
 	
 	public ImageView chooseImage(String code) {
@@ -83,6 +92,7 @@ public class LevelView extends GridPane{
 			case "v" : return getBlackImage();
 			case "j" : return getBlackEnemy1Image();
 			case "k" : return getExplodinglvl1Image();
+			case "u" : return getExplodinglvl2Image();
 			case "m" : return getBlackEnemy2Image();
 			default: return getDefaultImage();
 		}//end switch
@@ -159,6 +169,17 @@ public class LevelView extends GridPane{
 		img.setFitWidth(imgSize);		
 		return img;
 	}//end getDefaultImage()
+	
+	public ImageView getExplodinglvl2Image() {
+		
+		ImageView img = new ImageView("File:data/Escape Sprites/explodinglevel2enemy.png");
+		img.setFitHeight(imgSize);
+		img.setFitWidth(imgSize);		
+		return img;
+		
+	}
+	
+	
 	
 	
 }//end class LevelView

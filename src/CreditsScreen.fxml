@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreditsScreenController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@PHHighScoreBG.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="text1" fill="WHITE" layoutX="168.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By The Boolean Boyz">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fx:id="text2" fill="WHITE" layoutX="369.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="wolfy">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="text3" fill="WHITE" layoutX="364.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Casey">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="text4" fill="WHITE" layoutX="355.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Michael">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="text5" fill="WHITE" layoutX="368.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="text6" fill="WHITE" layoutX="353.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="andr01d">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="text7" fill="WHITE" layoutX="179.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Music Courtesy of Kevin Macleod">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Button fx:id="mainMenu" layoutX="354.0" layoutY="492.0" mnemonicParsing="false" onAction="#handle" text="Main Menu" />
+   </children>
 </AnchorPane>
-
