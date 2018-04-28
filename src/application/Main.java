@@ -3,7 +3,6 @@
  * 		Escape! is the Boolean Boyz team project for the 
  * 		2018 Spring Semester of CS 3443.001
  * 
- * 
  * @author indomichael, icekold736, CaseyCannon423, wolfyCSA, Mpoznecki
  */
 
@@ -109,6 +108,9 @@ public class Main extends Application {
 		gameMusicPlayer.play();
 	}
 	
+	/**
+	 * This method starts the level
+	 */
 	public static void startLevel() {
 		Main.model = new Level(Main.profile.getCurrentLevel());
 		//Main.model = new Level(1);
@@ -143,21 +145,32 @@ public class Main extends Application {
 		
 	}//end startLevel()
 	
+	/**
+	 * @param b bullet to be added to the bullet list
+	 */
 	public static void addPlayerBullet(PlayerBullet b) {
 		playerBullets.add(b);
 		System.out.println(playerBullets);
 	}
 	
+	/**
+	 * @param b bullet to be removed from the bullet list
+	 */
 	public static void removePlayerBullet(PlayerBullet b) {
 		playerBullets.remove(b);
 		System.out.println(playerBullets);
 	}
 	
+	/**
+	 * @param e enemy to be removed from the enemy list
+	 */
 	public static void removeEnemy(EnemyShip e) {
 		enemies.remove(e);
 	}
 	
-
+	/**
+	 * This method switches the view to Honest John's
+	 */
 	public static void startHonestJohn() {
 		try {
 			// Load the fxml file we need

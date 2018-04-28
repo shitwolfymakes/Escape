@@ -5,7 +5,7 @@ import application.Main;
 /**
  * CollisionDetector class controls and updates the Collison thread
  * 
- * @author IceKold736, caseycannon423, indomichael, wolfyCSA, Mpoznecki
+ * @author wolfyCSA, caseycannon423, IceKold736, Mpoznecki, indomichael
  *
  */
 public class CollisionDetector implements Runnable {

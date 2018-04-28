@@ -1,11 +1,8 @@
 /**
  * 	When the player presses the fire button, a PlayerBullet object
  *  		is created. This Object stores the data on the bullet.
- * @author caseycannon423
- * @author Mpoznecki
- * @author indomichael
- * @author IceKold736 
- * @author wolfyCSA
+ * 
+ * @author wolfyCSA, caseycannon423, IceKold736, Mpoznecki, indomichael
  */
 
 package application.model;

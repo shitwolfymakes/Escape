@@ -29,8 +29,6 @@ public class CreditsScreenController implements EventHandler<ActionEvent>, Initi
 
     @FXML
     private Button mainMenu;
-    
-    
 	
 	@Override
 	public void handle(ActionEvent event) {
@@ -51,8 +49,6 @@ public class CreditsScreenController implements EventHandler<ActionEvent>, Initi
 		
 	}//end handle()
 
-
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		text1.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 36));
@@ -62,7 +58,6 @@ public class CreditsScreenController implements EventHandler<ActionEvent>, Initi
 		text5.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 24));
 		text6.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 24));
 		text7.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 28));
-		
 	}//end initialize
 	
 }//end class CreditsScreenController

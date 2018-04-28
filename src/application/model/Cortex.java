@@ -36,11 +36,13 @@ public class Cortex {
 	public Map< String, ArrayList<String> >       			enemy    = new HashMap< String, ArrayList<String> >();
 	public Map< String, ArrayList<String> >       			upgrade  = new HashMap< String, ArrayList<String> >();
 	
-	
 	public Cortex() {
 		initCortex();
 	}//end constructor
 
+	/**
+	 * Initializes the Cortex HashMap, filling it with data
+	 */
 	public void initCortex() {
 		loadLevels();
 		System.out.println("Levels loaded!");
@@ -60,6 +62,9 @@ public class Cortex {
 		System.out.println("Cortex compiled!");
 	}//end initCortex()
 
+	/**
+	 * Loads levels into the level HashMap
+	 */
 	public void loadLevels() {
 		int i = 1;
 
@@ -74,9 +79,13 @@ public class Cortex {
 			} else break;
 		}//end while
 		
-		
 	}//end loadLevels()
 
+	/**
+	 * 
+	 * @param f the File to be parsed
+	 * @return a String List containing the level data
+	 */
 	public List<String> parseLevel(File f)
 	{
 		List<String> fullLevel = new ArrayList<String>();
@@ -99,6 +108,9 @@ public class Cortex {
 		return fullLevel;
 	}//end parseLevel()
 
+	/**
+	 * Loads weapons into the weapons HashMap
+	 */
 	public void loadWeapons() {
 		try {
 			Scanner scan = new Scanner( new File("data/weapons/weapons.txt") );
@@ -121,6 +133,9 @@ public class Cortex {
 		
 	}//end loadWeapons()
 
+	/**
+	 * Loads enemies into the enemies HashMap
+	 */
 	public void loadEnemies() {
 		try {
 			Scanner scan = new Scanner( new File("data/enemies/enemies.txt") );
@@ -142,6 +157,9 @@ public class Cortex {
 		
 	}//end loadEnemies()
 
+	/**
+	 * Loads upgrades into the upgrades HashMap
+	 */
 	public void loadUpgrades() {
 		try {
 			Scanner scan = new Scanner( new File("data/upgrades/upgrades.txt") );

@@ -32,6 +32,7 @@ public class Level {
 	/**
 	 * Overloaded constructor for level objects. Parses level to fill level String 
 	 * array, and then syncronizes starting player position with level starting position.
+	 * 
 	 * @param levelNum Designates which "level.txt" will be loaded.
 	 */
 	public Level(int levelNum) {

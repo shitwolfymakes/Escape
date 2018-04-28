@@ -1,11 +1,8 @@
 /**
  * Super class to Enemy.java and Player.java
  * 		defines shared data variables 
+ *
  * @author wolfyCSA
- * @author indomichael
- * @author IceKold736
- * @author Mpoznecki
- * @author caseycannon423
  */
 
 package application.model;

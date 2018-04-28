@@ -1,19 +1,15 @@
 /**
- * this controls the main menu
+ * This controls the main menu
  * 
  * @author wolfyCSA
  */
 
-
 package application.controller;
-
 
 import java.io.IOException;
 
 import application.Main;
-import application.model.BulletHandler;
 import application.model.Level;
-import application.model.PlayerBullet;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -24,14 +20,8 @@ import javafx.scene.layout.AnchorPane;
 
 public class MainMenuController implements EventHandler<Event>{
 
-    @FXML
-    private Button startButton;
-
-    @FXML
-    private Button creditsButton;
-
-    @FXML
-    private Button highScoreButton;
+    @FXML private Button startButton, creditsButton, highScoreButton;
+    
     /**
      * this loads a new level. starts the Level thread, bulletHandler thread, enemyHandler thread,
      * and collisionDetector.

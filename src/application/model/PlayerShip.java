@@ -1,9 +1,6 @@
 /**
  * 	Subclass of Ship.java. Governs the player ship object
- * @author Mpoznecki
- * @author IceKold736
- * @author indomichael
- * @author caseycannon423
+ * 
  * @author wolfyCSA
  */
 

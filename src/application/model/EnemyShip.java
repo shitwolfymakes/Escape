@@ -24,6 +24,12 @@ public class EnemyShip extends Ship {
 	private boolean active = true;
 	private boolean dead = false;
 	
+	/**
+	 * 
+	 * @param enemyID id of the enemy 
+	 * @param r row location of the enemy
+	 * @param c column location of the enemy
+	 */
 	public EnemyShip(String enemyID, int r, int c) {
 		this.currentRow = r;
 		this.currentCol = c;
