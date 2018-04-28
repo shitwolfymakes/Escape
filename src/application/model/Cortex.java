@@ -79,7 +79,6 @@ public class Cortex {
 			} else break;
 		}//end while
 		
-		
 	}//end loadLevels()
 
 	/**
