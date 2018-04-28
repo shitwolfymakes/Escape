@@ -93,7 +93,7 @@ public class Level {
 		
 		ArrayList<String> eachRow = new ArrayList<String>();
 		eachRow = Main.cortex.getLevel().get("L_"+levelNum);
-		int longestRow = getLongestRow(eachRow);
+		int longestRow = getLongestRow(eachRow)+1;
 		
 		String[][] matrix = new String[7][longestRow];
 		
@@ -101,7 +101,6 @@ public class Level {
 		{
 			String line = eachRow.get(i).toString();
 			String[] tokens = line.split(",");
-			
 			// fill the array
 			for (int j = 0; j < tokens.length; j++)
 				matrix[i][j] = tokens[j];

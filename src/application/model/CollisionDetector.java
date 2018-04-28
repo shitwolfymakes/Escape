@@ -2,6 +2,12 @@ package application.model;
 
 import application.Main;
 
+/**
+ * CollisionDetector class controls and updates the Collison thread
+ * 
+ * @author IceKold736, caseycannon423, indomichael, wolfyCSA, Mpoznecki
+ *
+ */
 public class CollisionDetector implements Runnable {
 	public Thread collisionDetector;
 	public boolean running = false;
@@ -30,7 +36,9 @@ public class CollisionDetector implements Runnable {
 		}
 	}
 	
-	
+	/**
+	 * runs the collison thread
+	 */
 	public void run() {
 		
 		while (running)

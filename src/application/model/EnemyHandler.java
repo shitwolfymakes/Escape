@@ -2,6 +2,13 @@ package application.model;
 
 import application.Main;
 
+/**
+ * 
+ * @author EnemyHandler class controls and updates the Enemy Ship thread
+ *
+ */
+
+
 public class EnemyHandler implements Runnable {
 	public Thread enemyHandler;
 	public boolean running = false;
@@ -30,7 +37,9 @@ public class EnemyHandler implements Runnable {
 		}
 	}
 	
-	
+	/**
+	 * runs the Enemy ship Thread
+	 */
 	public void run() {
 		
 		while (running)

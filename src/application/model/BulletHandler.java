@@ -2,6 +2,12 @@ package application.model;
 
 import application.Main;
 
+/**
+ * Bullet Handler class controls and updates the bullet thread
+ * 
+ * @author IceKold736, caseycannon423, indomichael, wolfyCSA, Mpoznecki
+ *
+ */
 public class BulletHandler implements Runnable {
 	public Thread bulletHandler;
 	public boolean running = false;
@@ -30,7 +36,9 @@ public class BulletHandler implements Runnable {
 		}
 	}
 	
-	
+	/**
+	 *  runs the bullet thread. 
+	 */
 	public void run() {
 		
 		while (running)

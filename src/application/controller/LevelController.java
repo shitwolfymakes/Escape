@@ -45,10 +45,8 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	@FXML
 	private Label hullLabel;
 
-
 	@FXML
-	private Label scoreLabel;
-	
+	private Label scoreLabel;	
 
 	@FXML ImageView background1, background2;
 
@@ -70,8 +68,10 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		if (event.getCode() != KeyCode.SPACE)	{
 			Main.model.move( key );
 			// update the view to show movement - VIEW
-			Main.view.update(Main.model.getCurrentRow(), Main.model.getCurrentColumn(), Main.model.getPreviousRow(), Main.model.getPreviousColumn());
-			//System.out.println(""+key);
+			Main.view.update(Main.model.getCurrentRow(), 
+							 Main.model.getCurrentColumn(), 
+							 Main.model.getPreviousRow(), 
+							 Main.model.getPreviousColumn());
 		} else if (event.getCode() == KeyCode.SPACE) {
 			PlayerBullet b = new PlayerBullet();
 			Main.bulletSound.play();
@@ -85,9 +85,9 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		//TODO: End game when reaches end - MODEL
 		//		- switch level to Honest John's 
 		boolean isOver = Main.model.isLevelOver();
-		if (isOver)
+		if (isOver) 
 			Main.startHonestJohn();
-
+		
 	}//end handle()
 	/**
 	 * this method loads the thread and the scrolling background.
@@ -140,7 +140,6 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	 */
 	
 	public void runUpdates() {
-		//seconds = 30;
 
 		Thread th = new Thread( new Task<Object>() {                // put the task in its own thread
 
@@ -148,17 +147,12 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			protected String call() throws Exception {
 				String score = "";	
 				String hull = "";
-				//String status3 = "";
-				//PlayerBullet bullet;
-				//Image image = new Image("File:" + bullet.getSpriteLink());
 				while (running) {	
 					score =  "Score:"+(Main.profile.getPoints()) ;
 					hull = "Hull Points Remaining:"+(Main.player.getHullPoints());
 
 					final String fscore = score;
 					final String fhull = hull;
-					//final String fstat3 = status3;
-					//final Image istat = image;
 					
 					// update the label on the JavaFx Application Thread!
 					Platform.runLater(new Runnable() {
@@ -173,20 +167,19 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 								{
 									Main.view.updateEnemy(e.getCurrentRow(), e.getCurrentCol(), e.getPrevRow(), e.getPrevCol(), e);
 								}//end if
-								if (!e.isActive()){	 
-									//Main.view.killEnemy(e.getCurrentRow(), e.getCurrentCol());	
+								if (!e.isActive()){	 	
 									Main.view.removeEnemy(e.getCurrentRow(), e.getCurrentCol());
 									Main.removeEnemy(e);
 								}//end if
 								if (e.isDead()){
 									
 									Main.view.killEnemy(e.getCurrentRow(), e.getCurrentCol(), e);	
-									//Main.view.removeEnemy(e.getCurrentRow(), e.getCurrentCol());
+									Main.explosionSound.play();
 									Main.removeEnemy(e);
 								}//end if
 							}//end for
-
-							hullLabel.setText("TEST");
+							String levelNum = String.format("Level: %d", Main.profile.getCurrentLevel());
+							hullLabel.setText(levelNum);
 							scoreLabel.setText(fscore);
 							if(Main.model.isLevelOver()) {
 								running = false;
@@ -204,7 +197,6 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 										e.printStackTrace();
 									}//end try/catch
 								
-							
 							}
 							if(Main.player.isDead()==true) {
 								try {
