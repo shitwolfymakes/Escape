@@ -73,7 +73,8 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 	}//end handle()
 	
     /**
-     * @param url, resources
+     * @param location the default paramater
+     * @param resources default paramater
      * 
      * loads the cash amount and updates the font style for the fxml
      */

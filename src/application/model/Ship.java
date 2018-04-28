@@ -72,7 +72,7 @@ public class Ship {
 		this.numWeapons = Integer.parseInt(numWeapons);
 	}
 	/**
-	 * @param weapons the weapons to set
+	 * @param weaponID the weapons to set
 	 */
 	public void addWeapons(String weaponID) {
 		weapons.add(weaponID);

@@ -26,7 +26,7 @@ public class MainMenuController implements EventHandler<Event>{
      * this loads a new level. starts the Level thread, bulletHandler thread, enemyHandler thread,
      * and collisionDetector.
      * 
-     * @param event
+     * @param event the event to be handled
      */
     @FXML 
     public void start(Event event) {
@@ -40,15 +40,7 @@ public class MainMenuController implements EventHandler<Event>{
     	
     	//memory overloads because I don't know how to kill the thread still :/
     }
-    /**
-     * 
-     * 
-     * 
-     * @event
-     * 
-     * loads the credits.fxml
-     */
-    @Override
+    
 	public void handle(Event event) {
     	try {
 			// Load the FXML document (we created with SceneBuilder)
@@ -68,7 +60,7 @@ public class MainMenuController implements EventHandler<Event>{
     /**
      * loads the highschores.fxml
      * 
-     * @param event
+     * @param event the event to be handled
      */
     @FXML
     public void highScore(Event event) {

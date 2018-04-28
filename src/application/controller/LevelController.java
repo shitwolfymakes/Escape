@@ -52,7 +52,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	/**
 	 * The handle function in LevelController effectively acts as a listener for 
 	 * key presses.
-	 * @param event
+	 * @param event the event to be handled
 	 */
 	@Override
 	public void handle(KeyEvent event) {
@@ -126,9 +126,6 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	}//end initialize()
 
 	/**
-	 * @param none
-	 * @return none
-	 * 
 	 * this method sets up the scrolling background for the level
 	 */
 	public void initializeBackground() {

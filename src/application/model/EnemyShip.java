@@ -235,7 +235,7 @@ public class EnemyShip extends Ship {
 	}
 
 	/**
-	 * @param active the active to set
+	 * @param dead boolean whether or not the guy is dead
 	 */
 	public void setDead(boolean dead) {
 		this.dead = dead;

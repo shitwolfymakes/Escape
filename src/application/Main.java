@@ -58,10 +58,6 @@ public class Main extends Application {
 	public static AudioClip bulletSound;
 	public static AudioClip explosionSound;
 	
-	/**
-	 * @param primaryStage
-	 * 
-	 */
 	@Override
 	public void start(Stage primaryStage) {
 		

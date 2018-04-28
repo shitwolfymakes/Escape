@@ -24,7 +24,7 @@ public class DeathScreenController implements EventHandler<Event>{
     /**
      * this loads the high score fxml
      * 
-     * @param event
+     * @param event the event to be handled
      */
     @Override
     public void handle(Event event) {

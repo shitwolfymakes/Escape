@@ -226,8 +226,8 @@ public class Level {
 	/**
 	 * The updateCurrentLocation method updates the level current position
 	 * and the player current position.
-	 * @param r
-	 * @param c
+	 * @param r current row
+	 * @param c current column
 	 */
 	public void updateCurrentLocation(int r, int c) {	
 		Main.model.previousCol = Main.model.currentCol;

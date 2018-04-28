@@ -46,11 +46,15 @@ public class LevelView extends GridPane{
 			}
 		}
 	}
+	
 	/**
-	 * @param currentRow, currentCol, previousRow, previousCol
+	 *  moves the player ship to the new coordinates given as paramters. replaces the previous sprite with
+	 * 		a black shadow 
 	 * 
-	 * moves the player ship to the new coordinates given as paramters. replaces the previous sprite with
-	 * a black shadow 
+	 * @param currentRow player current row
+	 * @param currentCol player current column
+	 * @param previousRow player previous row
+	 * @param previousCol player previous col
 	 */
 	public void update( int currentRow, int currentCol, int previousRow, int previousCol ) {
 		this.add( chooseImage("p"), currentCol, currentRow );
@@ -60,31 +64,34 @@ public class LevelView extends GridPane{
 	/**
 	 * removes the enemy from the Gridpane by replacing the ship with a black shadow
 	 * 
-	 * @param currentRow
-	 * @param currentCol
+	 * @param currentRow enemy current row
+	 * @param currentCol enemy current column
 	 */
 	public void removeEnemy(int currentRow, int currentCol) {
 		this.add( chooseImage("j"), currentCol, currentRow );
 	}
 	
-    /**
-     * @param currentRow, currentCol, previousRow, previousCol
-     * 
-     * moves the bullets one Gridpane. replaces previous bullet with a black shadow
-     */
+	/**
+	 * moves the bullets one Gridpane. replaces previous bullet with a black shadow
+	 * 
+	 * @param currentRow bullet current row
+	 * @param currentCol bullet current column
+	 * @param previousRow bullet previous row
+	 * @param previousCol bullet previous column
+	 */
 	public void updateBullet( int currentRow, int currentCol, int previousRow, int previousCol ) {
 		this.add( chooseImage("s"), currentCol, currentRow );
 		this.add( chooseImage("v"), previousCol, previousRow );
 	}
+	
 	/**
-	 * 
-	 * @param currentRow
-	 * @param currentCol
-	 * @param previousRow
-	 * @param previousCol
-	 * @param e
-	 * 
 	 * moves the enemy one gridpane. replaces the image with a black ship.
+	 * 
+	 * @param currentRow enemy current row
+	 * @param currentCol enemy current column
+	 * @param previousRow enemy previous row
+	 * @param previousCol enemy previous column
+	 * @param e the enemy
 	 */
 	public void updateEnemy(int currentRow, int currentCol, int previousRow, int previousCol, EnemyShip e) {
 		this.add( chooseEnemyImage(e), currentCol, currentRow );
@@ -95,11 +102,11 @@ public class LevelView extends GridPane{
 		}
 	}
 	/**
-	 * @param currentRow
-	 * @param currentCol
-	 * @param e
-	 * 
 	 * replaces the enemy sprite with an exploding ship
+	 * 
+	 * @param currentRow enemy current row
+	 * @param currentCol enemy current column
+	 * @param e the enemy
 	 */
 	public void killEnemy(int currentRow, int currentCol, EnemyShip e) {
 		if (e.getSpriteLink().equals("data/Escape Sprites/level1enemy.png")) {
@@ -115,8 +122,8 @@ public class LevelView extends GridPane{
 	}
 	/**
 	 * picks an image based on the code passed as an arg 
-	 * @param code
-	 * @return ImageView
+	 * @param code the string at the grid location
+	 * @return ImageView the image chosen
 	 *
 	 */
 	public ImageView chooseImage(String code) {
@@ -136,8 +143,8 @@ public class LevelView extends GridPane{
 	}//end chooseImage()
 	/**
 	 * picks the enemy ship to spawn 
-	 * @param eShip
-	 * @return
+	 * @param eShip the enemy ship
+	 * @return the image view we need
 	 */
 	public ImageView chooseEnemyImage(EnemyShip eShip) {
 		ImageView img = new ImageView("File:" + eShip.getSpriteLink());
@@ -148,7 +155,7 @@ public class LevelView extends GridPane{
 	/**
 	 * grabs the image of the player
 	 * 
-	 * @return ImageVieew
+	 * @return ImageView
 	 */
 	public ImageView getPlayerImage() {
 		//TODO: update, to grab spriteLink from profile object
@@ -215,7 +222,7 @@ public class LevelView extends GridPane{
 	}//end getDefaultImage()
 	/**
 	 * gets the shadow of the enemy2 ship
-	 * @return
+	 * @return the ImageView
 	 */
 	public ImageView getBlackEnemy2Image() {
 		//TODO: update, to grab spriteLink from cortex entry
