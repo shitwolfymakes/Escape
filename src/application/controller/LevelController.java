@@ -102,7 +102,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 				} catch(Exception e) {
 					e.printStackTrace();
 				}
-			}
+			}//end if
 			Main.startHonestJohn();
 		}//end ifOver
 	}//end handle()
