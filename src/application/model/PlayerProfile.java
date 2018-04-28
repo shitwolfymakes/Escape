@@ -81,6 +81,13 @@ public class PlayerProfile {
 	public void setPoints(int points) {
 		this.points = points;
 	}
+	
+	/**
+	 * @param points the points to set
+	 */
+	public void addPoints(int points) {
+		this.points += points;
+	}
 
 	/**
 	 * @param money the money to set
