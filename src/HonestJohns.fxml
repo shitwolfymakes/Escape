@@ -19,7 +19,7 @@
             <Font name="Pixeled Regular" size="24.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="463.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorry fellers. Shop's closed for now. yall Come back later fer all yer weapon and spaceship accessories. in the meantime, help yourself to an icecold beer in the fridge. I'll even give you a discount for the inconvenience." textAlignment="CENTER" wrappingWidth="310.99853515625">
+      <Text fx:id="dialogue" fill="WHITE" layoutX="463.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorry fellers. Shop's closed for now. yall Come back later fer all yer weapon and spaceship accessories. in the meantime, help yourself to an icecold beer in the fridge. I'll even give you a discount for the inconvenience." textAlignment="CENTER" wrappingWidth="310.99853515625">
          <font>
             <Font name="Pixeled Regular" size="15.0" />
          </font>
@@ -29,13 +29,13 @@
             <Font name="Pixeled Regular" size="15.0" />
          </font>
       </Button>
-      <Text fill="WHITE" layoutX="55.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ice-cold beer ">
+      <Text fx:id="menu" fill="WHITE" layoutX="55.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ice-cold beer ">
          <font>
             <Font name="Pixeled Regular" size="15.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fill="#fffefe" layoutX="93.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$3.00">
+      <Text fx:id="price" fill="#fffefe" layoutX="93.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$3.00">
          <font>
             <Font name="Pixeled Regular" size="15.0" />
          </font>

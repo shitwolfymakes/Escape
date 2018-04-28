@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class HonestJohnController implements EventHandler<Event>, Initializable{
@@ -22,10 +23,22 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
     int cashAmount = 3500;
 	String cashString = "$";
 	@FXML
-	Button buyBeer;
-	
-	@FXML
-	Text money;
+    private Text money;
+
+    @FXML
+    private Button buyBeer;
+
+    @FXML
+    private Text price;
+
+    @FXML
+    private Text dialogue;
+
+    @FXML
+    private Button startLevel;
+
+    @FXML
+    private Text menu;
 
 	@Override
 	public void handle(Event event) {
@@ -43,6 +56,12 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		cashString += String.valueOf(cashAmount);
+		money.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
+		dialogue.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
+		price.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
+		menu.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
+		buyBeer.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
+		startLevel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
 	    money.setText(cashString);
 	    cashString = "$";
 		
