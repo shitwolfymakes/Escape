@@ -24,7 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 /**
  * 
- * @author wolfieCSA
+ * @author wolfyCSA
  *
  */
 public class HighScoreController implements Initializable {
