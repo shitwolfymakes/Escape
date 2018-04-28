@@ -48,6 +48,9 @@ public class EnemyShip extends Ship {
 		System.out.println(getEnemyID() + " spawned at " + this.currentRow + ", " + this.currentCol );
 	}
 	
+	/**
+	 *  Handles collison detection with bullets and the player ship by manipulating enemy isDead(). 
+	 */
 	public void update1()
 	{
 		if(Main.model.crash(this.getCurrentRow(), this.getCurrentCol()) && this.getCurrentCol() < 10)
@@ -67,7 +70,10 @@ public class EnemyShip extends Ship {
 		    	this.setDead(true);
 		    }
 	}
-
+	
+	/**
+	 * Updates the enemy ships location and removes them from the enemy list if they exit the map
+	 */
 	public void update() {
 		
 	   if (this.getCurrentCol() < 2){
