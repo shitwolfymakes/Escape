@@ -9,6 +9,7 @@
 
 package application;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,11 +64,11 @@ public class Main extends Application {
 			AnchorPane layout = (AnchorPane) loader.load();
 			
 			// adds music, once for each audio file to be played
-			//Media media = new Media(new File("<theme song>").toURI().toString());
-			//MediaPlayer player = new MediaPlayer(media);
-			//needs to be added as a viewww
-			//MediaView mediaView = new MediaView(player);
-			//layout.getChildren().add(mediaView);
+			Media media = new Media(new File("data/music/Kevin_MacLeod_-_Ouroboros_-_Full_Mix.wav").toURI().toString());
+			MediaPlayer player = new MediaPlayer(media);
+			//needs to be added as a view
+			MediaView mediaView = new MediaView(player);
+			layout.getChildren().add(mediaView);
 			
 			Scene scene = new Scene( layout );
 			
@@ -75,7 +76,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
-			//player.play();
+			player.play();
 			
 		} catch(Exception e) {
 			e.printStackTrace(); // TODO: handle this better!
