@@ -83,9 +83,28 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 		//TODO: End game when reaches end - MODEL
 		//		- switch level to Honest John's 
 		boolean isOver = Main.model.isLevelOver();
-		if (isOver) 
+		if (isOver) {
+			if (Main.profile.getCurrentLevel() == 10)
+			{
+				try {
+					// Load the fxml file we need
+					FXMLLoader loader = new FXMLLoader();
+					
+					// The ../ is important to get the location in the directory structure
+					//  otherwise it throws IllegalStateException
+					loader.setLocation( Main.class.getResource("../HighScores.fxml") );
+					AnchorPane layout = (AnchorPane) loader.load();
+					Scene scene = new Scene( layout );
+
+					// Sets the scene to the stage & shows stage to the user
+					Main.stage.setScene(scene);
+					Main.stage.show();
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
 			Main.startHonestJohn();
-		
+		}//end ifOver
 	}//end handle()
 	/**
 	 * this method loads the thread and the scrolling background.
