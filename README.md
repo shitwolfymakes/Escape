@@ -1,5 +1,5 @@
 # Escape
-Escape! is the team project for CS 3443.001, made by the Boolean Boyz. Due to the limitations of JavaFX, this will be rebuilt in UE4 or Unity sometime during the summer.
+Escape! is the team project for CS 3443.001, made by the Boolean Boyz. Due to the limitations of JavaFX, this will be rebuilt in Unity, beginning sometime during the summer.
 
 Instructions for playing Escape!: 
 1. Please ensure you have the Eclipse IDE and Java 8 or 9.
