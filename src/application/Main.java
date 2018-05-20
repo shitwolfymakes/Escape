@@ -67,8 +67,8 @@ public class Main extends Application {
 		try {
 			
 			// load the fxml file we need
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( Main.class.getResource("../MainMenu.fxml") );
+			FXMLLoader loader = new FXMLLoader(  );
+			loader.setLocation( getClass().getResource("/MainMenu.fxml") );
 			
 			AnchorPane layout = (AnchorPane) loader.load();
 			
@@ -121,7 +121,7 @@ public class Main extends Application {
 		try {
 			// load the fxml file we need
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( Main.class.getResource("../Level.fxml") );
+			loader.setLocation( Main.class.getResource("/Level.fxml") );
 			AnchorPane layout = (AnchorPane) loader.load();
 
 			// Load the Level view
@@ -174,7 +174,7 @@ public class Main extends Application {
 			
 			// The ../ is important to get the location in the directory structure
 			//  otherwise it throws IllegalStateException
-			loader.setLocation( Main.class.getResource("../Market.fxml") );
+			loader.setLocation( Main.class.getResource("/Market.fxml") );
 			AnchorPane layout = (AnchorPane) loader.load();
 			Scene scene = new Scene( layout );
 

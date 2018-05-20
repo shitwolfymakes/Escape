@@ -93,7 +93,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 					
 					// The ../ is important to get the location in the directory structure
 					//  otherwise it throws IllegalStateException
-					loader.setLocation( Main.class.getResource("../HighScores.fxml") );
+					loader.setLocation( getClass().getResource("/HighScores.fxml") );
 					AnchorPane layout = (AnchorPane) loader.load();
 					Scene scene = new Scene( layout );
 
@@ -204,7 +204,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									try {
 
 										FXMLLoader loader = new FXMLLoader();
-										loader.setLocation( HighScoreController.class.getResource("../../HonestJohns.fxml"));
+										loader.setLocation( getClass().getResource("/HonestJohns.fxml"));
 
 										AnchorPane layout = (AnchorPane) loader.load();				
 										Scene scene = new Scene( layout );
@@ -220,7 +220,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									running = false;
 									Main.enemies.clear();
 									FXMLLoader loader = new FXMLLoader();
-									loader.setLocation( HighScoreController.class.getResource("../../DeathScreen.fxml"));
+									loader.setLocation( getClass().getResource("/DeathScreen.fxml"));
 
 									AnchorPane layout = (AnchorPane) loader.load();				
 									Scene scene = new Scene( layout );

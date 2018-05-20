@@ -76,7 +76,7 @@ public class HighScoreController implements Initializable {
 		try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( MainMenuController.class.getResource("../../MainMenu.fxml") );
+			loader.setLocation( getClass().getResource("/MainMenu.fxml") );
 
 			// Load the layout from the FXML and add it to the scene
 			AnchorPane layout = (AnchorPane) loader.load();				
