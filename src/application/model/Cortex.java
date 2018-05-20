@@ -70,7 +70,7 @@ public class Cortex {
 
 		while(true)
 		{
-			File levelFile = new File("data/levels/level"+i+"csv.txt");
+			File levelFile = new File("resources/data/levels/level"+i+"csv.txt");
 
 			if ( ((File) levelFile).exists() ) {
 				System.out.println(levelFile + " exists");
@@ -113,7 +113,7 @@ public class Cortex {
 	 */
 	public void loadWeapons() {
 		try {
-			Scanner scan = new Scanner( new File("data/weapons/weapons.txt") );
+			Scanner scan = new Scanner( new File("resources/data/weapons/weapons.txt") );
 			
 			while(scan.hasNextLine())
 			{
@@ -138,7 +138,7 @@ public class Cortex {
 	 */
 	public void loadEnemies() {
 		try {
-			Scanner scan = new Scanner( new File("data/enemies/enemies.txt") );
+			Scanner scan = new Scanner( new File("resources/data/enemies/enemies.txt") );
 			
 			while(scan.hasNextLine())
 			{
@@ -152,7 +152,7 @@ public class Cortex {
 			
 			scan.close();	// close the file!
 		}catch(FileNotFoundException ex) {
-			System.out.println( "Enemies file not found" );
+			System.out.println( "resources/Enemies file not found" );
 		}//end try/catch
 		
 	}//end loadEnemies()
@@ -162,7 +162,7 @@ public class Cortex {
 	 */
 	public void loadUpgrades() {
 		try {
-			Scanner scan = new Scanner( new File("data/upgrades/upgrades.txt") );
+			Scanner scan = new Scanner( new File("resources/data/upgrades/upgrades.txt") );
 			
 			while(scan.hasNextLine())
 			{

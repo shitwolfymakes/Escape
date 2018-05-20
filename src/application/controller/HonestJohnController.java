@@ -79,12 +79,12 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		cashString += String.valueOf(cashAmount);
-		money.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
-		dialogue.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
-		price.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
-		menu.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
-		buyBeer.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
-		startLevel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
+		money.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
+		dialogue.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
+		price.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
+		menu.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
+		buyBeer.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
+		startLevel.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
 	    money.setText(cashString);
 	    cashString = "$";
 	}//end initialize()

@@ -93,7 +93,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 					
 					// The ../ is important to get the location in the directory structure
 					//  otherwise it throws IllegalStateException
-					loader.setLocation( getClass().getResource("/HighScores.fxml") );
+					loader.setLocation( getClass().getResource("/fxml/HighScores.fxml") );
 					AnchorPane layout = (AnchorPane) loader.load();
 					Scene scene = new Scene( layout );
 
@@ -115,8 +115,8 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	@Override
 
 	public void initialize(URL url, ResourceBundle resources) {
-		hullLabel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
-		scoreLabel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
+		hullLabel.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
+		scoreLabel.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
 		if (runNum == 0) {
 			running = true;
 			runUpdates();
@@ -204,7 +204,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									try {
 
 										FXMLLoader loader = new FXMLLoader();
-										loader.setLocation( getClass().getResource("/HonestJohns.fxml"));
+										loader.setLocation( getClass().getResource("/fxml/HonestJohns.fxml"));
 
 										AnchorPane layout = (AnchorPane) loader.load();				
 										Scene scene = new Scene( layout );
@@ -220,7 +220,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									running = false;
 									Main.enemies.clear();
 									FXMLLoader loader = new FXMLLoader();
-									loader.setLocation( getClass().getResource("/DeathScreen.fxml"));
+									loader.setLocation( getClass().getResource("/fxml/DeathScreen.fxml"));
 
 									AnchorPane layout = (AnchorPane) loader.load();				
 									Scene scene = new Scene( layout );
