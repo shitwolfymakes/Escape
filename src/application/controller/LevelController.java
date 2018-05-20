@@ -163,13 +163,13 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			@Override
 			protected String call() throws Exception {
 				String score = "";	
-				String hull = "";
+				//String hull = "";
 				while (running) {	
 					score =  "Score:"+(Main.profile.getPoints()) ;
-					hull = "Hull Points Remaining:"+(Main.player.getHullPoints());
+					//hull = "Hull Points Remaining:"+(Main.player.getHullPoints());
 
 					final String fscore = score;
-					final String fhull = hull;
+					//final String fhull = hull;
 					
 					// update the label on the JavaFx Application Thread!
 					Platform.runLater(new Runnable() {

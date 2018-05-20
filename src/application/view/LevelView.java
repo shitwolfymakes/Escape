@@ -9,8 +9,6 @@ package application.view;
 
 import application.Main;
 import application.model.EnemyShip;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
