@@ -230,7 +230,6 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									e.printStackTrace();
 								}//end try/catch
 							}
-
 						}//end run()
 					});
 					Thread.sleep(100);
