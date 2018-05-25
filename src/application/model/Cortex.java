@@ -19,14 +19,21 @@
 
 package application.model;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+
+import application.Main;
 
 public class Cortex {
 
@@ -70,6 +77,19 @@ public class Cortex {
 
 		while(true)
 		{
+			//Reader paramReader = new InputStreamReader(getClass().getResourceAsStream("com/resources/data/levels/level"+i+"csv.txt"));
+			//InputStream is = Main.class.getResourceAsStream("resources/data/levels/level"+i+"csv.txt");
+			InputStream is = getClass().getResourceAsStream("data/levels/level"+i+"csv.txt");
+			InputStreamReader isr = new InputStreamReader(is);
+			BufferedReader br = new BufferedReader(isr);
+			//String line;
+			try {
+				System.out.printf("%s\n", br.readLine());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			File levelFile = new File("resources/data/levels/level"+i+"csv.txt");
 
 			if ( ((File) levelFile).exists() ) {
