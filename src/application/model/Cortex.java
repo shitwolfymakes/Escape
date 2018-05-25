@@ -19,21 +19,14 @@
 
 package application.model;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-
-import application.Main;
 
 public class Cortex {
 
@@ -77,20 +70,7 @@ public class Cortex {
 
 		while(true)
 		{
-			//Reader paramReader = new InputStreamReader(getClass().getResourceAsStream("com/resources/data/levels/level"+i+"csv.txt"));
-			//InputStream is = Main.class.getResourceAsStream("resources/data/levels/level"+i+"csv.txt");
-			InputStream is = getClass().getResourceAsStream("data/levels/level"+i+"csv.txt");
-			InputStreamReader isr = new InputStreamReader(is);
-			BufferedReader br = new BufferedReader(isr);
-			//String line;
-			try {
-				System.out.printf("%s\n", br.readLine());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			File levelFile = new File("resources/data/levels/level"+i+"csv.txt");
+			File levelFile = new File("data/levels/level"+i+"csv.txt");
 
 			if ( ((File) levelFile).exists() ) {
 				System.out.println(levelFile + " exists");
@@ -133,7 +113,7 @@ public class Cortex {
 	 */
 	public void loadWeapons() {
 		try {
-			Scanner scan = new Scanner( new File("resources/data/weapons/weapons.txt") );
+			Scanner scan = new Scanner( new File("data/weapons/weapons.txt") );
 			
 			while(scan.hasNextLine())
 			{
@@ -158,7 +138,7 @@ public class Cortex {
 	 */
 	public void loadEnemies() {
 		try {
-			Scanner scan = new Scanner( new File("resources/data/enemies/enemies.txt") );
+			Scanner scan = new Scanner( new File("data/enemies/enemies.txt") );
 			
 			while(scan.hasNextLine())
 			{
@@ -172,7 +152,7 @@ public class Cortex {
 			
 			scan.close();	// close the file!
 		}catch(FileNotFoundException ex) {
-			System.out.println( "resources/Enemies file not found" );
+			System.out.println( "Enemies file not found" );
 		}//end try/catch
 		
 	}//end loadEnemies()
@@ -182,7 +162,7 @@ public class Cortex {
 	 */
 	public void loadUpgrades() {
 		try {
-			Scanner scan = new Scanner( new File("resources/data/upgrades/upgrades.txt") );
+			Scanner scan = new Scanner( new File("data/upgrades/upgrades.txt") );
 			
 			while(scan.hasNextLine())
 			{

@@ -9,7 +9,6 @@
 package application;
 
 import java.io.File;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +32,6 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
-import javafx.application.Application;
-import javafx.application.HostServices;
 
 public class Main extends Application {
 	
@@ -70,24 +67,24 @@ public class Main extends Application {
 		try {
 			
 			// load the fxml file we need
-			FXMLLoader loader = new FXMLLoader(  );
-			loader.setLocation( getClass().getResource("/fxml/MainMenu.fxml") );
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation( Main.class.getResource("../MainMenu.fxml") );
 			
 			AnchorPane layout = (AnchorPane) loader.load();
 			
 			// adds music, once for each audio file to be played
-			//gameMusic = new Media(new File("resources/data/music/Kevin_MacLeod_-_Ouroboros_-_Full_Mix.wav").toURI().toString());
-			//bulletSound = new AudioClip(new File("resources/data/music/Photon gun shot.wav").toURI().toString());
-			//explosionSound = new AudioClip(new File("resources/data/music/Explosion+3.wav").toURI().toString());
+			gameMusic = new Media(new File("data/music/Kevin_MacLeod_-_Ouroboros_-_Full_Mix.wav").toURI().toString());
+			bulletSound = new AudioClip(new File("data/music/Photon gun shot.wav").toURI().toString());
+			explosionSound = new AudioClip(new File("data/music/Explosion+3.wav").toURI().toString());
 			
 			// creates players for all the media
-			//gameMusicPlayer = new MediaPlayer(gameMusic);
+			gameMusicPlayer = new MediaPlayer(gameMusic);
 			
 			//needs to be added as a view
-			//gameMusicMediaView = new MediaView(gameMusicPlayer);
+			gameMusicMediaView = new MediaView(gameMusicPlayer);
 			
 			// add music to the layout
-			//layout.getChildren().add(gameMusicMediaView);
+			layout.getChildren().add(gameMusicMediaView);
 			
 			Scene scene = new Scene( layout );
 			
@@ -95,8 +92,8 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
-			//gameMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-			//startMusic();
+			gameMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+			startMusic();
 		} catch(Exception e) {
 			e.printStackTrace(); // TODO: handle this better!
 		}//end try/catch
@@ -124,7 +121,7 @@ public class Main extends Application {
 		try {
 			// load the fxml file we need
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( Main.class.getResource("/fxml/Level.fxml") );
+			loader.setLocation( Main.class.getResource("../Level.fxml") );
 			AnchorPane layout = (AnchorPane) loader.load();
 
 			// Load the Level view
@@ -177,7 +174,7 @@ public class Main extends Application {
 			
 			// The ../ is important to get the location in the directory structure
 			//  otherwise it throws IllegalStateException
-			loader.setLocation( Main.class.getResource("/fxml/Market.fxml") );
+			loader.setLocation( Main.class.getResource("../Market.fxml") );
 			AnchorPane layout = (AnchorPane) loader.load();
 			Scene scene = new Scene( layout );
 

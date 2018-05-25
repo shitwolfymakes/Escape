@@ -1,0 +1,2 @@
+hornet,H1,5,0,10,10,data/Escape Sprites/level1enemy.png,1,BLA1
+super hornet,H2,10,0,25,25,data/Escape Sprites/level2enemy.png,1,BLA2

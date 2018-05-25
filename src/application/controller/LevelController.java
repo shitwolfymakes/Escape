@@ -93,7 +93,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 					
 					// The ../ is important to get the location in the directory structure
 					//  otherwise it throws IllegalStateException
-					loader.setLocation( getClass().getResource("/fxml/HighScores.fxml") );
+					loader.setLocation( Main.class.getResource("../HighScores.fxml") );
 					AnchorPane layout = (AnchorPane) loader.load();
 					Scene scene = new Scene( layout );
 
@@ -115,8 +115,8 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	@Override
 
 	public void initialize(URL url, ResourceBundle resources) {
-		hullLabel.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
-		scoreLabel.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 15));
+		hullLabel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
+		scoreLabel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
 		if (runNum == 0) {
 			running = true;
 			runUpdates();
@@ -163,13 +163,13 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 			@Override
 			protected String call() throws Exception {
 				String score = "";	
-				//String hull = "";
+				String hull = "";
 				while (running) {	
 					score =  "Score:"+(Main.profile.getPoints()) ;
-					//hull = "Hull Points Remaining:"+(Main.player.getHullPoints());
+					hull = "Hull Points Remaining:"+(Main.player.getHullPoints());
 
 					final String fscore = score;
-					//final String fhull = hull;
+					final String fhull = hull;
 					
 					// update the label on the JavaFx Application Thread!
 					Platform.runLater(new Runnable() {
@@ -204,7 +204,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									try {
 
 										FXMLLoader loader = new FXMLLoader();
-										loader.setLocation( getClass().getResource("/fxml/HonestJohns.fxml"));
+										loader.setLocation( HighScoreController.class.getResource("../../HonestJohns.fxml"));
 
 										AnchorPane layout = (AnchorPane) loader.load();				
 										Scene scene = new Scene( layout );
@@ -220,7 +220,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									running = false;
 									Main.enemies.clear();
 									FXMLLoader loader = new FXMLLoader();
-									loader.setLocation( getClass().getResource("/fxml/DeathScreen.fxml"));
+									loader.setLocation( HighScoreController.class.getResource("../../DeathScreen.fxml"));
 
 									AnchorPane layout = (AnchorPane) loader.load();				
 									Scene scene = new Scene( layout );
@@ -230,6 +230,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									e.printStackTrace();
 								}//end try/catch
 							}
+
 						}//end run()
 					});
 					Thread.sleep(100);

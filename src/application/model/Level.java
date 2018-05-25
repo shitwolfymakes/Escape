@@ -25,6 +25,7 @@ public class Level {
 	private ArrayList<EnemyShip> enemyShips = new ArrayList<EnemyShip>();
 
 	private boolean crash = false;
+	private boolean shot  = false;
 	
 	public Level() {};
 	

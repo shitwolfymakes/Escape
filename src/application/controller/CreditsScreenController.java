@@ -35,8 +35,8 @@ public class CreditsScreenController implements EventHandler<ActionEvent>, Initi
 		try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( getClass().getResource("/fxml/MainMenu.fxml") );
-			
+			loader.setLocation( MainMenuController.class.getResource("../../MainMenu.fxml") );
+
 			// Load the layout from the FXML and add it to the scene
 			AnchorPane layout = (AnchorPane) loader.load();				
 			Scene scene = new Scene( layout );
@@ -51,13 +51,13 @@ public class CreditsScreenController implements EventHandler<ActionEvent>, Initi
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		text1.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 36));
-		text2.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 24));
-		text3.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 24));
-		text4.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 24));
-		text5.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 24));
-		text6.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 24));
-		text7.setFont(Font.loadFont("file:resources/data/font/Pixeled.ttf", 28));
+		text1.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 36));
+		text2.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 24));
+		text3.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 24));
+		text4.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 24));
+		text5.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 24));
+		text6.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 24));
+		text7.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 28));
 	}//end initialize
 	
 }//end class CreditsScreenController

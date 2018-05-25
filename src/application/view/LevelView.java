@@ -9,6 +9,8 @@ package application.view;
 
 import application.Main;
 import application.model.EnemyShip;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
@@ -93,7 +95,7 @@ public class LevelView extends GridPane{
 	 */
 	public void updateEnemy(int currentRow, int currentCol, int previousRow, int previousCol, EnemyShip e) {
 		this.add( chooseEnemyImage(e), currentCol, currentRow );
-		if (e.getSpriteLink().equals("resources/data/Escape Sprites/level1enemy.png")) {
+		if (e.getSpriteLink().equals("data/Escape Sprites/level1enemy.png")) {
 			this.add( chooseImage("j"), previousCol, previousRow );
 		} else {
 			this.add(chooseImage("m"), previousCol, previousRow);
@@ -107,7 +109,7 @@ public class LevelView extends GridPane{
 	 * @param e the enemy
 	 */
 	public void killEnemy(int currentRow, int currentCol, EnemyShip e) {
-		if (e.getSpriteLink().equals("resources/data/Escape Sprites/level1enemy.png")) {
+		if (e.getSpriteLink().equals("data/Escape Sprites/level1enemy.png")) {
 			this.add(chooseImage("k"), currentCol, currentRow );
 		} else {
 			this.add(chooseImage("u"), currentCol, currentRow);
@@ -157,7 +159,7 @@ public class LevelView extends GridPane{
 	 */
 	public ImageView getPlayerImage() {
 		//TODO: update, to grab spriteLink from profile object
-		ImageView img = new ImageView("File:resources/data/Escape Sprites/playership.png");
+		ImageView img = new ImageView("File:data/Escape Sprites/playership.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
@@ -168,7 +170,7 @@ public class LevelView extends GridPane{
 	 */
 	public ImageView getBulletImage() {
 		//TODO: update, to grab spriteLink from cortex entry
-		ImageView img = new ImageView("File:resources/data/test_sprites/Yello_Dot.png");
+		ImageView img = new ImageView("File:data/test_sprites/Yello_Dot.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
@@ -178,18 +180,18 @@ public class LevelView extends GridPane{
 	 * @return ImageView
 	 */
 	public ImageView getBlackShipImage(){
-		ImageView img = new ImageView("File:resources/data/Escape Sprites/playership_black.png");
+		ImageView img = new ImageView("File:data/Escape Sprites/playership_black.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		return img;
 	}
 	/**
-	 * gets the default image
+	 * gets the default iamge
 	 * @return  ImageView
 	 */
 	public ImageView getDefaultImage() {
 		//TODO: update, to grab spriteLink from cortex entry
-		ImageView img = new ImageView("File:resources/data/test_sprites/default.png");
+		ImageView img = new ImageView("File:data/test_sprites/default.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		
@@ -201,7 +203,7 @@ public class LevelView extends GridPane{
 	 */
 	public ImageView getBlackImage() {
 		//TODO: update, to grab spriteLink from cortex entry
-		ImageView img = new ImageView("File:resources/data/test_sprites/Black_Dot.png");
+		ImageView img = new ImageView("File:data/test_sprites/Black_Dot.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);
 		
@@ -213,7 +215,7 @@ public class LevelView extends GridPane{
 	 */
 	public ImageView getBlackEnemy1Image() {
 		//TODO: update, to grab spriteLink from cortex entry
-		ImageView img = new ImageView("File:resources/data/Escape Sprites/level1enemy_black.png");
+		ImageView img = new ImageView("File:data/Escape Sprites/level1enemy_black.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);		
 		return img;
@@ -224,7 +226,7 @@ public class LevelView extends GridPane{
 	 */
 	public ImageView getBlackEnemy2Image() {
 		//TODO: update, to grab spriteLink from cortex entry
-		ImageView img = new ImageView("File:resources/data/Escape Sprites/level2enemy_black.png");
+		ImageView img = new ImageView("File:data/Escape Sprites/level2enemy_black.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);		
 		return img;
@@ -235,7 +237,7 @@ public class LevelView extends GridPane{
 	 */
 	public ImageView getExplodinglvl1Image() {
 		//TODO: update, to grab spriteLink from cortex entry
-		ImageView img = new ImageView("File:resources/data/Escape Sprites/explodinglvl1enemy.png");
+		ImageView img = new ImageView("File:data/Escape Sprites/explodinglvl1enemy.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);		
 		return img;
@@ -246,7 +248,7 @@ public class LevelView extends GridPane{
 	 */
 	public ImageView getExplodinglvl2Image() {
 		
-		ImageView img = new ImageView("File:resources/data/Escape Sprites/explodinglevel2enemy.png");
+		ImageView img = new ImageView("File:data/Escape Sprites/explodinglevel2enemy.png");
 		img.setFitHeight(imgSize);
 		img.setFitWidth(imgSize);		
 		return img;
