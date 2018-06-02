@@ -16,7 +16,6 @@
  * 
  * @author wolfyCSA
  */
-
 package application.model;
 
 import java.io.File;
@@ -82,6 +81,7 @@ public class Cortex {
 	}//end loadLevels()
 
 	/**
+	 * This method creates a List<String> from every line in the level file
 	 * 
 	 * @param f the File to be parsed
 	 * @return a String List containing the level data

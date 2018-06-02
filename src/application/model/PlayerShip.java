@@ -3,7 +3,6 @@
  * 
  * @author wolfyCSA
  */
-
 package application.model;
 
 public class PlayerShip extends Ship {
@@ -15,12 +14,13 @@ public class PlayerShip extends Ship {
 	private boolean dead = false;
 	
 	/**
-	 * Default constructor for playership object
+	 * Default constructor for PlayerShip object
 	 */
 	public PlayerShip() {} //end default constructor 
 	
 	/**
-	 * Constructor for playership at certain coordinates
+	 * Constructor for PlayerShip at certain coordinates
+	 * 
 	 * @param r starting row
 	 * @param c starting column
 	 */
@@ -36,48 +36,23 @@ public class PlayerShip extends Ship {
 		
 		//for (int i = 0; i < getNumWeapons(); i++)
 		//System.out.println(this.toString());
-	}//end overloaded constructor
+	}//end PlayerShip() overloaded constructor
 
 	/**
-	 * Sets a location of a playership based on given coordinates
+	 * Sets a location of a PlayerShip based on given coordinates
+	 * 
 	 * @param row to be set
 	 * @param column to be set
 	 */
 	public void setCurrentLocation(int row, int column) {
 		this.currentRow = row;
 		this.currentCol = column;
-	}
-
-	/**
-	 * @return the currentRow
-	 */
-	public int getCurrentRow() {
-		return currentRow;
-	}
-
-	/**
-	 * @return the currentCol
-	 */
-	public int getCurrentCol() {
-		return currentCol;
-	}
+	}//end setCurrentLocation()
 	
 	/**
-	 * @return the currentRow
-	 */
-	public int getPreviousRow() {
-		return previousRow;
-	}
-
-	/**
-	 * @return the currentCol
-	 */
-	public int getPreviousCol() {
-		return previousCol;
-	}
-	
-	/**
-	 * sets a previous location
+	 * Sets the previous location of a PlayerShip based on given 
+	 * 	coordinates
+	 * 
 	 * @param row to be set
 	 * @param column to be set
 	 */
@@ -87,27 +62,46 @@ public class PlayerShip extends Ship {
 	}
 	
 	/**
-	 * Designated default print for PlayerShip
+	 * @return the currentRow
+	 */
+	public int getCurrentRow() {
+		return currentRow;
+	}
+	/**
+	 * @return the currentCol
+	 */
+	public int getCurrentCol() {
+		return currentCol;
+	}
+	/**
+	 * @return the currentRow
+	 */
+	public int getPreviousRow() {
+		return previousRow;
+	}
+	/**
+	 * @return the currentCol
+	 */
+	public int getPreviousCol() {
+		return previousCol;
+	}
+	/**
+	 * @return String info about the PlayerShip object
 	 */
 	public String toString() {
 		return "Player Ship at: " + this.currentRow + "," + this.currentCol;
 	}
-
 	/**
-	 * Checks if ship is dead
 	 * @return true if dead, false if not
 	 */
 	public boolean isDead() {
 		return dead;
 	}
-	
 	/**
-	 * Sets dead to true or false
 	 * @param dead boolean that is true if dead or false if not
 	 */
 	public void setDead(boolean dead) {
 		this.dead = dead;
 	}
-
 	
 }//end class PlayerShip

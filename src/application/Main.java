@@ -95,7 +95,7 @@ public class Main extends Application {
 			gameMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 			startMusic();
 		} catch(Exception e) {
-			e.printStackTrace(); // TODO: handle this better!
+			e.printStackTrace(); 
 		}//end try/catch
 		
 	}//end start()

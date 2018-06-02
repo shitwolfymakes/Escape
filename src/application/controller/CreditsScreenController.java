@@ -1,5 +1,5 @@
 /**
- * 
+ * This controls the credits screen fxml
  * 
  * @author wolfyCSA
  */

@@ -1,13 +1,13 @@
-package application.model;
-
-import application.Main;
-
 /**
  * CollisionDetector class controls and updates the Collison thread
  * 
  * @author wolfyCSA, caseycannon423, IceKold736, Mpoznecki, indomichael
  *
  */
+package application.model;
+
+import application.Main;
+
 public class CollisionDetector implements Runnable {
 	public Thread collisionDetector;
 	public boolean running = false;
@@ -22,7 +22,7 @@ public class CollisionDetector implements Runnable {
 		collisionDetector = new Thread(this);
 		collisionDetector.setDaemon(true);
 		collisionDetector.start();
-	}
+	}//end start()
 	
 	public synchronized void stop(){
 		if (!running)
@@ -31,31 +31,29 @@ public class CollisionDetector implements Runnable {
 		try {
 			collisionDetector.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-	}
+		}//end try/catch
+		
+	}//end stop()
 	
 	/**
-	 * runs the collison thread
+	 * runs the collision thread
 	 */
 	public void run() {
 		
 		while (running)
 		{
-			for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.playerBullets.size()])) {
+			for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.playerBullets.size()]))
 				e.update1();
-				//System.out.println("move");
-			}
+			
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}//end try/catch
 
-		}
+		}//end while
 		stop();
-	}
+	}//end run()
 
-}
+}//end class CollisionDetector

@@ -1,5 +1,5 @@
 /**
- * this controls the death screen fxml
+ * This controls the death screen fxml
  * 
  * @author Michael Indo
  */
@@ -22,7 +22,7 @@ public class DeathScreenController implements EventHandler<Event>{
     private Button highScores;
 
     /**
-     * this loads the high score fxml
+     * This loads the high score fxml
      * 
      * @param event the event to be handled
      */
@@ -43,6 +43,7 @@ public class DeathScreenController implements EventHandler<Event>{
 		}catch( IOException e ) {
 			e.printStackTrace();
 		}//end try/catch
+    	
     }//end handle()
     
 }//end class DeathScreenController

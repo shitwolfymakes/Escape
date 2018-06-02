@@ -1,3 +1,8 @@
+/**
+ * This controls the high score screen fxml
+ * 
+ * @author wolfyCSA
+ */
 package application.controller;
 
 import java.io.BufferedWriter;
@@ -22,11 +27,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-/**
- * 
- * @author wolfyCSA
- *
- */
+
 public class HighScoreController implements Initializable {
 
 	@FXML private ListView<String> scoreView;
@@ -39,7 +40,7 @@ public class HighScoreController implements Initializable {
 	}//end initialize()
 	
 	/**
-	 * displays the code for  
+	 * Displays the high scores
 	 */
 	public void displayHighScores() {
 		try {
@@ -60,7 +61,6 @@ public class HighScoreController implements Initializable {
 			
 			scan.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}//end try/catch
 		
@@ -68,7 +68,6 @@ public class HighScoreController implements Initializable {
 
 	/**
 	 * Takes the player back to the main menu and loads a new player profile 
-	 * 
 	 */
 	public void back() {
 		Main.profile = new PlayerProfile();
@@ -87,11 +86,11 @@ public class HighScoreController implements Initializable {
 		}catch( IOException e ) {
 			e.printStackTrace();
 		}//end try/catch
+		
 	}//end back()
 	
     /**
      * loads information from highscores.txt. also adds the players high score to the listview
-     * 
      */
 	public void addName() {
 		String str = String.format( "\n%d,%s", Main.profile.getPoints(), name.getText() );
@@ -101,9 +100,9 @@ public class HighScoreController implements Initializable {
 			bw.write(str);
 			bw.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}//end try/catch
+		
 		displayHighScores();
 	}//end addName()
 

@@ -52,13 +52,11 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	/**
 	 * The handle function in LevelController effectively acts as a listener for 
 	 * key presses.
+	 * 
 	 * @param event the event to be handled
 	 */
 	@Override
 	public void handle(KeyEvent event) {
-
-		// TODO: add logic to check if key pressed is a function key
-
 		// get the user input
 		char key = event.getCode().toString().charAt(0);
 		System.out.println(key);
@@ -78,10 +76,9 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 				Main.addPlayerBullet(b);	
 			}
 			
-		}
-		//else fire bullet
+		}// end if
 
-		//TODO: End game when reaches end - MODEL
+		// End game when reaches end - MODEL
 		//		- switch level to Honest John's 
 		boolean isOver = Main.model.isLevelOver();
 		if (isOver) {
@@ -102,18 +99,19 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 					Main.stage.show();
 				} catch(Exception e) {
 					e.printStackTrace();
-				}
-			}//end if
+				}//end try/catch
+				
+			}//end inner if
 			Main.startHonestJohn();
-		}//end ifOver
+		}//end outer if
 	}//end handle()
+	
 	/**
-	 * this method loads the thread and the scrolling background.
+	 * This method loads the thread and the scrolling background.
 	 * 
 	 * @param url, resources
 	 */
 	@Override
-
 	public void initialize(URL url, ResourceBundle resources) {
 		hullLabel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
 		scoreLabel.setFont(Font.loadFont("file:data/font/Pixeled.ttf", 15));
@@ -126,7 +124,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	}//end initialize()
 
 	/**
-	 * this method sets up the scrolling background for the level
+	 * This method sets up the scrolling background for the level
 	 */
 	public void initializeBackground() {
 
@@ -155,21 +153,17 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	 * runUpdates() is the main thread that updates the javaFX document
 	 * 
 	 */
-	
 	public void runUpdates() {
 
 		Thread th = new Thread( new Task<Object>() {                // put the task in its own thread
 
 			@Override
 			protected String call() throws Exception {
-				String score = "";	
-				String hull = "";
+				String score = "";
 				while (running) {	
 					score =  "Score:"+(Main.profile.getPoints()) ;
-					hull = "Hull Points Remaining:"+(Main.player.getHullPoints());
 
 					final String fscore = score;
-					final String fhull = hull;
 					
 					// update the label on the JavaFx Application Thread!
 					Platform.runLater(new Runnable() {

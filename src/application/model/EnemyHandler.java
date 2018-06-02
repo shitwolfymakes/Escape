@@ -1,13 +1,11 @@
-package application.model;
-
-import application.Main;
-
 /**
  * EnemyHandler class controls and updates the Enemy Ship thread
  * 
  * @author wolfyCSA, caseycannon423, IceKold736, Mpoznecki, indomichael
  */
+package application.model;
 
+import application.Main;
 
 public class EnemyHandler implements Runnable {
 	public Thread enemyHandler;
@@ -32,7 +30,6 @@ public class EnemyHandler implements Runnable {
 		try {
 			enemyHandler.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -44,28 +41,24 @@ public class EnemyHandler implements Runnable {
 		
 		while (running)
 		{
-			for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.playerBullets.size()])) {
+			for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.playerBullets.size()])) 
 				e.update1();
-				//System.out.println("move");
-			}
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}//end try/catch
 			
-			for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.playerBullets.size()])) {
+			for (EnemyShip e : Main.enemies.toArray(new EnemyShip[Main.playerBullets.size()]))
 				e.update();
-				//System.out.println("move");
-			}
 			try {
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-		}
+			}//end try/catch
+			
+		}//end while
 		stop();
-	}
-}
+	}//end run()
+	
+}//end class EnemyHandler

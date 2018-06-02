@@ -1,9 +1,8 @@
 /**
- * 	Subclass of Ship.java. Governs the enemy ship object
+ * Subclass of Ship.java. Governs the enemy ship object
  * 
  * @author wolfyCSA
  */
-
 package application.model;
 
 import java.util.ArrayList;
@@ -23,8 +22,9 @@ public class EnemyShip extends Ship {
 	private int numWeapons;
 	private boolean active = true;
 	private boolean dead = false;
-	
+
 	/**
+	 * Constructor
 	 * 
 	 * @param enemyID id of the enemy 
 	 * @param r row location of the enemy
@@ -38,7 +38,7 @@ public class EnemyShip extends Ship {
 		ArrayList<String> enemyShipData = new ArrayList<String>();
 		// store data grabbed from the Cortex entry
 		enemyShipData = Main.cortex.getEnemy().get("E_"+ enemyID);
-		
+
 		setEnemyID(enemyShipData.get(0));
 		setName(enemyShipData.get(1));
 		super.setHullPoints(Integer.parseInt(enemyShipData.get(2)));
@@ -47,50 +47,48 @@ public class EnemyShip extends Ship {
 		setMoneyValue(enemyShipData.get(5));
 		super.setSpriteLink(enemyShipData.get(6));
 		super.setNumWeapons(enemyShipData.get(7));
-		
+
 		for (int i = 1; i <= getNumWeapons(); i++)
 			super.addWeapons(enemyShipData.get(7+i));
-		
+
 		System.out.println(getEnemyID() + " spawned at " + this.currentRow + ", " + this.currentCol );
-	}
-	
+	}//end EnemyShip() constructor
+
 	/**
-	 *  Handles collison detection with bullets and the player ship by manipulating enemy isDead(). 
+	 *  Handles collision detection with bullets and the player ship by manipulating enemy isDead(). 
 	 */
 	public void update1()
 	{
 		if(Main.model.crash(this.getCurrentRow(), this.getCurrentCol()) && this.getCurrentCol() < 10)
-			{
-				// TODO: play explodey animation
-				try {
-					Thread.sleep(200);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			    this.setDead(true);
-			    Main.player.setDead(true);
-		    }
-		    if(Main.model.shot())
-		    {
-		    	this.setDead(true);
-		    }
-	}
-	
+		{
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}//end try/catch
+
+			this.setDead(true);
+			Main.player.setDead(true);
+		}
+		
+		if(Main.model.shot())
+			this.setDead(true);
+	}//end update1()
+
 	/**
 	 * Updates the enemy ships location and removes them from the enemy list if they exit the map
 	 */
 	public void update() {
-		
-	   if (this.getCurrentCol() < 2){
-		   this.setActive(false);
-		   //collision set to false
-	   }
-	   if (this.isActive()){
-		   this.prevCol = currentCol;
-		   this.currentCol = currentCol-1;
-	   }
-   }
+
+		if (this.getCurrentCol() < 2){
+			this.setActive(false);
+		}
+		if (this.isActive()){
+			this.prevCol = currentCol;
+			this.currentCol = currentCol-1;
+		}
+	}//end update()
+	
 	/**
 	 * @return the pointValue
 	 */
@@ -133,7 +131,6 @@ public class EnemyShip extends Ship {
 	public int getCurrentCol() {
 		return currentCol;
 	}
-
 	/**
 	 * @param pointValue the pointValue to set
 	 */
@@ -194,52 +191,47 @@ public class EnemyShip extends Ship {
 	public int getPrevCol() {
 		return prevCol;
 	}
-
 	/**
 	 * @param prevCol the prevCol to set
 	 */
 	public void setPrevCol(int prevCol) {
 		this.prevCol = prevCol;
 	}
-
 	/**
 	 * @return the prevRow
 	 */
 	public int getPrevRow() {
 		return prevRow;
 	}
-
 	/**
 	 * @param prevRow the prevRow to set
 	 */
 	public void setPrevRow(int prevRow) {
 		this.prevRow = prevRow;
 	}
-
 	/**
 	 * @return the active
 	 */
 	public boolean isActive() {
 		return active;
 	}
-
 	/**
 	 * @param active the active to set
 	 */
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
+	/**
+	 * @return boolean whether or not the guy is dead
+	 */
 	public boolean isDead() {
 		return dead;
 	}
-
 	/**
 	 * @param dead boolean whether or not the guy is dead
 	 */
 	public void setDead(boolean dead) {
 		this.dead = dead;
 	}
-	
-	
+
 }//end class EnemyShip

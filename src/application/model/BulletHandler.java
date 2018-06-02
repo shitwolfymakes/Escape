@@ -1,13 +1,13 @@
-package application.model;
-
-import application.Main;
-
 /**
  * Bullet Handler class controls and updates the bullet thread
  * 
  * @author wolfyCSA, caseycannon423, IceKold736, Mpoznecki, indomichael
  *
  */
+package application.model;
+
+import application.Main;
+
 public class BulletHandler implements Runnable {
 	public Thread bulletHandler;
 	public boolean running = false;
@@ -22,7 +22,7 @@ public class BulletHandler implements Runnable {
 		bulletHandler = new Thread(this);
 		bulletHandler.setDaemon(true);
 		bulletHandler.start();
-	}
+	}//end start()
 	
 	public synchronized void stop(){
 		if (!running)
@@ -31,16 +31,14 @@ public class BulletHandler implements Runnable {
 		try {
 			bulletHandler.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-	}
+		}//end try/catch
+	}//end stop()
 	
 	/**
-	 *  runs the bullet thread. 
+	 *  Runs the bullet thread. 
 	 */
 	public void run() {
-		
 		while (running)
 		{
 			
@@ -51,10 +49,10 @@ public class BulletHandler implements Runnable {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-		}
+			}//end try/catch
+		}//end while
 		stop();
-	}
-}
+	}//end run()
+	
+}//end class BulletHandler

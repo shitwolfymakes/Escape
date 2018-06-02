@@ -4,7 +4,6 @@
  *
  * @author wolfyCSA
  */
-
 package application.model;
 
 import java.util.ArrayList;
@@ -77,7 +76,5 @@ public class Ship {
 	public void addWeapons(String weaponID) {
 		weapons.add(weaponID);
 	}
-	
-	
 
 }//end class Ship
