@@ -3,7 +3,7 @@ Escape! is the team project for CS 3443.001, made by the Boolean Boyz. Due to th
 
 Instructions for playing Escape!: 
 1. Please ensure you have the Eclipse IDE and Java 8 or 9.
-2. Clone or download the Escape! repository from https://github.com/UTSA-CS-3443/Escape
+2. Clone or download the Escape! repository
 3. Import project into Eclipse
 4. Double click main and run the program
 
