@@ -46,7 +46,7 @@ public class HighScoreController implements Initializable {
 		try {
 			// Fill ListView with data.
 			ObservableList<String> items = FXCollections.observableArrayList ();
-			Scanner 			   scan  = new Scanner(new File("data/highscores.txt"));
+			Scanner 			   scan  = new Scanner(new File("./data/highscores.txt"));
 			
 			while(scan.hasNextLine())
 			{
@@ -75,7 +75,7 @@ public class HighScoreController implements Initializable {
 		try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( MainMenuController.class.getResource("../../MainMenu.fxml") );
+			loader.setLocation( Main.class.getResource("../src/MainMenu.fxml") );
 
 			// Load the layout from the FXML and add it to the scene
 			AnchorPane layout = (AnchorPane) loader.load();				
@@ -96,7 +96,7 @@ public class HighScoreController implements Initializable {
 		String str = String.format( "\n%d,%s", Main.profile.getPoints(), name.getText() );
 		name.setText("");
 		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter("data/highscores.txt", true));
+			BufferedWriter bw = new BufferedWriter(new FileWriter("./data/highscores.txt", true));
 			bw.write(str);
 			bw.close();
 		} catch (IOException e) {

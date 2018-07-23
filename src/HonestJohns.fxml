@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../data/Screen_background/HonestJoe'sBG.png" />
+            <Image url="@/data/Screen_background/HonestJoe'sBG.png" />
          </image>
       </ImageView>
       <Text fx:id="money" fill="#21f505" layoutX="64.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$2.50">

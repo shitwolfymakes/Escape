@@ -32,7 +32,7 @@ public class DeathScreenController implements EventHandler<Event>{
     	try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(DeathScreenController.class.getResource("../../HighScore.fxml") );
+			loader.setLocation(Main.class.getResource("../src/HighScore.fxml") );
 
 			// Load the layout from the FXML and add it to the scene
 			AnchorPane layout = (AnchorPane) loader.load();				

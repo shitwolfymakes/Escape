@@ -90,7 +90,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 					
 					// The ../ is important to get the location in the directory structure
 					//  otherwise it throws IllegalStateException
-					loader.setLocation( Main.class.getResource("../HighScores.fxml") );
+					loader.setLocation( Main.class.getResource("../src/HighScores.fxml") );
 					AnchorPane layout = (AnchorPane) loader.load();
 					Scene scene = new Scene( layout );
 
@@ -151,11 +151,11 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 	
 	/**
 	 * runUpdates() is the main thread that updates the javaFX document
-	 * 
 	 */
 	public void runUpdates() {
 
-		Thread th = new Thread( new Task<Object>() {                // put the task in its own thread
+		// put the task in its own thread
+		Thread th = new Thread( new Task<Object>() {
 
 			@Override
 			protected String call() throws Exception {
@@ -198,7 +198,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									try {
 
 										FXMLLoader loader = new FXMLLoader();
-										loader.setLocation( HighScoreController.class.getResource("../../HonestJohns.fxml"));
+										loader.setLocation(Main.class.getResource("../src/HonestJohns.fxml"));
 
 										AnchorPane layout = (AnchorPane) loader.load();				
 										Scene scene = new Scene( layout );
@@ -214,7 +214,7 @@ public class LevelController implements EventHandler<KeyEvent>, Initializable {
 									running = false;
 									Main.enemies.clear();
 									FXMLLoader loader = new FXMLLoader();
-									loader.setLocation( HighScoreController.class.getResource("../../DeathScreen.fxml"));
+									loader.setLocation(Main.class.getResource("../src/DeathScreen.fxml"));
 
 									AnchorPane layout = (AnchorPane) loader.load();				
 									Scene scene = new Scene( layout );

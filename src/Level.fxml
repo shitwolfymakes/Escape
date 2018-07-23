@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LevelController">
    <children>
-      <GridPane fx:id="gridPane" layoutX="-93.0" layoutY="-43.0" prefHeight="693.0" prefWidth="971.0" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="-93.0" AnchorPane.rightAnchor="-78.0" AnchorPane.topAnchor="-43.0">
+      <GridPane layoutX="-93.0" layoutY="-43.0" prefHeight="693.0" prefWidth="971.0" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="-93.0" AnchorPane.rightAnchor="-78.0" AnchorPane.topAnchor="-43.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="92.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="100.0" />
@@ -36,25 +36,25 @@
       </GridPane>
       <ImageView fx:id="background1" fitHeight="600.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../data/Screen_background/levelBG.png" />
+            <Image url="@data/Screen_background/levelBG.png" />
          </image>
       </ImageView>
       <ImageView fx:id="background2" fitHeight="600.0" fitWidth="1600.0" layoutX="1600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../data/Screen_background/levelBG.png" />
+            <Image url="@data/Screen_background/levelBG.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="100.0" fitWidth="800.0" layoutX="23.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../data/Screen_background/pixil-frame-0%20(17).png" />
+            <Image url="@/data/Screen_background/HUD.png" />
          </image>
       </ImageView>
-      <Label fx:id="hullLabel" layoutX="523.0" layoutY="14.0" prefHeight="38.0" prefWidth="175.0" text="Label">
+      <Label fx:id="hullLabel" layoutX="523.0" layoutY="16.0" prefHeight="38.0" prefWidth="175.0" text="Label">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Label fx:id="scoreLabel" layoutX="356.0" layoutY="19.0" text="Label">
+      <Label fx:id="scoreLabel" layoutX="356.0" layoutY="16.0" text="Label">
          <font>
             <Font size="23.0" />
          </font>

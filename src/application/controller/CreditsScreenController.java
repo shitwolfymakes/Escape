@@ -35,7 +35,7 @@ public class CreditsScreenController implements EventHandler<ActionEvent>, Initi
 		try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( MainMenuController.class.getResource("../../MainMenu.fxml") );
+			loader.setLocation( Main.class.getResource("../src/MainMenu.fxml") );
 
 			// Load the layout from the FXML and add it to the scene
 			AnchorPane layout = (AnchorPane) loader.load();				

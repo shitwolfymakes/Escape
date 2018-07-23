@@ -43,7 +43,7 @@ public class MainMenuController implements EventHandler<Event>{
     	try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( HighScoreController.class.getResource("../../CreditsScreen.fxml") );
+			loader.setLocation( Main.class.getResource("../src/CreditsScreen.fxml") );
 
 			// Load the layout from the FXML and add it to the scene
 			AnchorPane layout = (AnchorPane) loader.load();				
@@ -67,7 +67,7 @@ public class MainMenuController implements EventHandler<Event>{
     	try {
 			// Load the FXML document (we created with SceneBuilder)
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( HighScoreController.class.getResource("../../HighScore.fxml") );
+			loader.setLocation( Main.class.getResource("../src/HighScore.fxml") );
 
 			// Load the layout from the FXML and add it to the scene
 			AnchorPane layout = (AnchorPane) loader.load();				

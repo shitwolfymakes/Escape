@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../data/Screen_background/GameOverBG.png" />
+            <Image url="@/data/Screen_background/GameOverBG.png" />
          </image>
       </ImageView>
       <Button fx:id="highScores" layoutX="365.0" layoutY="445.0" mnemonicParsing="false" onAction="#handle" text="High Scores" />

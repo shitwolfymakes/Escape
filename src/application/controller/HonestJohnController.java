@@ -36,16 +36,16 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
      */
 	@Override
 	public void handle(Event event) {
-		if(((Button)event.getSource()).equals(buyBeer)) {
+		if ( ((Button)event.getSource()).equals(buyBeer) ) {
 			cashAmount -= 3;
 			cashString += String.valueOf(cashAmount);
 		    money.setText(cashString);
 		    cashString = "$";
 		}//end if
-		if(((Button)event.getSource()).equals(startLevel)) {
-			
+		
+		if ( ((Button)event.getSource()).equals(startLevel) ) {
 	    	Main.startLevel();
-	    	//starts bullet controller thread
+	    	// Start the threads
 	    	Main.bulletHandler.start();
 	    	Main.enemyHandler.start();
 	    	Main.collisionDetector.start();
