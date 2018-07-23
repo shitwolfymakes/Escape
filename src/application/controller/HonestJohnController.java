@@ -32,7 +32,7 @@ public class HonestJohnController implements EventHandler<Event>, Initializable{
     /**
      * checks what button the user presses, and either buys beer or starts the next level
      * 
-     * @param event
+     * @param event The event to be handled
      */
 	@Override
 	public void handle(Event event) {
